@@ -33,6 +33,10 @@ h1, h2, h3, h4 {
   font-family: Trebuchet, Tahoma, Arial, sans-serif
 }
 
+.subheader {
+    font-size: 50%;
+}
+
 img {
   margin: 10px;
 }
@@ -122,4 +126,8 @@ footer p {
 
 #google-voice {
   margin-top: 10px;
+}
+
+#photo-grid {
+    margin: 0;
 }
