@@ -114,25 +114,6 @@ footer p {
   background: transparent url(/images/twitter_newbird_white.png) 0 50% no-repeat;
 }
 
-.forks, .watchers {
-  width: 40px;
-  height: 20px;
-  display: block;
-  text-align: right;
-  margin-left: -20px;
-  padding-right: 20px;
-}
-
-.forks {
-  background: url(/images/forks.png) right top no-repeat;
-  text-decoration: none;
-}
-
-.watchers {
-  background: url(/images/watchers.png) right top no-repeat;
-  text-decoration: none;
-}
-
 /* GitHub section */
 
 ul.code {
@@ -140,8 +121,7 @@ ul.code {
 }
 
 ul.code li {
-  margin: 0;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   height: 40px;
 }
 
@@ -149,20 +129,10 @@ ul.code li {
   margin-bottom: 0;
 }
 
-/* TODO i'd rather not float this. */
-.github .meta {
-  margin-top: 1px;
-  float: left;
-  clear: left;
-}
-
-.github .description {
-  margin-left: 50px;
-}
-
 .github h3 {
-  font-size: 90%;
+  font-size: 100%;
   margin-bottom: 0;
+  display: inline;
 }
 
 .github a {
@@ -173,6 +143,21 @@ ul.code li {
 
 .github p {
   font-size: 75%;
+}
+
+.forks, .watchers {
+  width: 20px;
+  display: inline-block;
+  padding-right: 20px;
+  text-align: right;
+}
+
+.forks {
+  background: url(/images/forks.png) right top no-repeat;
+}
+
+.watchers {
+  background: url(/images/watchers.png) right top no-repeat;
 }
 
 /* Other blocks */

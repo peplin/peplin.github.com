@@ -48,13 +48,11 @@ function loadGithubDetails() {
                 if(repoData) {
                     var watchers_link = $('<a>').addClass('watchers').attr('href', url+'/watchers').text(repoData.watchers);
                     var forks_link = $('<a>').addClass('forks').attr('href', url+'/network').text(repoData.forks);
-                    var description = listItem.find(".description");
-                    var meta = $('<section>').addClass('meta');
-                    description.before(meta);
-                    meta.append(watchers_link);
-                    meta.append(forks_link);
-                    description = listItem.find(".description h3");
-                    $(description).after("<p>" + repoData.description + "</p>");
+                    var header = listItem.find("h3");
+                    var description = $('<p>').text(repoData.description);
+                    header.after(description);
+                    header.after(forks_link);
+                    header.after(watchers_link);
                 }
             }
         });
