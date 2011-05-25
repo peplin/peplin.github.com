@@ -1,4 +1,9 @@
 $(document).ready(function() {
+    loadPhotoGrid();
+    loadGithubDetails();
+});
+
+function loadPhotoGrid() {
     $.ajax({url: "http://api.flickr.com/services/rest",
         data: {
             method: "flickr.people.getPublicPhotos",
@@ -23,5 +28,35 @@ $(document).ready(function() {
                         '<img alt="'+ photo.title + '"src="' + photo.thumbnail +
                         '"/></a>');
             });
-        }});
-});
+        }
+    });
+}
+
+function loadGithubDetails() {
+    $(".github a").each(function(i, item) {
+        var listItem = $(item).parents("li");
+        var url = $(item).attr("href");
+        var segments = url.split('/');
+        var repo = segments.pop();
+        var username = segments.pop();
+
+        $.ajax({url: "http://github.com/api/v2/json/repos/show/" + username +
+                "/" + repo,
+            dataType: "jsonp",
+            success: function(data) {
+                var repoData = data.repository;
+                if(repoData) {
+                    var watchers_link = $('<a>').addClass('watchers').attr('href', url+'/watchers').text(repoData.watchers);
+                    var forks_link = $('<a>').addClass('forks').attr('href', url+'/network').text(repoData.forks);
+                    var description = listItem.find(".description");
+                    var meta = $('<section>').addClass('meta');
+                    description.before(meta);
+                    meta.append(watchers_link);
+                    meta.append(forks_link);
+                    description = listItem.find(".description h3");
+                    $(description).after("<p>" + repoData.description + "</p>");
+                }
+            }
+        });
+    });
+}

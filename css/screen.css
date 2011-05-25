@@ -34,7 +34,7 @@ h1, h2, h3, h4 {
 }
 
 .subheader {
-    font-size: 50%;
+  font-size: 50%;
 }
 
 img {
@@ -114,6 +114,69 @@ footer p {
   background: transparent url(/images/twitter_newbird_white.png) 0 50% no-repeat;
 }
 
+.forks, .watchers {
+  width: 40px;
+  height: 20px;
+  display: block;
+  text-align: right;
+  margin-left: -20px;
+  padding-right: 20px;
+}
+
+.forks {
+  background: url(/images/forks.png) right top no-repeat;
+  text-decoration: none;
+}
+
+.watchers {
+  background: url(/images/watchers.png) right top no-repeat;
+  text-decoration: none;
+}
+
+/* GitHub section */
+
+ul.code {
+  margin-top: 0;
+}
+
+ul.code li {
+  margin: 0;
+  margin-bottom: 10px;
+  height: 40px;
+}
+
+.code p {
+  margin-bottom: 0;
+}
+
+/* TODO i'd rather not float this. */
+.github .meta {
+  margin-top: 1px;
+  float: left;
+  clear: left;
+}
+
+.github .description {
+  margin-left: 50px;
+}
+
+.github h3 {
+  font-size: 90%;
+  margin-bottom: 0;
+}
+
+.github a {
+  text-decoration: none;
+  font-family: Trebuchet, Tahoma, Arial, sans-serif;
+  font-size: 75%;
+}
+
+.github p {
+  font-size: 75%;
+}
+
+/* Other blocks */
+
 #email {
   padding-left: 40px;
   background: transparent url(/images/email.png) 0 50% no-repeat;
@@ -129,5 +192,5 @@ footer p {
 }
 
 #photo-grid {
-    margin: 0;
+  margin: 0;
 }
