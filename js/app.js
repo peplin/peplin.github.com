@@ -8,7 +8,7 @@ function loadPhotoGrid() {
         data: {
             method: "flickr.people.getPublicPhotos",
             user_id: "52818162@N00",
-            per_page: 6,
+            per_page: 9,
             format: "json",
             api_key: "55115d73f4005b232247ecef716803f6"
         },
