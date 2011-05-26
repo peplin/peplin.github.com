@@ -80,7 +80,7 @@ footer p {
   margin-bottom: 0;
 }
 
-.block, .sidebar, .post, .page {
+.block, .sidebar, .page {
   background-color: #666;
   padding: 0 5px 5px 5px;
   margin-top: 20px;
