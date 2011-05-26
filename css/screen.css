@@ -242,6 +242,7 @@ ul.code li {
 .page {
   height: 100%;
   padding: 5px 15px;
+  margin-top: 5px;
 }
 
 .post p {
