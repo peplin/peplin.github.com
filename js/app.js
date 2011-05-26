@@ -36,7 +36,7 @@ function loadGithubDetails() {
     $(".github a").each(function(i, item) {
         var listItem = $(item).parents("li");
         var url = $(item).attr("href");
-        var segments = url.split('/');
+        var segments = url.split("/");
         var repo = segments.pop();
         var username = segments.pop();
 
@@ -46,15 +46,33 @@ function loadGithubDetails() {
             success: function(data) {
                 var repoData = data.repository;
                 if(repoData) {
-                    var watchers_link = $('<a>').addClass('watchers').attr('href', url+'/watchers').text(repoData.watchers);
-                    var forks_link = $('<a>').addClass('forks').attr('href', url+'/network').text(repoData.forks);
+                    var watchers_link = $("<a>").addClass("watchers").attr(
+                            "href", url + "/watchers").text(repoData.watchers);
+                    var forks_link = $("<a>").addClass("forks").attr(
+                            "href", url + "/network").text(repoData.forks);
                     var header = listItem.find("h3");
-                    var description = $('<p>').text(repoData.description);
+                    var description = $("<p>").text(repoData.description);
                     header.after(description);
                     header.after(forks_link);
                     header.after(watchers_link);
                 }
+                sortGithubRepositories();
             }
         });
+    });
+}
+
+function sortGithubRepositories() {
+    var repos = $(".code li").get();
+    repos.sort(function(a, b){ 
+        var keyA = $(a).find(".watchers").text();
+        var keyB = $(b).find(".watchers").text();
+        if (keyA < keyB) return 1;
+        if (keyA > keyB) return -1;
+        return 0;
+    });
+    var list = $(".code");
+    $.each(repos, function(i, li){
+          list.append(li);
     });
 }
