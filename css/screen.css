@@ -152,6 +152,7 @@ ul.code {
 
 ul.code li {
   height: 40px;
+  border-bottom: 1px solid #777;
 }
 
 .code p {
