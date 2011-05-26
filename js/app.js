@@ -63,7 +63,7 @@ function loadGithubDetails() {
 }
 
 function sortGithubRepositories() {
-    var repos = $(".code li").get();
+    var repos = $("ul.code li").get();
     repos.sort(function(a, b){ 
         var keyA = $(a).find(".watchers").text();
         var keyB = $(b).find(".watchers").text();
@@ -71,7 +71,7 @@ function sortGithubRepositories() {
         if (keyA > keyB) return -1;
         return 0;
     });
-    var list = $(".code");
+    var list = $("ul.code");
     $.each(repos, function(i, li){
           list.append(li);
     });
