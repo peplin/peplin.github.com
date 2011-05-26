@@ -3,6 +3,11 @@ layout: default
 title: Christopher Peplin
 ---
 
+<div class="grid_4"><header class="block">
+    <a href="/"><h1>Christopher Peplin</h1></a>
+</header></div>
+<div class="clear"></div>
+
 <div class="grid_4"><div class="block">
     <h2>Code <span class="subheader"><a href="https://github.com/peplin" target="_blank">more</a></span></h2>
     <ul class="code">
@@ -43,7 +48,12 @@ title: Christopher Peplin
 </div></div>
 
 <div class="grid_4"><div class="block">
-    <h2></h2>
+    <h2>Posts <span class="subheader"><a href="/list.html">more</a></span></h2>
+    <ul class="posts">
+    {% for post in site.posts limit: 5 %}
+        <li><span>{{ post.date | date: "%B %e, %Y" }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+    </ul>
 </div></div>
 
 <div class="grid_4"><div class="block" id="photo-grid">

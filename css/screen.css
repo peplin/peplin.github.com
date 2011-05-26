@@ -27,14 +27,21 @@ a:visited {
 
 a:hover {
   color: #ddd;
+  text-decoration: underline;
 }
 
 h1, h2, h3, h4 {
-  font-family: Trebuchet, Tahoma, Arial, sans-serif
+  font-family: Trebuchet, Tahoma, Arial, sans-serif;
+  margin: 3px 0 0 3px;
+}
+
+h1 a, h2 a, h3 a, h4 a {
+  text-decoration: none;
 }
 
 .subheader {
   font-size: 50%;
+  margin-left: 5px;
 }
 
 img {
@@ -73,7 +80,7 @@ footer p {
   margin-bottom: 0;
 }
 
-.block {
+.block, .sidebar, .post {
   background-color: #666;
   padding: 0 5px 5px 5px;
   margin-top: 20px;
@@ -90,14 +97,24 @@ footer p {
 
 header.block {
   background-color: #888;
-  padding: 10px 5px;
+  padding: 8px 5px;
   margin-top: 0;
-  height: 100%;
+  height: 40px;
 }
 
 header h1 {
   margin: 0 0 0 3px;
   font-size: 190%;
+}
+
+header h2 {
+  font-size: 100%;
+  margin: 0 10px;
+}
+
+header.block.minimal {
+  padding: 3px 5px 8px 5px;
+  height: 20px;
 }
 
 footer {
@@ -115,10 +132,6 @@ footer p {
 
 .block ul li {
   margin-left: 16px;
-}
-
-.block h2 {
-  margin: 3px 0 0 3px;
 }
 
 .twitter {
@@ -196,3 +209,41 @@ ul.code li {
 #photo-grid img {
   margin: 5px 10px;
 }
+
+/* Posts list */
+
+.posts {
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.posts a:hover {
+  text-decoration: underline;
+}
+
+/* Post page */
+
+.post h1 {
+  border-bottom: 1px solid #777;
+  margin: 0;
+  font-size: 140%;
+}
+
+.post h2, h3, h4 {
+  font-weight: normal;
+}
+
+.post {
+  height: 100%;
+  padding: 5px 15px;
+}
+
+.post p {
+  line-height: 1.5em;
+  margin: 10px 0;
+}
+
+.post .authoring {
+  font-style: italic;
+}
+

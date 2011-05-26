@@ -1,0 +1,34 @@
+---
+layout: post
+title: Standardizing Python Web Application Deployment
+permalink: /2011/05/python-deployment/
+---
+
+Deployment is one of the most talked about issues in the Python web application
+community. Every development shop comes up with their own approach, pieced
+together with experience and blog posts.
+
+Fabric is often mentioned as the Python alternative to the code deploy tool
+Capistrano, but there are many more Capistrano plugins and extensions than
+Fabfiles. One reason for this is a lack of standard application layouts (i.e.
+where is the WSGI application, the javascript files, list of dependencies,
+etc.). What if there were a standard convention for organizing and deploying
+small- to medium-sized applications? We are open-sourcing the configuration we
+use at Bueda for building and deploying Django and Tornado web applications.
+There are four related projects that make up the release:
+
+[python-webapp-etc](https://github.com/bueda/python-webapp-etc) -
+Config files for tools to deploy Python webapps
+
+[buedafab (a.k.a. "ops")](https://github.com/bueda/ops) -
+A collection of Fabric commands for deployment
+
+[django-boilerplate](https://github.com/bueda/django-boilerplate) -
+A standard layout for Django apps
+
+[tornado-boilerplate](https://github.com/bueda/tornado-boilerplate) -
+A standard layout for Tornado apps
+
+I will let the documentation of each individual repository speak for itself.
+Ideas, comments and contributions are welcome - we hope to come to a community
+consensus on good standard practice.
