@@ -80,7 +80,7 @@ footer p {
   margin-bottom: 0;
 }
 
-.block, .sidebar, .post {
+.block, .sidebar, .post, .page {
   background-color: #666;
   padding: 0 5px 5px 5px;
   margin-top: 20px;
@@ -140,6 +140,11 @@ footer p {
 }
 
 /* GitHub section */
+
+.code h3 {
+  margin: 0;
+  font-weight: bold;
+}
 
 ul.code {
   margin-top: 0;
@@ -233,7 +238,7 @@ ul.code li {
   font-weight: normal;
 }
 
-.post {
+.page {
   height: 100%;
   padding: 5px 15px;
 }
