@@ -84,6 +84,9 @@ function sortGithubRepositories() {
     });
     var list = $("ul.code");
     $.each(repos, function(i, li){
-          list.append(li);
+        if(i == repos.length) {
+            $(li).addClass("last-child");
+        }
+        list.append(li);
     });
 }

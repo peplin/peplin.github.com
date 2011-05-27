@@ -179,7 +179,7 @@ ul.code li {
   margin: 0 0 2px 10px
 }
 
-ul.code li:last-child {
+ul.code li:last-child, ul.code li.last-child {
   border-bottom: 0;
 }
 
