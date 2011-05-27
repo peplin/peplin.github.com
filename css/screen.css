@@ -61,10 +61,6 @@ li ul {
   margin-bottom: 0;
 }
 
-code {
-  color: #000;
-}
-
 /* Sections */
 
 ul.nav {
@@ -129,7 +125,7 @@ header h2 {
 }
 
 header.block.minimal {
-  padding: 3px 5px 8px 5px;
+  padding: 0 5px 12px 5px;
   height: 20px;
 }
 
@@ -248,13 +244,30 @@ ul.code li:last-child {
 
 /* Posts list */
 
-.posts {
+.block ul.posts {
+  margin-top: 0;
+}
+
+ul.posts {
   text-decoration: none;
   font-size: 14px;
+  list-style: none;
 }
 
 .posts a:hover {
   text-decoration: underline;
+}
+
+.posts a {
+  display: block;
+  margin-top: -3px;
+  line-height: 1.2em;
+}
+
+.posts .date {
+  font-size: 76%;
+  margin: 0;
+  padding: 0;
 }
 
 /* Post page */
@@ -267,6 +280,8 @@ ul.code li:last-child {
 
 .post h2, h3, h4 {
   font-weight: normal;
+  margin-left: 0;
+  padding-left: 0;
 }
 
 .page {
@@ -280,7 +295,7 @@ ul.code li:last-child {
   margin: 10px 0;
 }
 
-.post .date {
+.date {
   color: #888;
 }
 

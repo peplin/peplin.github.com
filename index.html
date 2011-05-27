@@ -9,7 +9,7 @@ title: Christopher Peplin
 <div class="clear"></div>
 
 <div class="grid_4"><div class="block">
-    <h2>Code <span class="subheader"><a href="https://github.com/peplin" target="_blank">more</a></span></h2>
+    <h2><a href="https://github.com/peplin" target="_blank">Code <span class="subheader">more</span></a></h2>
     <ul class="code">
         <li class="github">
             <section class="description">
@@ -48,16 +48,18 @@ title: Christopher Peplin
 </div></div>
 
 <div class="grid_4"><div class="block">
-    <h2>Posts <span class="subheader"><a href="/list.html">more</a></span></h2>
+    <h2><a href="/list.html">Posts <span class="subheader">more</span></a></h2>
     <ul class="posts">
     {% for post in site.posts limit: 5 %}
-        <li><span>{{ post.date | date: "%B %e, %Y" }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+        <li><span class="date">{{ post.date | date: "%B %e, %Y" }}</span>
+            <a href="{{ post.url }}">{{ post.title }}</a>
+        </li>
     {% endfor %}
     </ul>
 </div></div>
 
 <div class="grid_4"><div class="block" id="photo-grid">
-    <h2>Photography <span class="subheader"><a href="http://flickr.com/photos/christopherpeplin" target="_blank">more</a></span></h2>
+        <h2><a href="http://flickr.com/photos/christopherpeplin" target="_blank">Photography <span class="subheader">more</span></a></h2>
     <noscript>
         <p>This photo grid requires JavaScript, and your browser doesn't
         seem to support it. Click the link above to see some pretty
