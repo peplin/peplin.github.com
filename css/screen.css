@@ -163,6 +163,10 @@ ul.code li {
   border-bottom: 1px solid #777;
 }
 
+ul.code li:last-child {
+  border-bottom: 0;
+}
+
 .code p {
   margin-bottom: 0;
   line-height: 93%;
