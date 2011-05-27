@@ -326,6 +326,12 @@ Files created or modified in FLAC source:
     src/libFLAC++/stream_encoder.cpp
     src/libFLAC/stream_encoder.c
 
+The patches to the FLAC encoder are available at
+[GitHub](https://github.com/peplin/pflac).
+
+A [PDF](https://github.com/peplin/pflac/raw/master/docs/report.pdf) version of
+this post.
+
 ## References
 
 * [FLAC Format Specification](http://flac.sourceforge.net/format.html)
