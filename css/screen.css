@@ -52,6 +52,14 @@ img.inline {
   margin: 0;
 }
 
+li ul {
+  margin-bottom: 0;
+}
+
+code {
+  color: #000;
+}
+
 /* Sections */
 
 ul.nav {
