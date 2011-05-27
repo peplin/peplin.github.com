@@ -1,5 +1,11 @@
 /* General Elements */
 
+html {
+  overflow: -moz-scrollbars-vertical;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
 body {
   background-color: #EEE;
   font-family: Georgia, "Times New Roman", Times, serif;
