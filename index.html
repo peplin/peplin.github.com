@@ -48,7 +48,7 @@ title: Christopher Peplin
 </div></div>
 
 <div class="grid_4"><div class="block">
-    <h2><a href="/list.html">Posts <span class="subheader">more</span></a></h2>
+    <h2><a href="/posts/">Posts <span class="subheader">more</span></a></h2>
     <ul class="posts">
     {% for post in site.posts limit: 5 %}
         <li><span class="date">{{ post.date | date: "%B %e, %Y" }}</span>
@@ -108,9 +108,14 @@ title: Christopher Peplin
     </ul>
 </div></div>
 <div class="clear"></div>
+<footer class="prefix_4 grid_8">
+{% include footer.html %}
+</footer>
+
 <script type="text/javascript"
     src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js">
 </script>
 <script type="text/javascript"
     src="/js/app.js">
 </script>
+

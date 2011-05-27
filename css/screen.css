@@ -135,6 +135,7 @@ header.block.minimal {
 
 footer {
   text-align: right;
+  padding-bottom: 10px;
 }
 
 footer p {
@@ -250,6 +251,11 @@ ul.code li:last-child {
 
 .block ul.posts {
   margin-top: 0;
+}
+
+.page ul.posts li {
+  margin-bottom: 8px;
+  font-size: 120%;
 }
 
 ul.posts {
