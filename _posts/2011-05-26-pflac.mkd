@@ -46,9 +46,8 @@ described at a high level in this way:
 * Open the output file stream
 * Write stream header, including metadata such as artist/album information and
     an MD5 checksum
-* Encode:
 
-
+Finally, do the encoding:
 {% highlight cpp %}
 while(blocksLeft) {
     readBlock();
@@ -112,11 +111,11 @@ Truncated profiling results showing the prime candidates for parallel speedup:
 
 {% highlight bash %}
 index  \% time  self   children    called     name
-                0.00    0.00       1/3080        FLAC__stream_encoder_finish [37]
-                0.00   12.99    3079/3080        FLAC__stream_encoder_process [6]
-[7]     96.5    0.00   13.00    3080         process_frame_ [7]
-                0.00   12.34    3080/3080        process_subframes_ [8]
-                0.00    0.47    3080/3080        FLAC__MD5Accumulate [22]
+                0.00    0.00       1/3080     FLAC__stream_encoder_finish [37]
+                0.00   12.99    3079/3080     FLAC__stream_encoder_process [6]
+[7]     96.5    0.00   13.00    3080          process_frame_ [7]
+                0.00   12.34    3080/3080     process_subframes_ [8]
+                0.00    0.47    3080/3080     FLAC__MD5Accumulate [22]
 ...
 {% endhighlight %}
 
@@ -148,6 +147,8 @@ for each frame is too much, and would limit any speedup drastically. We
 determined that the work in loop of the second plan was ultimately insignificant
 in comparison to other areas of the encoder.
 
+### Pipeline Filters
+
 Before explaining the hazards of this design, we present our pipeline filter
 plan and the read/write dependencies between each filter. These filters are
 defined in filters.h, and the type of token passed among them is in
@@ -155,27 +156,29 @@ defined in filters.h, and the type of token passed among them is in
 
 **InputFilter**
 
-read:  infile, shared encoder
+*Read*:  infile, shared encoder
 
-write:  shared encoder, raw WAV buffer, byte counters
+*Write*:  shared encoder, raw WAV buffer, byte counters
 
 **PCMFilter (parallel)**
 
-read:  byte counter, shared encoder, raw WAV buffer
+*Read*:  byte counter, shared encoder, raw WAV buffer
 
-write: PCM buffer
+*Write*: PCM buffer
 
 **ProcessFilter (parallel)**
 
-read: PCM buffer, byte counter
+*Read*: PCM buffer, byte counter
 
-write: parallel encoder
+*Write*: parallel encoder
 
 **OutputFilter**
 
-read: parallel encoder
+*Read*: parallel encoder
 
-write: outfile, shared encoder
+*Write*: outfile, shared encoder
+
+### Serial Nature
 
 While designing the pipeline, it became obvious that libFLAC was built from the
 ground up as a serial library. Every function in the library is based the

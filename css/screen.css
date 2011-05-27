@@ -61,6 +61,10 @@ li ul {
   margin-bottom: 0;
 }
 
+code {
+  font-size: 85%;
+}
+
 /* Sections */
 
 ul.nav {
