@@ -6,14 +6,16 @@ desc "Draft a new post"
 task :new do
   puts "What should we call this post for now?"
   name = STDIN.gets.chomp
-  FileUtils.touch("drafts/#{name}.md")
+  system("git checkout -b #{name}")
 
-  open("drafts/#{name}.md", 'a') do |f|
+  path = "_posts/#{name}.mkd"
+  File.open(path, 'a') do |f|
     f.puts "---"
     f.puts "layout: post"
-    f.puts "title: \"DRAFT: #{name}\""
+    f.puts "title: \"#{name}\""
     f.puts "---"
   end
+  system("git add #{path}")
 end
 
 desc "Startup Jekyll"
