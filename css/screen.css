@@ -1,15 +1,16 @@
 /* General Elements */
 
-body { 
-  background-color: #444;
-  font-family: georgia, "times new roman", times, serif;
+body {
+  background-color: #EEE;
+  font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 1em;
   font-weight: normal;
-  color: #fff;
+  color: #000;
+  -webkit-font-smoothing: antialiased;
 }
 
 a {
-  color: #fff;
+  color: #000;
   text-decoration: underline;
 }
 
@@ -17,25 +18,29 @@ a img {
   text-decoration: none;
 }
 
-a:link {
-  color: #fff;
-}
-
-a:visited {
-  color: #fff;
-}
-
 a:hover {
-  color: #ddd;
+  color: #444;
   text-decoration: underline;
 }
 
 h1, h2, h3, h4 {
+  color: #612B29;
   font-family: Trebuchet, Tahoma, Arial, sans-serif;
   margin: 3px 0 0 3px;
 }
 
+h2 {
+  margin: 5px 0 0 5px;
+  padding: 6px 0 0 3px;
+}
+
 h1 a, h2 a, h3 a, h4 a {
+  text-decoration: none;
+  color: #612B29;
+}
+
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover {
+  color: #000;
   text-decoration: none;
 }
 
@@ -89,30 +94,33 @@ footer p {
 }
 
 .block, .sidebar, .page {
-  background-color: #666;
+  background-color: #FFF;
   padding: 0 5px 5px 5px;
   margin-top: 20px;
-  height: 290px;
+  height: 295px;
   -webkit-border-radius: 0 0 3px 3px; -moz-border-radius: 0 0 3px 3px; border-radius: 0 0 3px 3px;
-  -webkit-box-shadow: 0px 0px 2px rgba(255,255,255,.25);
-  -moz-box-shadow: 0px 0px 2px rgba(255,255,255,.25);
-  box-shadow: 0px 0px 2px rgba(255,255,255,.25);
+  -webkit-box-shadow: 0px 0px 2px rgba(0,0,0,.25);
+  -moz-box-shadow: 0px 0px 2px rgba(0,0,0,.25);
+  box-shadow: 0px 0px 2px rgba(0,0,0,.25);
 }
 
 .block.bottom {
-  height: 220px;
+  height: 225px;
 }
 
 header.block {
-  background-color: #888;
   padding: 8px 5px;
   margin-top: 0;
   height: 40px;
 }
 
 header h1 {
-  margin: 0 0 0 3px;
+  margin: 0 0 0 5px;
   font-size: 190%;
+}
+
+header h1 a {
+  color: #523E49;
 }
 
 header h2 {
@@ -159,8 +167,13 @@ ul.code {
 }
 
 ul.code li {
-  height: 40px;
   border-bottom: 1px solid #777;
+  padding-bottom: 5px;
+  margin: 0 0 2px 10px
+}
+
+ul.code li:last-child {
+  border-bottom: 0;
 }
 
 ul.code li:last-child {
@@ -186,6 +199,11 @@ ul.code li:last-child {
 
 .github p {
   font-size: 75%;
+}
+
+.meta {
+  display: inline;
+  float: right;
 }
 
 .forks, .watchers {
@@ -242,8 +260,8 @@ ul.code li:last-child {
 /* Post page */
 
 .post h1 {
-  border-bottom: 1px solid #777;
-  margin: 0;
+  border-bottom: 1px solid #EEE;
+  margin: 10px 0;
   font-size: 140%;
 }
 
@@ -252,9 +270,9 @@ ul.code li:last-child {
 }
 
 .page {
+  background-color: #FFF;
   height: 100%;
   padding: 5px 15px;
-  margin-top: 5px;
 }
 
 .post p {
@@ -262,7 +280,7 @@ ul.code li:last-child {
   margin: 10px 0;
 }
 
-.post .authoring {
-  font-style: italic;
+.post .date {
+  color: #888;
 }
 
