@@ -320,3 +320,9 @@ ul.posts {
   color: #888;
 }
 
+.post img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
