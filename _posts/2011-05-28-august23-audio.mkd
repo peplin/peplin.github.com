@@ -4,4 +4,21 @@ title: The Audio of August 23, 1966
 permalink: /2011/05/august23-audio/
 ---
 
-TODO
+This post is part of a series describing the
+[August 23, 1966](/2011/05/august23/) project.
+
+We had two recording sessions for the August project: field recordings for
+providing ambient sound in the airlock chamber and voice-over recordings for the
+headset narration and voice commands.
+
+## Airlock Ambiance
+
+These recordings were made in and around the University of Michigan campus. I
+sought out the sounds of wind passing through narrow walkways, the hum of
+machinery, and other background sounds.
+
+<a href="/files/august/audio.gpx" class="gpx"></a>
+<div id="map"></div>
+
+## Headset Narration
+

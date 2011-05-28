@@ -251,6 +251,13 @@ ul.code li:last-child {
   margin-top: 10px;
 }
 
+#map {
+  margin-left: auto;
+  margin-right: auto;
+  height: 300px;
+  width: 500px;
+}
+
 /* Photo grid */
 
 #photo-grid h2 {
