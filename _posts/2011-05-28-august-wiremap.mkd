@@ -75,3 +75,10 @@ field range from 0 to the field depth.
 
 The library was released under the Apache open source license on GitHub
 ([https://github.com/peplin/wiremap-shapes](https://github.com/peplin/wiremap-shapes)),
+
+## Results
+
+Despite careful planning, we had trouble at the very end of the build phase
+accurately calibrating our Wiremap. The final transportation from our workspace
+to the gallery sealed the deal; we were never able to form a satisfactory
+image in the field after the move.
