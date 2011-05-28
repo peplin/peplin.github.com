@@ -22,12 +22,12 @@ function loadGPXFileIntoGoogleMap(map, filename) {
         dataType: "xml",
         success: function(data) {
           var parser = new GPXParser(data, map);
-          parser.SetTrackColour("#ff0000");     // Set the track line colour
-          parser.SetTrackWidth(5);          // Set the track line width
-          parser.SetMinTrackPointDelta(0.001);      // Set the minimum distance between track points
-          parser.CenterAndZoom(data);
-          parser.AddTrackpointsToMap();         // Add the trackpoints
-          parser.AddWaypointsToMap();           // Add the waypoints
+          parser.setTrackColour("#ff0000");     // Set the track line colour
+          parser.setTrackWidth(5);          // Set the track line width
+          parser.setMinTrackPointDelta(0.001);      // Set the minimum distance between track points
+          parser.centerAndZoom(data);
+          parser.addTrackpointsToMap();         // Add the trackpoints
+          parser.addWaypointsToMap();           // Add the waypoints
         }
     });
 }
