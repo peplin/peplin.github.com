@@ -42,6 +42,8 @@ to simply draw a sphere, rectangle or sliver in the field. The library also
 includes a novel calibration method developed in response to inaccuracies in our
 Wiremap.
 
+* [Wiremap Shapes Library](https://github.com/peplin/wiremap-shapes)
+
 ### Abstraction
 
 The Wiremap library gathers the coordinate conversion and wire selection math

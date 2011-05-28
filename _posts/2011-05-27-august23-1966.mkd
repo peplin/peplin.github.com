@@ -12,388 +12,205 @@ physical reality, it may be interpreted in many ways. By implementing mechanical
 and digital interaction technologies, the interpretation can become
 re-manifestation, where the observer tells a personal story of the cosmos.
 
-[Proposal (PDF)](/files/august23/proposal.pdf)
+In 2009, myself and three others at the University of Michigan tried to make
+sense of that. We received a grant as a part of the
+[GROCS](http://www.dc.umich.edu/dmc/grocs/index.html) program, which was started
+to try and encourage inter-departmental collaboration unified by technology. The
+team consisted of four people from three departments:
 
-![Logo](/images/august23/august_logo_transp.png)
+* Myself, Chris Peplin (computer science)
+* [Brian Nord](http://flavors.me/briannord) (physics, specifically cosmology)
+* [Jiangang Hao](http://gmbcg.blogspot.com/) (also astrophysics)
+* [John Walters](http://www.johndanielwalters.com/) (art & design, specifically sculpture)
 
-From our proposal:
+In November 2008, we [proposed](/files/august23/proposal.pdf) that over the next
+semester we would:
 
-"We will also explore the possibility of a collaborative universe creation
+"[...] explore the possibility of a collaborative universe creation
 computer game written in Java and [Processing](http://processing.org/). Based on
 a true to life cosmic starting point, participants can manipulate galaxies and
 change the laws of physics on the fly. The creator can allow players to catalog
 and experiment with a shared universe (similar to the game, Spore ) while
 exploring scientific laws and theories of creation, order, and design."
 
-## Origin
+We named the project "August 23rd, 1966," after the date of the first photograph
+of the Earth from the far side of the moon by
+[Lunar Orbiter 1](http://en.wikipedia.org/wiki/Lunar_Orbiter_1).
 
-I was thinking about how to bring our ideas back into one solid, rich project.
-I was worried we would spend the semester fiddling our way somewhere, which
-while I'm sure would be a worthwhile experience, makes me a little uneasy. I'm
-a software person, and I like specifications.
+![Logo](/images/august23/august_logo_transp.png)
+
+Our proposal was accepted, and from January to May 2009, we focused our ideas
+into a three day interactive gallery installation. Visitors could configure and
+create their own personal star, then witness its birth, life and death in a
+virtual universe alongside others'.
+
+## Gallery Installation
+
+![Gallery](/images/august23/gallery_installation.png)
+
+The gallery experience went something like this:
+
+A visitor enters and sees a desktop computer, a
+[multi-touch table](/2011/05/august23-multitouch/) and a big black tent. They
+approach the multi-touch table to view a galaxy of stars. They manipulate the
+[viewpoint](https://github.com/peplin/august23/blob/master/src/gallery/MultitouchClient/MultitouchInterface.pde),
+with their hands, and select existing stars to see details of their makeup and
+date of birth.
+
+The user then selects a location for their own, personal addition to the
+universe: a new star.
+
+A webcam connected to the multi-touch table
+[automatically configures](https://github.com/peplin/august23/blob/master/src/gallery/ActiveColorBackground/ActiveColorGrabber.pde)
+the temperature (and thus color) of the new star based on the color of the
+user's clothing. This information is fed over the network to a computer powering
+a [Wiremap](/2011/05/august23-wiremap), located inside the black tent.
+
+The user dons a radio headset and space helmet (a modified face shield) and
+steps into an antechamber at the edge of the tent - a simulated airlock. A sound
+dome suspended from the ceiling fills the room with
+[ambient industrial noise](/2011/05/august23-audio/), much like the loud life
+support systems on the space shuttle.
+[Verbal instructions](/2011/05/august23-audio/) are piped to the user from the
+multi-touch table's computer over the radio headset, and a second visitor in the
+gallery can acts as "mission controller" and communicate via another headset.
+Much like NASA's controllers in Houston, TX, they do not have the same visuals
+as the person in the tent.
+
+A [voice](/2011/05/august23-audio/) instructs the user to place their finger on
+a sensor at the edge of a [small black box](/2011/05/august23-pulse-oximeter/)
+in the airlock, lit by a single red bulb, in order to check their life signs.
+(The box is a [heartbeat detector](/2011/05/august23-pulse-oximeter/) and its
+reading is used to set the oscillation frequency of the new star.)
+
+These events are synchronized with the Wiremap, so when the visitor is
+informed that the airlock door is unlocked and they enter the darkened tent
+(simulating the isolation of space), the birth of their star begins in front of
+their eyes. A new voice on the headset occasionally describes the unfolding
+sights, and the visitor is free to walk around and examine a kinetic three
+dimensional representation of their star's creation (a light field suspended on
+a grid of strings).
+
+After a few minutes, the process is complete and the user is directed to leave
+the tent and return their helmet. Their star is now a part of a universe shared
+by all of the other visitors to the gallery. A second computer near the
+multi-touch table offers a view of the entire universe via a web browser, with
+instructions on how to keep tabs on stars from home.
+
+This [video](http://vimeo.com/5368587) gives a sense of what the final gallery
+installation looked like, and hopefully a sense of the experience.
+
+<iframe
+    src="http://player.vimeo.com/video/5368587?title=0&amp;byline=0&amp;portrait=0"
+    width="600" height="405" frameborder="0"></iframe><p><a
+    href="http://vimeo.com/5368587">August 23, 1966</a> from <a
+    href="http://vimeo.com/user1934112">Christopher Peplin</a> on <a
+    href="http://vimeo.com">Vimeo</a>.</p>
 
 ## Abstract
 
-Consider it a play off of the many-worlds theory - alongside our world, with
-its crumbling economies and warring nations, there exists a digital universe
-that is directed by you, the user. Just like here, many parameters are outside
-of your control. The interesting part is choosing what you can, timing as you
-may, and watching the results.
+August's installation can be considered a play off of the
+[many-worlds](http://en.wikipedia.org/wiki/Many-worlds_interpretation) theory -
+alongside our world, with its crumbling economies and warring nations, there
+exists a digital universe that is directed by you, the user. Just like in our
+known universe, many parameters are outside of your control. The interesting
+part is choosing what you can, timing as you may, and watching the results.
 
-## Comments
+Our intention was to create a multiplayer environment, where visitors to the
+gallery and online users from elsewhere are interacting in the same virtual
+universe - we called it [Twoverse](/2011/05/august23-twoverse/). Users would
+begin their experience in the gallery with our unique hardware and
+visualizations, then continue to monitor the objects they create in a web
+interface from home.
 
-* I see this as Second Universe ... no, Next Universe or SIM Verse, but better
-* I'd also like to have a way to keep in touch with the full cosmos.  Perhaps we
-    can have multiple levels of spacetime interaction: one person has built the
-    cosmos, another a galaxy, within that another person has constructed a
-    planetary system, etc.
-* Our final display can be a walk-through installation where multiple people can
-    customize and build their universes together, while others are viewing them
-    on-screen.
-* The ability of the user to tell their own story and let that story be
-    reintegrated into a larger one is a very strong aspect of this, but this is
-    not immediately apparent to the user: it's still Meta-data.  We need a mode
-    of interaction that will "bridge" these scales.
+From a game design perspective, we took into account the potential for
+replayability of what we were creating. We reasoned there were a few factors
+that would hopefully give users reason to return to the installation or visit
+the website:
 
-
-## Names
-
-* Simverse (probably troublesome, with the current trademarked Sim games)
-* United Universe
-* Origins
-* ONE - Origins, now electronic: this over-emphasizes the digital part of our
-    project.
-* TWO - The Wormhole Opens, also two because of two universes, ours and the
-    digital.
-    * Twoverse
-* Wormscale
-* Your Verse
-* ~Multi-Verse
-* ~CosmUs
-
-## Requirements
-
-There are a few requirements that I think will unite our ideas and questions
-(and I think there are many more yet to be explored).
-
-It must be:
-
-* Multiplayer
-    * One or two primary terminals in DL-1, but also simultaneously active with
-        online and mobile users
-* Low commitment for a user, and won't allow you to devote too much time to it
-    at any one moment
-    * eg. 5 minutes per day to check up on things or make small changes
-    * Can't sink 20 minutes, then get bored and never think about it again -
-        want to live past the &amp;quot;wow, that's neat&amp;quot; factor
-* Centralized in DL-1 with the primary interaction being there, where we can
-    offer unique interfaces and better graphics
-    * Offer something unique here to encourage users to come together in a
-        physical space to talk about their creations or plan explorations and
-        colonization pushes in the universe
-
-## Software
-
-* Google Sky modification
-* Integration of S2plot and Processing
-* There exist hi-res geometry converters that make this deployable in different
-    environments, including planetaria
-* Backend server written in Python or Java
-    * Use MySQL database backend to store and centralize data about users and
-        what they create
-    * Server runs constantly, updating positions of objects and their behaviors
-* Web-based frontend running on same server
-    * Text-based status updates, some simple graphics to display orbits and
-        distances
-* Processing frontend, using OpenGL for graphics
-    * Should be able to run on any computer that can connect to the server,
-        either on campus or off
-
-### User Accounts##
-
-I think this game would require user accounts for the cooler features, so
-objects could be owned by different people. We could figure out a way to label
-them, but I don't think there needs to be a formal, competitive game. It's
-everyone vs. space, and if someone builds drone satellites to smash into
-someone else's launch vehicles in race to colonize, so be it!
-
-## Input Elements
-
-The universe may start with some phenomena and astral bodies, but the rest is
-up to the users, who could add and determine.  The layers are:
-
-### Man-made Bodies
-
-* Space travel vehicles
-    * Size
-    * Population
-    * Speed
-    * Radiation protection
-    * Heat/cold protection
-    * Power generation
-    * Flight plan or orbit, could be a recurring vessel traveling from the moon
-         to Earth
-* Satellites
-    * Purpose
-    * Corporate/national logo, for a high-level sort of "colonization" of areas
-        of galaxies
-    * Speed
-    * Orbit
-    * Destination for long distance scientific missions
-
-### Celestial Bodies##
-
-* Cosmos?
-* Group of Galaxies
-    * Galaxies
-    * gas between galaxies
-* Galaxy
-    * stars
-    * black holes
-    * interstellar gas
-* Star system
-    * planet
-    * comet
-* planetary system (including a mirror of our solar system)
-* planet (network of cities)
-    * Size
-    * Density
-    * Composition (desert, ice, dense gas, etc)
-    * Initial orbit
-    * Population and habitability
-* Single city ( network of neighborhoods )
-
-### Feedback and Interaction Systems##
-
-The special installations in DL-1 can have control methods developed by our
-team. The Wiimote would be a fantastic way of dragging and dropping new
-elements into the universe, and you could drag onscreen sliders to change
-parameters. A multitouch table would accomplish the same thing, and be that
-much cooler. There is certainly a way to incorporate video feeds of people into
-the game as well - as I said, i think we can incorporate all of our ideas here,
-it's just a great way to integrate them all together.
-
-* Multi-touch display interface: cheaply develop higher-dimensional,
-    sophisticated haptics
-    * multi-touch table
-    * multi-touch upright panel
-    * Faux 3D interface
-* Lightbox, multi-person space
-* Focus on Some larger connections that we want to make evident
-    * cosmology as mythology (storytelling)
-    * complexity (particles as swarms): include agent-based modeling
-* Focus on non-visual sensory methods
-    * what is the sound of space
-    * What does infinity feel like?
-
-### Integration of digital universe back into our physical world##
-
-I haven't explored this much yet, but even cooler than representing astronomic
-data would be representing data from our simulated universe. It would have some
-personal connection to the users, making them that much more interested.
-
-* Analog meter displays showing the number of spacecraft/asteroids in a certain
-    area
-* Color shifting light from green to red to indicate the number and severity of
-    predicted interstellar collisions
-* Unobtrusive sounds to indicate when a new planet or galaxy is born...ping!
-* A physical sphere at different input points (kiosk, but not a kiosk) will
-    relay a given star's features.
-    * we can replay events on different timescales on this 3D viewer.
-* How can we explicitly connect to other concepts and paradigms featured in our
-    proposal, like complexity, emergence, the similarities between biology and
-    cosmology?
-
-## Features
-
-### Real, live universe data integration##
-
-Far from an isolation simulation, however, this parallel universe has some
-crossover with our current space (and in real time!). Imagine the Sun in this
-digital universe, matching the solar flares of our own. I see the entire
-graphical interface going blurry/static-y during periods of high proton wind,
-or cause your space vehicles and satellites to lose communication and spin out
-of control.
-
-We could also bring in factors here that have nothing to do with astronomy -
-the amount of activity in DL-1 could determine properties of some special
-galaxy cluster, or the people in the room could automatically have an asteroid
-generated for them.
-
-### Time scales##
-
-Time is a big issue with this game. We want it to be slow enough that you can
-make some decisions one day, but then you have to wait 24 hours or more for big
-enough changes to happen. The time should also be fast enough that we can
-demonstrate some really amazing phenomena in a more human time scale - note
-that not all of the bodies have to obey the same time scale, since we're not
-trying to be super fact-accurate. The time scale for stars could be greatly
-accelerated so we can ultimately see them collapse. For space travel, maybe it
-takes 3 hours instead of 3 days to go from Earth to the moon. Do we ever reset
-the universe? This may be mediated by having several levels of God-power.  Each
-level controls a different scope of the verse.
-
-### Replayability##
-
-We've discussed replayability before, and I think this game will satisfy our
-requirement. There are many ways to lure users back:
-
-* The fun of putting your name on a cluster of planets or on a convoy of space
-    vessels destined for Andromeda.
+* The excitement of putting your name on a cluster of planets or on a convoy of
+    space vessels destined for Andromeda.
 * The parental like ownership you may feel watching your star grow up, and the
-    pains in your heart when it dies (oh, how sad)
-* Something to check on for just a few minutes each day, and more educationally
-    rewarding than your fantasy football scores
-    * There could be a great mobile aspect of this - I do want to make a web
-        interface so you could check on a brief status of your objects from a
-        web site, without being in or near DL-1. The system could also text
-        message your phone if a collision is predicted between any of your
-        objects (there's actually a really cool live data stream for this in the
-        real world, which lists upcoming possible collisions ranked by proximity
-        and probability).
+    pains in your heart when it dies.
+* Something to check on for just a few minutes each day, and more potentially
+    intellectually rewarding than fantasy football scores.
 
-### Dynamic Scale and Interaction##
+## Objects in the Universe
 
-All of this is dynamic, meaning that if someone came along and created a new
-empty galaxy, another person could see that galaxy later and populate it with
-their solar systems. There's a really fascinating, hierarchical structure to
-the whole thing that makes it //ideal// for software development.
+We envisioned the universe would start with some phenomena and astral bodies,
+but the rest was up to the users. There are two different categories of objects,
+each with a set of parameters configurable by the user: man-made bodies and
+celestial bodies. These objects span from human scale (single science satellites or cities) up to
+unfathomably large (galaxy clusters).
 
-# Software Design
+Some of the parameters envisioned for satellites include the intended research
+purse, nationality, speed, orbit and destination. For planets, the parameters
+could include size, density, composition, orbit and population.
 
-Here we have the "holy trinity" of our universe - God, Science, and the Loyal
-Subjects
+The current version implements a single object: stars, with configurable size
+and temperature.
 
+## Documentation
 
-loyal subjects is interface?
+I've posted more detailed descriptions and documentation for each of the core
+components of the installation in separate articles.
 
-## God (Java)
-
-* System level responsibilities
-    * Insert new objects into the Database from a queue of new objects, once per
-        timestep
-    * Change user parameters of existing objects directly in the Database
-* User-level responsibilities
-    * Accept requests from users via RPC or JMS
-        * Graphical Client to God Messages
-    * User notification (e-mail, SMS, etc)
-    * Communicate with Science to get most up-to-date positioning info (rather
-        than going through the Database)
-        * God to Science Messages
-    * Communicate with Science to give user modifications of existing objects -
-        light enough to be on-the-fly, doesn't matter for simulation
-
-## Science (C++)
-
-* Cooperative, System level responsibilities
-    * Store updates from God between commits to the Database
-    * Communicate with God to coordinate commits to and updates from the
-        Database
-* Simulation level responsibilities
-    * Calculate object position, velocity, acceleration, etc, continuously
-    * Commit/update from the Database at some greater interval, ~10 minutes
+* [Twoverse](/2011/05/august23-twoverse/), the core software backend
+* [Multi-touch Table](/2011/05/august23-multitouch/)
+* [Wiremap](/2011/05/august23-wiremap/)
+* [Pulse Oximeter (Heartbeat Monitor)](/2011/05/august23-pulse-oximeter/)
+* [Audio Recordings](/2011/05/august23-audio/)
 
 ## Reflection
 
 The most important goal to me, and one we did accomplish, was to complete a
-vertical slice of an entire system. Our gallery installation and the hardware
-and software that support it touch an amazing number of topics, and I know
-everyone on the team has learned a great deal about their own and one another's
-fields in the process. I am extremely happy to have expanded my knowledge with
-hands on experience in:
+vertical slice of the entire Twoverse system. Our gallery installation and the
+hardware and software that supported it touched an amazing number of topics, and
+I know everyone on the team learned a great deal about their own and one
+another's fields in the process. During this project, I expanded my knowledge
+with hands on experience in:
 
 * XML-RPC
 * Java Servlets
 * Multi-threading and databases in Java
-* Sound in the Processing environment
+* Audio in the Processing environment
 * Library development for Processing
-* Releasing a software project online with an open source license
-* Multitouch input processing
+* Multi-touch input processing
 * Graphics performance optimization
 * Analog signal processing (filters, opamps)
 
-I am coming away from this semester having created multiple tools, and I am
-eager to pass those on to anyone else with an interest in these topics. 
+## Future Work
 
-Our team used an online wiki (a [TiddlyWiki](http://www.tiddlywiki.com/)) to
-organize our thoughts and coordinate the project plan. I was very pleased with
-how this fit into the group's workflow. The wiki served as the default place to
-put any thoughts or meeting notes, which greatly simplified the process of
-sharing information.
+There were a few items left incomplete that I think are interesting enough to
+mention as possibilities for future work.
 
-# Documentation
+### Real-time Data Integration
 
-[Multitouch Table](/2011/05/august23-multitouch/)
-[Wiremap](/2011/05/august23-wiremap/)
-[Twoverse](/2011/05/august23-twoverse/)
-[Pulse Oximeter (Heartbeat Monitor)](/2011/05/august23-pulse-oximeter/)
+Far from an isolated simulation, this parallel virtual universe could have
+crossover with our current space (and in real time!). Imagine the Sun in this
+virtual universe mirroring the solar flares of our own.
 
+The proliferation of real-time data APIs over the Internet present an
+opportunity for integrating these information into the game. In another example,
+the user interface could become blurred during periods of high proton wind, or
+space vehicles and satellites could lose communication and spin out of control.
 
-# Gallery Installation
+Twoverse could also bring in factors here that have nothing to do with astronomy
+in an attempt to relate more directly back to the human scale - e.g. the amount
+of activity in the gallery could determine properties of some special galaxy
+cluster, or the people in the room could automatically have an asteroid
+generated for them.
 
-![Gallery](/images/august23/gallery_installation.png)
+### Time Scales
 
-To replicate the gallery installation, the following systems & equipment are
-required:
+Time is a big issue with this game, one not sufficiently explored.
 
-### Server
+The progression of events must be slow enough that you can make some decisions
+one day, but then you have to wait 24 hours or more for big enough changes to
+happen. The speed must also be fast enough that we can demonstrate phenomena in
+a reasonable time span.
 
-* MySQL server
-* Web server, root pointing to $<$location of august package$>$/www
-* Ports 80 & 8080 open
-* Java JRE 1.5 or greater
-
-### Multitouch or Desktop Client
-
-* Multitouch table
-* Hardware accelerated graphics
-* Network connection to server (can be over Internet)
-* Sound output (ideally to a radio headset)
-
-### Wiremap Client
-
-* Wiremap
-* Projector
-* Sound output (ideally to a sound dome)
-
-#### Server Setup
-
-* Create an "august" user for the MySQL database
-* Initialize the august database using the SQL script found at
-    \texttt{/august/database/create.sql}
-* Run the compiled Twoverse server to check the database connection and create
-    the XML feed file: \texttt{java -jar twoverse\_server.jar}
-* Create a symbolic link to the feed.xml file that was just created in the web
-    server's root directory (this should be /august/www/)
-
-#### Multitouch or Desktop Client Setup
-
-* Plug the radio headset into the audio output of the computer (if you are using
-    a radio)
-* Open the client sketch (either Multitouch or Desktop version) and modify the
-    configuration parameter for the server IP to point to the correct address.
-* Configure the Wiremap server IP configuration parameter in the CreateMode.pde
-    file to point to the address of the Wiremap client (if you are using one)
-* Run the sketch in Processing, or export a compiled application to simplify
-    restarting the application
-
-#### Wiremap Client Setup
-
-* Plug the sound dome into the audio output of the computer (if you are using a
-    sound dome)
-* Open the client sketch and modify the configuration parameter for the
-    Multitouch Client IP to point to the correct address of the Multitouch
-    Client (not the Twoverse server)
-* Run the sketch in Processing, or export a compiled application to simplify
-    restarting the application
-
-The Multitouch or Desktop client connects to the Twoverse server and manages the
-creation and storing of new stars. The Wiremap client receives a message from
-the Multitouch Client when a new star is being created, which initializes the
-sound and visuals for the star formation experience. See the Twoverse library
-documentation for more detailed information on this relationship.
-
-## References
-
-* [Wiremap Shapes Library](https://github.com/peplin/wiremap-shapes)
-* [Wiremap](http://wiremap.phedhex.com)
+Not all of the objects need obey the same time scale, since the goal of Twoverse
+isn't to be absolutely accurate. The time scale for stars could be greatly
+accelerated so we can ultimately see them collapse. For space travel, maybe it
+takes 3 hours instead of 3 days to go from Earth to the moon.
