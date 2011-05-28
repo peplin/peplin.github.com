@@ -16,8 +16,12 @@
         <link href="/css/syntax.css" type="text/css" rel="stylesheet" />
         <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
 
+        {% if production %}
         <script type="text/javascript"
             src="http://cachedcommons.org/cache/webfont/1.0.6/javascripts/webfont-min.js"></script>
+        {% else %}
+        <script type="text/javascript" src="/js/vendor/webfont.js"></script>
+        {% endif %}
         <!--[if lt IE 9]>
         <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
@@ -30,10 +34,18 @@
 
     </div>
 
+    {% if production %}
     <script type="text/javascript"
         src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js">
     </script>
+    {% else %}
+    <script type="text/javascript" src="/js/vendor/jquery-1.6.1.min.js">
+    </script>
+    {% endif %}
+
     <script type="text/javascript" src="/js/app.js"></script>
+
+    {% if production %}
     <script type="text/javascript">
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-23218185-1']);
@@ -45,5 +57,6 @@
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
     </script>
+    {% endif %}
     </body>
 </html>

@@ -2,4 +2,4 @@ auto: true
 markdown: rdiscount
 pygments:    true
 permalink: /posts/:title
-production: true
+production: false
