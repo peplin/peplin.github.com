@@ -11,7 +11,7 @@ $(document).ready(function() {
 });
 
 function loadPhotoGrid() {
-    if($("photo-grid")) {
+    if($("#photo-grid").length > 0) {
         $.ajax({url: "http://api.flickr.com/services/rest",
             data: {
                 method: "flickr.people.getPublicPhotos",
