@@ -20,7 +20,19 @@ end
 
 desc "Startup Jekyll"
 task :start do
+  edit_config("production", "false")
   sh "jekyll --server"
+  edit_config("production", "true")
 end
 
 task :default => :start
+
+## Helpers
+## Thanks to https://github.com/dbarbosa/dbarbosa.me
+
+def edit_config(option_name, value)
+  config = File.read("_config.yml")
+  regexp = Regexp.new('(^\s*' + option_name + '\s*:\s*)(\S+)(\s*)$')
+  config.sub!(regexp,'\1'+value+'\3')
+  File.open("_config.yml", 'w') {|f| f.write(config)}
+end
