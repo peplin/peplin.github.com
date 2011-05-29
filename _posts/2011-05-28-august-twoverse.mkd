@@ -1,0 +1,107 @@
+---
+layout: post
+title: Twoverse, the universe of August 23, 1966
+permalink: /2011/05/august23-twoverse/
+---
+
+The software core of the August 23, 1966 project is a Java software system named
+"Twoverse," a parallel universe that exists only in the digital realm.
+
+The Twoverse architecture can be split into three levels - server, client and
+input. This diagram [(full size)](https://github.com/peplin/august23/raw/master/doc/report/images/twoverse_arch.jpg)
+includes some unimplemented elements, such as input from a sound sensor.
+
+![Arch](/images/august23/twoverse_arch.jpg)
+
+## System Design
+
+The broad concept of Twoverse includes mechanics and partial system
+specifications for a massively multiplayer online game. The scope was minimized
+due to time constraints and to better fit the gallery installation. However,
+even with a smaller scope, a complete vertical slice of the entire system was
+implemented and used. Downsized from a universe of many types of objects, the
+system currently supports a universe made of stars with a few properties, and
+constellations that connect them with meta-objects known as links. Extensibility
+was considered from the beginning of development, so adding new objects will
+require a minimal amount of work.
+
+## Server
+
+The system relies on a central server to provide the following:
+
+* A [persistant database](https://github.com/peplin/august23/blob/master/database/create.sql)
+    of all objects in the universe and their current state, using MySQL
+* User account management, as well as authenticated session negotiation
+* A [public API](https://github.com/peplin/august23/blob/master/src/Twoverse/src/twoverse/TwoversePublicApi.java)
+    for interacting with the universe, via Apache [XML-RPC](http://ws.apache.org/xmlrpc/)
+* Client pull style updates for minimizing bandwidth requirements, via an XML
+    feed
+* A [browser based frontend](https://github.com/peplin/august23/tree/master/www)
+    to view the status of objects in the universe, via PHP
+
+## Client
+
+Using the XML-RPC API, many types of clients are possible. This includes
+graphical, text-based, mobile, e-mail, etc. The clients implemented for the
+gallery installation are graphical clients written using the Processing
+development environment and include the following features:
+
+* Users can scroll and zoom around a graphical universe of glowing stars
+* Users can click on an individual star to view a close-up view and additional
+    details about its creation and properties
+* Users can create a new star in the universe, and watch a 3D visualization of
+    their star's formation
+* Users can draw constellations that connect the stars in the universe, and
+    leave them for other users to see
+* Users can visit the gallery website to view a table of all of the stars in the
+    universe, their properties and current status
+
+The graphical client uses the XML-RPC API as defined by the server, and updates
+its local cache of the universe via the server's XML feed.
+
+A screenshot of the star chart in a web browser during the time the gallery was
+open:
+
+![Star Chart](/images/august23/starchart.png)
+
+## Library
+
+The client and server for Twoverse share many common functions, and were
+designed to inherit from the same code hierarchy. They both stem from a
+[Twoverse Java library](https://github.com/peplin/august23/tree/master/src/Twoverse/src/twoverse),
+which includes many utility classes, shared functionality and the server
+executable. The Twoverse library provides these features and many others:
+
+* [Database wrapper](https://github.com/peplin/august23/blob/master/src/Twoverse/src/twoverse/Database.java)
+    for a persistent universe - could be used to run SQL database client-side.
+    (Revisiting this, a more established ORM should be used.)
+* [XML-RPC servlet](https://github.com/peplin/august23/blob/master/src/Twoverse/src/twoverse/TwoverseServer.java)
+    for serving XML-RPC requests
+* Thread-safe universal [object manager](https://github.com/peplin/august23/blob/master/src/Twoverse/src/twoverse/ObjectManager.java)
+    for maintaining the state of the universe
+* [User session manager](https://github.com/peplin/august23/blob/master/src/Twoverse/src/twoverse/SessionManager.java)
+* Small [unit test suite](https://github.com/peplin/august23/tree/master/src/Twoverse/src/twoverse/test)
+    for core classes
+* Processing [camera wrapper](https://github.com/peplin/august23/blob/master/src/Twoverse/src/twoverse/util/Camera.java)
+    for simplifying the elusive camera() function
+* Flexible 2D/3D point [coordinate class](https://github.com/peplin/august23/blob/master/src/Twoverse/src/twoverse/util/Point.java)
+
+Additional documentation is available as Javadoc comments with the
+[source code](https://github.com/peplin/august23/blob/master/src/Twoverse/src).
+
+## Interface Screenshots
+
+![MT-screenshot](/images/august23/Screenshot-MultitouchClient.png)
+
+A screenshot of the multi-touch Client with a group of stars displayed at the
+default zoom level. The lines connecting the stars are constellations drawn by a
+user.
+
+![MT-screenshot](/images/august23/Screenshot-MultitouchClient-1.png)
+
+A screenshot of the multi-touch Client viewing the details of a single star.
+
+![MT-screenshot](/images/august23/Screenshot-MultitouchClient-2.png)
+
+A screenshot of the multi-touch Client zoomed in for a closer look at a cluster
+of stars.

@@ -1,0 +1,216 @@
+---
+layout: post
+title: August 23, 1966
+permalink: /2011/05/august23/
+---
+
+How do you tell the universe's story as our story? Myth has been intertwining
+the small and the large for a very long time, with varying degrees of success.
+Our modern physical cosmology is another mythic story in the suite of human
+cosmogonies. Though it holds a special place as one that is connected to
+physical reality, it may be interpreted in many ways. By implementing mechanical
+and digital interaction technologies, the interpretation can become
+re-manifestation, where the observer tells a personal story of the cosmos.
+
+In 2009, myself and three others at the University of Michigan tried to make
+sense of that. We received a grant as a part of the
+[GROCS](http://www.dc.umich.edu/dmc/grocs/index.html) program, which was started
+to try and encourage inter-departmental collaboration unified by technology. The
+team consisted of four people from three departments:
+
+* Myself, Chris Peplin (computer science)
+* [Brian Nord](http://flavors.me/briannord) (physics, specifically cosmology)
+* [Jiangang Hao](http://gmbcg.blogspot.com/) (also astrophysics)
+* [John Walters](http://www.johndanielwalters.com/) (art & design, specifically sculpture)
+
+In November 2008, we [proposed](/files/august23/proposal.pdf) that over the next
+semester we would:
+
+"[...] explore the possibility of a collaborative universe creation
+computer game written in Java and [Processing](http://processing.org/). Based on
+a true to life cosmic starting point, participants can manipulate galaxies and
+change the laws of physics on the fly. The creator can allow players to catalog
+and experiment with a shared universe (similar to the game, Spore ) while
+exploring scientific laws and theories of creation, order, and design."
+
+We named the project "August 23rd, 1966," after the date of the first photograph
+of the Earth from the far side of the moon by
+[Lunar Orbiter 1](http://en.wikipedia.org/wiki/Lunar_Orbiter_1).
+
+![Logo](/images/august23/august_logo_transp.png)
+
+Our proposal was accepted, and from January to May 2009, we focused our ideas
+into a three day interactive gallery installation. Visitors could configure and
+create their own personal star, then witness its birth, life and death in a
+virtual universe alongside others'.
+
+## Gallery Installation
+
+![Gallery](/images/august23/gallery_installation.png)
+
+The gallery experience went something like this:
+
+A visitor enters and sees a desktop computer, a
+[multi-touch table](/2011/05/august23-multitouch/) and a big black tent. They
+approach the multi-touch table to view a galaxy of stars. They manipulate the
+[viewpoint](https://github.com/peplin/august23/blob/master/src/gallery/MultitouchClient/MultitouchInterface.pde),
+with their hands, and select existing stars to see details of their makeup and
+date of birth.
+
+The user then selects a location for their own, personal addition to the
+universe: a new star.
+
+A webcam connected to the multi-touch table
+[automatically configures](https://github.com/peplin/august23/blob/master/src/gallery/ActiveColorBackground/ActiveColorGrabber.pde)
+the temperature (and thus color) of the new star based on the color of the
+user's clothing. This information is fed over the network to a computer powering
+a [Wiremap](/2011/05/august23-wiremap), located inside the black tent.
+
+The user dons a radio headset and space helmet (a modified face shield) and
+steps into an antechamber at the edge of the tent - a simulated airlock. A sound
+dome suspended from the ceiling fills the room with
+[ambient industrial noise](/2011/05/august23-audio/), much like the loud life
+support systems on the space shuttle.
+[Verbal instructions](/2011/05/august23-audio/) are piped to the user from the
+multi-touch table's computer over the radio headset, and a second visitor in the
+gallery can acts as "mission controller" and communicate via another headset.
+Much like NASA's controllers in Houston, TX, they do not have the same visuals
+as the person in the tent.
+
+A [voice](/2011/05/august23-audio/) instructs the user to place their finger on
+a sensor at the edge of a [small black box](/2011/05/august23-pulse-oximeter/)
+in the airlock, lit by a single red bulb, in order to check their life signs.
+(The box is a [heartbeat detector](/2011/05/august23-pulse-oximeter/) and its
+reading is used to set the oscillation frequency of the new star.)
+
+These events are synchronized with the Wiremap, so when the visitor is
+informed that the airlock door is unlocked and they enter the darkened tent
+(simulating the isolation of space), the birth of their star begins in front of
+their eyes. A new voice on the headset occasionally describes the unfolding
+sights, and the visitor is free to walk around and examine a kinetic three
+dimensional representation of their star's creation (a light field suspended on
+a grid of strings).
+
+After a few minutes, the process is complete and the user is directed to leave
+the tent and return their helmet. Their star is now a part of a universe shared
+by all of the other visitors to the gallery. A second computer near the
+multi-touch table offers a view of the entire universe via a web browser, with
+instructions on how to keep tabs on stars from home.
+
+This [video](http://vimeo.com/5368587) gives a sense of what the final gallery
+installation looked like, and hopefully a sense of the experience.
+
+<iframe
+    src="http://player.vimeo.com/video/5368587?title=0&amp;byline=0&amp;portrait=0"
+    width="600" height="405" frameborder="0"></iframe><p><a
+    href="http://vimeo.com/5368587">August 23, 1966</a> from <a
+    href="http://vimeo.com/user1934112">Christopher Peplin</a> on <a
+    href="http://vimeo.com">Vimeo</a>.</p>
+
+## Abstract
+
+August's installation can be considered a play off of the
+[many-worlds](http://en.wikipedia.org/wiki/Many-worlds_interpretation) theory -
+alongside our world, with its crumbling economies and warring nations, there
+exists a digital universe that is directed by you, the user. Just like in our
+known universe, many parameters are outside of your control. The interesting
+part is choosing what you can, timing as you may, and watching the results.
+
+Our intention was to create a multiplayer environment, where visitors to the
+gallery and online users from elsewhere are interacting in the same virtual
+universe - we called it [Twoverse](/2011/05/august23-twoverse/). Users would
+begin their experience in the gallery with our unique hardware and
+visualizations, then continue to monitor the objects they create in a web
+interface from home.
+
+From a game design perspective, we took into account the potential for
+replayability of what we were creating. We reasoned there were a few factors
+that would hopefully give users reason to return to the installation or visit
+the website:
+
+* The excitement of putting your name on a cluster of planets or on a convoy of
+    space vessels destined for Andromeda.
+* The parental like ownership you may feel watching your star grow up, and the
+    pains in your heart when it dies.
+* Something to check on for just a few minutes each day, and more potentially
+    intellectually rewarding than fantasy football scores.
+
+## Objects in the Universe
+
+We envisioned the universe would start with some phenomena and astral bodies,
+but the rest was up to the users. There are two different categories of objects,
+each with a set of parameters configurable by the user: man-made bodies and
+celestial bodies. These objects span from human scale (single science satellites or cities) up to
+unfathomably large (galaxy clusters).
+
+Some of the parameters envisioned for satellites include the intended research
+purse, nationality, speed, orbit and destination. For planets, the parameters
+could include size, density, composition, orbit and population.
+
+The current version implements a single object: stars, with configurable size
+and temperature.
+
+## Documentation
+
+I've posted more detailed descriptions and documentation for each of the core
+components of the installation in separate articles.
+
+* [Twoverse](/2011/05/august23-twoverse/), the core software backend
+* [Multi-touch Table](/2011/05/august23-multitouch/)
+* [Wiremap](/2011/05/august23-wiremap/)
+* [Pulse Oximeter (Heartbeat Monitor)](/2011/05/august23-pulse-oximeter/)
+* [Audio Recordings](/2011/05/august23-audio/)
+
+## Reflection
+
+The most important goal to me, and one we did accomplish, was to complete a
+vertical slice of the entire Twoverse system. Our gallery installation and the
+hardware and software that supported it touched an amazing number of topics, and
+I know everyone on the team learned a great deal about their own and one
+another's fields in the process. During this project, I expanded my knowledge
+with hands on experience in:
+
+* XML-RPC
+* Java Servlets
+* Multi-threading and databases in Java
+* Audio in the Processing environment
+* Library development for Processing
+* Multi-touch input processing
+* Graphics performance optimization
+* Analog signal processing (filters, opamps)
+
+## Future Work
+
+There were a few items left incomplete that I think are interesting enough to
+mention as possibilities for future work.
+
+### Real-time Data Integration
+
+Far from an isolated simulation, this parallel virtual universe could have
+crossover with our current space (and in real time!). Imagine the Sun in this
+virtual universe mirroring the solar flares of our own.
+
+The proliferation of real-time data APIs over the Internet present an
+opportunity for integrating these information into the game. In another example,
+the user interface could become blurred during periods of high proton wind, or
+space vehicles and satellites could lose communication and spin out of control.
+
+Twoverse could also bring in factors here that have nothing to do with astronomy
+in an attempt to relate more directly back to the human scale - e.g. the amount
+of activity in the gallery could determine properties of some special galaxy
+cluster, or the people in the room could automatically have an asteroid
+generated for them.
+
+### Time Scales
+
+Time is a big issue with this game, one not sufficiently explored.
+
+The progression of events must be slow enough that you can make some decisions
+one day, but then you have to wait 24 hours or more for big enough changes to
+happen. The speed must also be fast enough that we can demonstrate phenomena in
+a reasonable time span.
+
+Not all of the objects need obey the same time scale, since the goal of Twoverse
+isn't to be absolutely accurate. The time scale for stars could be greatly
+accelerated so we can ultimately see them collapse. For space travel, maybe it
+takes 3 hours instead of 3 days to go from Earth to the moon.
