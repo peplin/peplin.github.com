@@ -30,7 +30,6 @@ This [schematic](https://github.com/peplin/august23/raw/master/doc/heartmonitor/
 describes the circut used inside the pulse oximeter. It is also
 provided as a [Fritzing](http://fritzing.org/) [file](https://github.com/peplin/august23/raw/master/doc/heartmonitor/schematic.fz).
 
-
 ![Pulse](/images/august23/schematic-final.png)
 
 For fun, you can look at the [original schematic](https://github.com/peplin/august23/raw/master/doc/heartmonitor/schematic-draft.jpg).
@@ -42,6 +41,8 @@ the visitor just needs to gently place their finger on top of the light sensor.
 Depending on the person, the shape, rate and range of the photoplethysmograph
 obtained can vary widely, but we found the results distinct enough to obtain a
 stable heart rate from most visitors in under 15 seconds.
+
+![Outsides](/images/august23/pulse-outside.jpg)
 
 Our device used the amplified signal of an inexpensive photo-resistor passed
 through a high pass filter and captured by an [Arduino microcontroller](http://www.arduino.cc/).
@@ -56,6 +57,8 @@ The software is general to heart rate monitoring, and can be used for other
 applications that are interested in the data. There is also a sketch to
 [visualize the value](https://github.com/peplin/august23/blob/master/src/test/HeartbeatPulseViewer/HeartbeatPulseViewer.pde)
 of the pulse oximeter on a graph.
+
+![Innards](/images/august23/pulse-inside.jpg)
 
 ## Source Code
 
