@@ -1,0 +1,197 @@
+---
+layout: post
+title: Evaluation of Threephase
+permalink: /2011/05/threephase-evaluation/
+---
+
+This post is part of a series describing the [Threephase](/2011/05/threephase/)
+project.
+
+The proposed endpoint of this project was a deployed game server with a playable
+version of Threephase. One of the first tasks to make sure this was accomplished
+was to define the scope of the game for the initial version. Clearly, there is
+enough material to extend beyond a two month timeframe. The core logic of the
+virtual world took longer than expected to implement, and as a result progress
+fell behind the list of planned features. Threephase is not currently robust
+enough for a public deployment, and needs additional work to optimize
+performance and the user interface. The three evaluation criteria from the
+project proposal were:
+
+* Reception among players. Document reactions during beta testing. Is the game
+    captivating?
+* Conveyance of critical power systems concepts. Is the game a useful teaching
+    aid?
+* Robustness and scalability of game architecture. Is the system well-designed?
+    Are upgrades streamlined?
+
+The project was not far enough along by the end of the semester to perform user
+testing, but the introduction of power systems concepts and scalability of the
+system made good progress.
+
+## Design Changes
+
+Threephase evolved from a turn-based game to real-time before the design was
+finalized. Real-time strategy games are a more natural setting for players, but
+when the project was proposed the technology for real-time updates in the
+browser was not mature. While still an emerging technology, recent developments
+in non-blocking web servers and browser sockets led to a shift in Threephase 's
+playing style.
+
+Instead of requiring a somewhat complicated system of action points and player
+turns, the game world is persistent and never stops. This presented some
+additional implementation challenges, but in the end will be a more compelling
+interface.
+
+## Project Management
+
+The project uses the [Lighthouse](http://threephase.lighthouseapp.com/) issue
+tracking system to track milestones and tasks. The initial schedule planned a
+milestone every four days. This duration ended up being too short, and did not
+allow for slippage or early finishes. Week long milestones (for a project
+receiving 3/4 of the time of its participants) would be a more flexible and
+realistic time period.
+
+### Time Distribution
+
+The time spent on Threephase was tracked over the past two months with the time
+tracking tool [Timetrap](https://github.com/samg/timetrap). Split into general
+categories, most of the time was spent on the backend code (which determines the
+data storage and object interaction). The second most time was spent in testing.
+
+![Time Distribution](/images/threephase/time-tracking.png)
+
+The initial concept of Threephase evolved over the summer months, culminating in
+software requirements and architecture documents (now in the project's wiki
+page). The first month of development was spent implementing the core data
+models, application controllers and basic web views to interact with the game.
+The second and final month was spent implementing the game logic - maintaining
+consistency in the virtual world, updating objects and enforcing the different
+regulatory conditions.
+
+## Future Work
+
+### Serious Games
+
+Threephase represents a proof of concept of a platform for teaching and
+experimenting with power system concepts in the context of a familiar game-like
+interface. The motive roughly follows the ideas behind the Serious Games
+Initiative (and other, less formal pushes towards games for learning and
+experimenting).
+
+Serious games try to leverage the immersive power of games for education, for
+both academics and continued learning. These games also serve as excellent
+training tools within industry. Instead of building strictly academic
+simulations, experts can make an approachable game, something that laypeople
+would be interest in playing and the experts themselves would enjoy outside of a
+class or job.
+
+#### Player Responsibility Scope
+
+A core requirement of serious games is to avoid simplifying critical components,
+which could alienate the experts of the field, while balancing enough au-
+tomation that newcomers can learn at their own pace. The game needs to be able
+to adjust the scope of decisions a player must make, and the extent of the
+complexity they see, in order to allow players to focus on only certain aspects
+of the system at one time.
+
+Something discovered firsthand over the course of this project is that it can be
+overwhelming to be responsible for all aspects of the system, coming dangerously
+close to the micromanagement of resources. The game must balance between system
+level decisions and real-world issues that high-level simulations often ignore.
+The player should be able to select from a range of difficulty levels that
+automate different areas of the system to adjust the difficulty.
+
+#### Expanded Multiplayer
+
+Collaborative learning is also possible with serious games. In Threephase,
+each State is run by an individual player, but this could be expanded to allow
+cooperative play - one player controlling the generators and another the
+transmission lines. This actually reflects another real-world regulatory
+scenario, where these areas of the power grid are separated by law into
+different management entities.
+
+### Improvements
+
+There is a long list of features that could be added to Threephase. The most
+interesting and pressing items are:
+
+#### Line Constraints & Location Marginal Prices
+
+The implementation of transmission line construction and the respecting of line
+constraints in determining the operating levels of generators. The game is
+lacking a key component of real power systems without this. LMP-style regulation
+depends on this feature.
+
+#### Avoiding Outages
+
+The consequences for not meeting demand in Threephase are unclear.
+
+The player is warned of the condition and their state essentially
+freezes in place - customers aren't charged, operating costs aren't deducted,
+and no power is generated. This is an overly forgiving approach, as there are
+serious consequences for an outage in the real world ranging from unhappy
+customers to financial penalties and even eviction from the market.
+
+Players in Threephase are given this great leeway to allow new players a
+build-up period, where they can build enough generators to meet demand when
+first joining a game. This phase could be re-worked to occur before players
+officially join the game and must being running their utility.
+
+Once the game has started and harsher consequences are in place, a more useful
+warning for players will be that "generation is projected to come dangerous
+close to not meeting generation," thereby giving the player a chance to resolve
+the situation before an outage.
+
+#### Load Profiles & Demand Response
+
+The load profile of each city is static, and varies only linearly with the
+population. This could be improved not only by introducing more
+interesting variations, but by incorporating the idea of demand response. If
+customers are offered time-dependent electricity prices, they (or their
+networked appliances) can schedule their operating hours to minimize their costs
+and stabilize the load for generators. For example, electricity is generally
+less expensive at night due to excess capacity (and can even have a negative
+price), and customers are unaffected by short voluntary outages of certain
+appliances.
+
+This feature would require additional intelligence in the load profile
+algorithm, as its value would be based on price as well as time.
+
+#### Intelligent Map Generation
+
+The maps assigned to each State must be generated more intelligently, creating a
+natural a landscape with a relationship between blocks. The current
+implementation does not allow for realistic groupings of generators around
+certain resources (e.g. wind farms in a windy area), since the indices can shift
+dramatically from block to block.
+
+#### Expanded Multiplayer
+
+The multiplayer aspects of the game could be expanded beyond shared national
+fuel prices to include interstate trade. Interstate transmission lines are
+implemented but not exposed to the player in the interface. Fuel contracts and
+contracts for different on transmission have also been proposed.
+
+#### Interactive Visualizations
+
+The map and chart visualizations need to be improved to be more accurate,
+interactive and useful. The map rendering was intended as the primary interface
+for the game, but sits as a sidebar in the current implementation. It should
+present a natural way of viewing the geograph of the State and interacting with
+the generators and transmission lines. Threephase exposes a JSON API for nearly
+every function of the game, so the possibilities here depend primarily on user
+experience decisions.
+
+#### Mobile Client
+
+Because an API already exists, a mobile client would be a good addition to the
+system, so players can keep track of their power grid without being near a
+browser.
+
+## Other Threephase Articles
+
+* [Overview](/2011/05/threephase/)
+* [Game Objects](/2011/05/threephase-game-objects/)
+* [Game Mechanics](/2011/05/threephase-mechanics/)
+* [Time](/2011/05/threephase-time/)
+* [Implementation](/2011/05/threephase-implementation/)

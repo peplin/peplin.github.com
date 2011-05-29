@@ -1,0 +1,169 @@
+---
+layout: post
+title: The Mechanics of Threephase
+permalink: /2011/05/threephase-mechanics/
+---
+
+This post is part of a series describing the [Threephase](/2011/05/threephase/)
+project.
+
+## Demand
+
+In a new state, players will see immediately that their power grid is not
+[meeting customer demand](https://github.com/peplin/threephase/blob/master/app/models/state.rb#L179).
+This is critical in power systems, much more so than any other commodity market.
+Unlike typical consumer product supply and demand, a lack of supply of
+electricity doesn't generate consumer buzz like a gadget shortage. The system
+experiences instability and outages fails if demand and generation don't match
+exactly.
+
+## Notifications
+
+Thanks to the way players authenticate with Threephase (with their existing
+Twitter or Facebook account, using the OAuth protocol), the server can
+optionally communicate to players out-of-band when such emergency situations
+arise. Imagine a tweet or Facebook message from Threephase when generation dips
+dangerous close to or below the level of demand.
+
+## Changing Demand
+
+The first solution to not meeting demand, of course, is to build more
+generators. Not all is perfect, however, as demand is not static. The load of
+each City (and overall that of the State) changes based on the time of day. Each
+City has a predefined
+[load profile](https://github.com/peplin/threephase/blob/master/app/models/city.rb#L66)
+function, which determines how that City's demand changes during the day.
+Generally, demand is higher in the afternoon and early evening than late at
+night. A player's system may be sufficient at 8am, but insufficient later in the
+day.
+
+The current load profile function is static, and simply scales
+linearly with the number of customers in a City. In the future, each City could
+have a more intelligent, varying load profile function. The current function
+(found by visual approximation) is:
+
+    -.1 ∗ ((.42 ∗ Hour - 5)4 ) + 100) ∗ Customers/Constant)
+
+![Load Profile](/images/threephase/profile.png)
+
+### Equipment Failure
+
+In addition to changes in demand, components in the system can also fail due to
+equipment malfunction, natural disasters or union strikes. The system must have
+enough capacity to withstand the loss of its largest component - this is known
+as an n - 1 reliability constraint. As mentioned earlier, the GeneratorType determines the relative frequency and
+severity of failures. The Country can also enforce stricter reliability
+constraints (e.g. n - 2) for experimentation.
+
+The parameters for describing these failures - technical reliability (i.e. mean
+time between failure) and technical complexity (i.e. mean time to repair) - are
+not the same descriptors used by the electricity industry, but they are more
+familiar to laypeople and describe similar concepts to the system-wide metrics
+used by experts (e.g. the system average interruption duration index, or SAIDI).
+These two attributes determine the frequency at which failures are triggered.
+
+## Primary Player Goals
+
+Players of the game have two basic motives:
+
+* Generate enough power to meet demand
+* Route the power generated to the demand
+
+### Line Constraints
+
+The requirement to transmit power changes the reality of the operating strategy
+quite a bit. The ideal system, where generators are operated in order of their
+marginal cost, becomes impossible when the physical location of generators and
+customers is considered. The line constraint feature was removed from the list
+of initial features of Threephase, but it is the next big logical step for
+simulating reality.
+
+![Line Constraints](/images/threephase/line-constraint.png)
+
+The physical location of load on the grid can make the ideal, cost-minimizing
+generation scenario impossible. In this example, Titusville has 150MW of demand
+and no generator, but the only transmission line into the City has a maximum
+capacity of 50MW. It is impossible to transmit enough electricity to meet
+demand.
+
+## Profit
+
+The true root motive of any utility operator is profit. The ability to make a
+profit on the system is critical to re-investment in new technology, system
+upgrades, and investor satisfaction (in the case of investor-owned utilities).
+This greatly depends on the economic regulatory environment, both in the real
+world and Threephase. The
+[current implementation](https://github.com/peplin/threephase/blob/master/app/models/state.rb#L164)
+supports rate of return and marginal cost bidding regulation.
+
+### Simplified Operating Costs
+
+In all of the regulatory environments, the actual cost of operations depends on
+the operating levels of each generator. In the current implementation, this is
+set based on the ideal strategy - generators are enabled in order of their
+marginal or average cost. Transmission line constraints must be completed before
+a more realistic scenario can be demonstrated.
+
+### Rate of Return
+
+[Rate of return](http://en.wikipedia.org/wiki/Rate-of-return_regulation)
+regulation is the simplest to calculate and understand. The customers payments
+are simply the total cost of operating the system at the level demanded
+multiplied by a regulated rate of return (e.g. 8%). This type of regulation is
+highly desirable for utilities, as players of the game will quickly realize. A
+guaranteed return on investment is great encouragement for expanding the system
+to levels beyond what is actually required. The cost of capital in this system
+is also lowered, as the risk to banks loaning money is low if the debtor is
+guaranteed a return on their investment by the government.
+
+In real-world rate of return regulation, there is a possibility that investment
+decisions made by the utility will not be approved by the regulator. In the
+future, Threephase could add intelligence to its regulating algorithm to reject
+extraneous investment and equipment purchases.
+
+In the current implementation, approval is always granted.
+
+### Marginal Cost Bidding
+
+The next type of regulation is marginal cost, or average cost bidding. This type
+calculates the average cost curve each day, and the generators
+"[bid in](https://github.com/peplin/threephase/blob/master/app/models/bid.rb)"
+at their marginal or average cost (a bid price enforced by the regulators). The
+market price of electricity for the day is set at the intersection of demand
+that curve. Generators at the intersection price will break even, generators
+above it will potentially make a profit and those below are operating below
+their marginal cost and are thus guaranteed to lose money.
+
+In both rate of return and marginal cost bidding, the generator's operating
+levels are set
+[automatically each day](https://github.com/peplin/threephase/blob/master/app/models/state.rb#L111)
+by the server. An optional operating level override is planned for future
+versions, to allow players to experiment with and view the effects of market
+manipulation.
+
+### Locational Marginal Pricing
+
+The next regulation type to be implemented in Threephase will be locational
+marginal pricing.
+
+This regulation type depends on determining generator operating levels that
+respect transmission line constraints. Each City in the State (more generally
+each node) has a local price, which is affected by the system-wide transmission
+capacity, cost of local generation and the local demand.
+
+In this example, Titusville has a marginal price of $80 because of
+its isolation from high capacity transmission lines, relatively high demand and
+(not pictured) an expensive local generator to make up the difference.
+
+![LMP](/images/threephase/lmp.png)
+
+*Continue to the next section on
+[in-game time](/2011/05/threephase-time/).*
+
+## Other Threephase Articles
+
+* [Overview](/2011/05/threephase/)
+* [Game Objects](/2011/05/threephase-game-objects/)
+* [Time](/2011/05/threephase-time/)
+* [Implementation](/2011/05/threephase-implementation/)
+* [Evaluation](/2011/05/threephase-time/)

@@ -1,0 +1,187 @@
+---
+layout: post
+title: The Simulated Time of Threephase
+permalink: /2011/05/threephase-time/
+---
+
+This post is part of a series describing the [Threephase](/2011/05/threephase/)
+project.
+
+A primary task for any game is making things move. The default approach in a
+single-player, desktop computer game is somewhat clear. The software has total
+control over the CPU, and there is only a single player waiting for game world
+updates. A web-based game needs to optimize for many simultaneous games, while
+minimizing server costs.
+
+## Update Frequency
+
+In a single-player, desktop computer game, it is reasonable to set a small
+timestep (e.g. 1 second) at each of which the game will recalculate and update
+the entire world. Powerful processors permit this method to scale up to very
+large games locally, providing the player with a consistent, up-to-date world.
+
+Unfortunately, this strategy doesn't scale to the web, where a server will have
+more individual game instances to process and where it is infeasible to dedicate
+an entire processor to a single game instance at all hours of the day. Thanks to
+the patterns of web users, there are some relatively easy ways to decrease the
+amount of work that needs to be done. Updating at a regular timestep would be
+overeager, when a player typically isn't visiting the web application every
+second or demanding real-time updates. Users are much more tolerant of short
+delays (i.e. 1-5 seconds) on the web than in desktop applications.
+
+## On-Demand Updates
+
+At the minimum, Threephase updates on demand, only when the player visits their
+game. To provide background, out-of-band notifications (e.g. e-mails with
+in-game alerts), however, the game does occasionally need to be updated to check
+the conditions. Instead of maintaining a steady, short timestep, Threephase
+gradually decreases the interval between updates as a player stops visiting the
+game. 12 hours after a visit, the game updates only once an hour. Three days
+after the last player visit, game updates may be as infrequent as once a day.
+
+Players visiting every day (and by implication those more invested in their
+virtual world) will receive an appropriately higher update rate, thanks to the
+processing power left free by those visiting Threephase less often.
+
+## Crossing the Day Boundary
+
+The technical impact of this design is that every element of the game needs to
+be able to update itself over any time interval - 10 seconds, 10 minutes, 10
+days. Instead of simply calculating the difference between now and 1 second ago,
+the objects need to handle updates spanning multiple days. This is important in
+Threephase because there are certain statistics and calculations that need to
+occur exactly once per day. That includes:
+
+* Calculating the marginal cost curve
+* Clearing fuel market prices
+* Storing average marginal price and operating level statistics
+
+![Decreasing Updates](/images/threephase/frequency2.png)
+
+The algorithms to calculate these values need to be able to step through the
+calculation for multiple days, and not condense the change into a single value.
+For example, if three days have passed since an update, the server must to
+calculate the marginal price of power on each of the three days, not on average.
+It is possible to use an integral in some situations where the calculations per
+day are unimportant, and this method is preferred if possible.
+
+![Marginal Price](/images/threephase/mp.png) 
+
+## Update Scope
+
+In addition to the question of when to update, the game must decide how much to
+update. A naive approach is to update every game element, every time, starting
+from the top of the object hierarchy. This method grows in complexity
+exponentially as games are created, and does a lot of unnecessary work. It also
+runs into problems with a fixed timestep - if the work cannot be finished before
+the next interval (e.g. 1 second), the updates will fall behind and never catch
+up. Another method is to maintain a list of only the objects that explicitly
+need to be updated. This avoids duplicated work, but is difficult to maintain.
+
+![Naive Updating](/images/threephase/update1.png)
+
+A representation of naive, update-all approach to game updating. A naive
+approach to update scope chooses to update every game object starting and the
+top of the object hierarchy. This approach is not scalable to many simultaneous
+game instances, especially with short timesteps in between updates.
+
+![List Updating](/images/threephase/update2.png)
+
+A representation of improved, list-based update approach game updating. An
+improved scope for updates maintains a list of specific objects that need to be
+updated. It saves time and work over the naive approach, but still has
+difficulty scaling in small timestep situations.
+
+![Lazy Updating](/images/threephase/update3.png)
+
+A representation of lazy approach to game updating. A lazy approach to update
+scope updates objects only on demand from player actions. A request for the
+operating level of a generator may or may not propagate up the hierarchy of
+objects, depending on the last update time of each object in between.
+
+
+## Distributed Updates
+
+Threephase uses a distributed update strategy, where updates start at the lowest
+levels of the hierarchy and propagate upwards only as needed. This approach
+harmonizes well with HTTP, which is closely tied to a request/response cycle of
+communication between client and server. For HTTP, there is no concept of a
+long-running job that continuously updates the game. Clients should also not
+have to worry about keeping the game state up-to-date.
+
+When a request arrives, the server need only return the best answer it can find,
+not necessarily the perfect answer. This approach relies on caching at multiple
+levels of the hierarchy to update the minimum amount of game state necessary to
+maintain consistency. This frees up processing power for other games, and also
+increases the response time for players.
+
+## Accelerated Game Speed
+
+These update issues are compounded by the fact that games are permitted to scale
+the passage of time to shorten game duration. Running a power system in
+real-time speed would be an achingly slow gaming experience, and it would be
+difficult to observe trends over time. Instead, the time in game can be scaled
+up as much as 200 times normal. The in-game time is displayed on every page, and
+begins counting from the epoch of the game. This represents an accelerated view
+into the future, allowing players to see the near to medium-term implications of
+their choices.
+
+![Crossing Days](/images/threephase/crossing-over2.png)
+
+At the high end of the time scale, update intervals can be especially
+problematic. At the maximum (200 times real-time), a day passes in game every 12
+normal minutes. Nearly every player visit is crossing dozens, if not hundreds of
+day boundaries. The calculations mentioned must efficiently handle updating a
+large number of days.
+
+## GameTime Helper
+
+To take advantage of the useful time helper methods in both Ruby and the
+[Ruby on Rails](http://rubyonrails.org/) web framework, Threephase uses a
+dynamic
+[GameTime](https://github.com/peplin/threephase/blob/master/app/models/game.rb#L103)
+class when dealing with in-game time. The root problem is that given a Time
+object, the system needs to be able to tell if it has already
+
+Without a steady timestep, all updates must handle the possibility that multiple
+days have passed since the last update. The lower timeline shows how the day
+boundary crossing problem is compounded when game speed is increased. been
+scaled from real-time to game time. A method receiving an instance of GameTime
+has some implicit metadata (the fact that this is a GameTime, not a regular
+Time) that the time is already scaled. In addition, the class provides automatic
+conversion between real and game-time as needed.
+
+Each instance of a Country generates a unique GameTime class definition, with
+the game's epoch and speed stored as class constants. All times are scaled
+forward from the epoch (and an error is thrown if a pre-epoch time is passed as
+an argument), limiting worry about time scaling to a single location in the code
+base. The class can smoothly convert between scaled game time
+and unscaled real time.
+
+{% highlight ruby %}
+> game.speed
+=> 5
+> GameTime = game.time
+=> GameTime
+> GameTime.epoch
+=> Sat, 06 Nov 2010 03:38:49 UTC +00:00
+> Time.now
+=> 2010-11-06 03:39:10 UTC
+> GameTime.now
+=> Sat, 06 Nov 2010 03:42:08 UTC +00:00
+> GameTime.at(Time.now)
+=> Sat, 06 Nov 2010 03:42:43 UTC +00:00
+> GameTime.at(Time.now).to_normal
+=> 2010-11-06 03:39:45 UTC
+{% endhighlight %}
+
+*Continue to the next section on
+[implementing](/2011/05/threephase-implementation/) Threephase.*
+
+## Other Threephase Articles
+
+* [Overview](/2011/05/threephase/)
+* [Game Objects](/2011/05/threephase-game-objects/)
+* [Game Mechanics](/2011/05/threephase-mechanics/)
+* [Implementation](/2011/05/threephase-implementation/)
+* [Evaluation](/2011/05/threephase-time/)

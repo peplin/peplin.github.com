@@ -1,0 +1,262 @@
+---
+layout: post
+title: The Game Objects of Threephase
+permalink: /2011/05/threephase-game-objects/
+---
+
+This post is part of a series describing the [Threephase](/2011/05/threephase/)
+project.
+
+The primary geographical units of Threephase are the
+[Country](https://github.com/peplin/threephase/blob/master/app/models/game.rb),
+the
+[State](https://github.com/peplin/threephase/blob/master/app/models/state.rb)
+and the
+[City](https://github.com/peplin/threephase/blob/master/app/models/city.rb). At
+any time, there are multiple game worlds running simultaneously. Each game (or
+Country) has its own unique attributes and available power technologies. The
+player can choose to either join an existing Country or create a new one
+(perhaps to experiment with a new regulatory system). A Country's virtual world
+is ongoing and persistent - players can join and leave at any time.
+
+To join a Country (game and Country are used interchangeably), the player
+creates a State.
+
+The State is the player's relationship to a certain Country - they can
+participate in multiple games simultaneously, but with only one State in each
+game. The player assigns a name, research budget (which effects the cost of new
+technology) and a map to the new State.
+
+![Models](/images/threephase/city.png)
+
+## Game/Country
+
+In order to lower the barrier to entry for new players, the player may join and
+leave games at any time. The time spent finding and joining a game should be
+minimal. The player should be able to start making in-game decisions as soon as
+possible to grab and keep their attention. The effects of a State suddenly
+dropping out of the Country are dampened to not negatively effect the experience
+for other players when someone leaves the game.
+
+## Attributes
+
+A Country has many
+[adjustable attributes](https://github.com/peplin/threephase/blob/master/app/models/game.rb#L30)
+that are set at creation. These include, but are not limited to:
+
+* Minimum & maximum transmission line capacity
+* Relative cost of technology
+* Relative wind speed
+* Type of economic regulation
+
+The attributes affect the difficulty of the game (e.g. relatively higher capital
+costs make new construction more difficult) similar to how new laws and public
+policies can affect power utility strategy in real life. They can also simulate
+different physical environments, e.g. the relative scale of the average wind
+speed can make a State more or less inclined to add wind turbines to their
+generator portfolio.
+
+### Economic Regulation
+
+Economic regulation is a critical factor in operating a profitable utility. The
+available economic regulation types in Threephase are rate of return, marginal
+cost bidding, and locational marginal pricing (discussed in more detail later
+on). Power utility regulation is an unsolved problem, and the ability to switch
+between types in Threephase makes comparing scenarios in different regulatory
+environments a possible use case.
+
+## Map
+
+Each State has a
+[map](https://github.com/peplin/threephase/blob/master/app/models/map.rb)
+which defines the land and natural resources underneath and
+neighboring each City. The proximity of City to areas of the map can have a
+non-trivial effect on the price of certain types of generation in the City
+because of the abundance of natural resources (discussed further later).
+
+## Multiplayer Elements
+
+Threephase is a multiplayer game. Each Country is shared among the players that
+control a State in that Country. These players currently share national fuel
+prices. Generators that use non-renewable fuel purchase their operating fuel at
+prices determined by a national
+[fuel market](https://github.com/peplin/threephase/blob/master/app/models/fuel_market.rb).
+Every day, the
+[market price](https://github.com/peplin/threephase/blob/master/app/models/market_price.rb)
+for each [fuel type](https://github.com/peplin/threephase/blob/master/db/fixtures/010_fuel_markets.rb)
+(e.g. coal, oil, natural gas, etc.) is cleared based on the
+total demand (the sum of the demand of all generators using that fuel, with
+respect to their projected operating level) and the total supply (the sum of the
+availability of the fuel's raw natural resource in the State maps).
+
+To bootstrap the economy, each fuel market is
+[initialized](https://github.com/peplin/threephase/blob/master/app/models/fuel_market.rb#L106)
+with a starting price (randomized within a pre-specified standard deviation, for
+variety's sake) and a price elasticity of supply. The supply of fuel does not
+change since State maps are static in the current implementation, so the price
+elasticity is used to calculate how the fuel price reacts to changes in demand.
+
+The shared fuel prices mean that a player's decision to build many large coal
+generators can have implications on the generator portfolios of another player (
+who may be less inclined to build coal plants due to the increasing cost of
+fuel).
+
+## State
+
+Within a State, the player has complete control over all generators and
+transmission lines. The player can view the
+[average cost curve](https://github.com/peplin/threephase/blob/master/public/javascripts/application.js#L157)
+of their generators, graphed in order of their average cost. The ideal,
+cost-minimizing strategy would run the generators in this order - cheapest
+first.
+
+![Average Cost Curve](/images/threephase/curve.png)
+
+## Average Cost Curve
+
+Threephase makes a conscious decision to use the average cost curve, as opposed
+to the marginal cost curve, to attempt to take into the account the capital
+investment of each generator. This is a deviation from the industry norm, done
+in part to assist my own understanding.
+
+A common point of confusion for non-experts is how utilities could ever expect
+to do more than depreciate their equipment while operating at the marginal cost.
+Different types of regulation attempt to compensate in various ways, most
+commonly with what are known as capacity payments. These are side payments made
+by the regulator to encourage re-investment and continued expansion of
+operations.
+
+## Geographic Visualization
+
+The dashboard of each state displays a basic visualization of the State and its
+Citys. The map also
+[visualizes the composition of the land](https://github.com/peplin/threephase/blob/master/public/javascripts/map.js)
+underneath the State. Each small dot is a
+[Block](https://github.com/peplin/threephase/blob/master/app/models/block.rb),
+and each Block has one of a few different types - mountains, plains or water.
+Each Block also has an index per natural resource, describing its relative
+abundance in that area. There are currently indices for the non-renewable
+resources natural gas, coal and oil and for the renewable resources sun, water
+and wind. In the current implementation, the block types and indices are chosen
+[randomly](https://github.com/peplin/threephase/blob/master/app/models/block.rb#L46).
+This can be improved using map generation algorithms to create more
+natural and useful land organization - mountain ranges, rivers, etc.
+
+![HUD](/images/threephase/overview.png)
+
+A screenshot of the State "heads-up display", which shows a map of the natural
+landscape, where the cities fall in relationship to natural resources, and
+historical statistics on the price of fuel and electricity.
+
+## Location Based Discounts
+
+The location of a City on the map has important implications. Based on the
+availability of coal within the region, for example, a certain percentage
+[discount](https://github.com/peplin/threephase/blob/master/app/models/fuel_market.rb#L93)
+is given to coal generators operating in that City. Wind turbines in an area of
+Blocks with high wind indices will be more effective than in other places.
+
+The discounts are
+[calculated](https://github.com/peplin/threephase/blob/master/app/models/city.rb#L139)
+by finding all blocks within a certain radius of the City, scaled based on the
+population. Larger cities will extend further out from their center point, so
+they can be expected to utilize a wider area of natural resources.
+
+![Map](/images/threephase/discount.png)
+
+On the in-game map, the natural resource indices of the land beneath each City
+can have an effect on the price of local generation. Blocks within a certain
+radius of a City (green dots within the blue circle, scaled based on population)
+that contain large amounts of coal or natural gas can make a City a good choice
+for matching generator types.
+
+## Creating Objects
+
+To create a
+[generator](https://github.com/peplin/threephase/blob/master/app/models/generator.rb),
+the player selects a
+[GeneratorType](https://github.com/peplin/threephase/blob/master/app/models/generator_type.rb)
+from a list of [available technologies](https://github.com/peplin/threephase/blob/master/db/fixtures/050_generator_types.rb).
+
+Each Country can customize the list of available GeneratorTypes to simulate
+different time periods and regulatory environments (e.g. before advanced
+nuclear or coal with carbon capture and sequestration). The player can compare
+the available GeneratorTypes based on their attributes to decide which would be
+the best choice for their portfolio. The current interface is a simple table,
+sortable by column. Additional comparison visualizations can make the choices
+easier to understand, and convey some of the issues with new technologies.
+[Lauren Fleishman's work](http://sds.hss.cmu.edu/risk/fleishman/InformationMaterials.html)
+in summarizing and comparing generators is a good inspiration for the user
+interface.
+
+## Generator Type Attributes
+
+The attributes for a GeneratorType loosely belong to three different groups -
+those that:
+
+* Scale the marginal cost
+* Scale the capital cost
+* Scale the rate of occasionally positive & negative one-time events
+
+For example, the waste disposal cost effects the marginal cost of power for the
+GeneratorType. The tax credit lowers the initial capital investment, relative
+to the size of the generator. The technical reliability effects the frequency
+of equipment failure, and the technical complexity effects the time it takes to
+repair a generator once a failure occurs. A complete list is available in the
+[Threephase wiki](https://github.com/peplin/threephase/wiki/Technical-Component-Parameters).
+Some of the values for attributes were inferred from the
+[U.S. Energy Information Administraton](http://www.eia.doe.gov/), but others
+still need to be researched.
+
+### Capacity Range
+
+Each GeneratorType also has a range of valid capacities - the number of MWh the
+GeneratorType can produce at its peak. This range reflects the general
+capabilities of the GeneratorType, and also its typical applications in real
+world power grids. For example, gas turbines have relatively lower capacity
+limits than nuclear generators, and they are typically used as peaking plants
+(to cover spikes in demand) as opposed to baseload plants which are more
+efficient in large capacities.
+
+## Object Type Extensibility
+
+These attributes and effects are not specific to generators. The objects in
+Threephase are members of a
+[TechnicalComponent](https://github.com/peplin/threephase/blob/master/app/models/technical_component.rb)
+hierarchy, allowing them to share the flexibility enjoyed by generators.
+[Transmission lines](https://github.com/peplin/threephase/blob/master/app/models/line.rb),
+power storage devices, and other component classes all have
+these attributes.
+
+![Technical Components](/images/threephase/technical-components.png)
+
+Generators, transmission lines and power storage devices all inherit from a
+common parent type - the `TechnicalComponent`. This allows the game to share
+code when interacting with each type of object, and still allow for some
+customization.
+
+In the case of transmission lines, the player can choose from
+[LineTypes](https://github.com/peplin/threephase/blob/master/app/models/line_type.rb)
+such as [high-voltage DC and high-voltage AC](https://github.com/peplin/threephase/blob/master/db/fixtures/050_line_types.rb)
+of varying capacities and resistances.
+
+Most of the attributes are shared with generators through the TechnicalComponent
+model, but class-specific attributes (e.g. underground v.s. above ground lines)
+are also supported.
+
+### Implementation Note
+
+The relationships are maintained using single-table inheritance (so
+`GeneratorType`, `LineType` and `StorageDeviceType` share a database table) and
+polymorphic associations (so a State can reference instances of the three
+classes in a generic fashion).
+
+*Continue to the next section on
+[game mechanics](/2011/05/threephase-mechanics/).*
+
+## Other Threephase Articles
+
+* [Game Mechanics](/2011/05/threephase-mechanics/)
+* [Time](/2011/05/threephase-time/)
+* [Implementation](/2011/05/threephase-implementation/)
+* [Evaluation](/2011/05/threephase-time/)

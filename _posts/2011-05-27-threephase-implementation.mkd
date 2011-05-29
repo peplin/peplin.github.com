@@ -1,0 +1,143 @@
+---
+layout: post
+title: Implementation of Threephase
+permalink: /2011/05/threephase-implementation/
+---
+
+This post is part of a series describing the [Threephase](/2011/05/threephase/)
+project.
+
+## Test-driven Development
+
+The development of Threephase followed the test-driven design philosophy. This
+method encourages that before any implementation, a test case is written that
+exercises a small piece of desired functionality. Initially the test will fail
+since nothing has been implemented. The implementation goal is to write just
+enough code to pass the test - providing some degree of certainty in correctness
+and making sure no more code than is necessary is written. The resulting
+collection of test cases (the test suite) is also a critical tool for making
+sure that contributions from the open source community don't break existing
+features. Each test case also serves as live, runnable documentation of how a
+class or method is supposed to work.
+
+## Unit Testing
+
+At its core, Threephase is a web application using the
+[Ruby on Rails](http://rubyonrails.org/) framework. Most of the interesting
+logic is in the application's models (i.e. the State, Generator, etc.), so there
+is relatively loose coupling to Rails itself. The test suite uses the
+[RSpec](http://rspec.info/) testing framework for its human-readable test cases
+and strong integration with Rails. To test the standard request/response
+patterns of the game's API, the project uses a
+[custom set of RSpec feature groups](https://github.com/peplin/threephase/blob/master/spec/support/crud_helper.rb).
+These can be called like methods in a test case to avoid duplication, e.g.:
+
+{% highlight ruby %}
+describe StatesController do
+    before do
+        @game = Factory :game
+    end
+
+    context "as an admin" do
+        before do
+            login_as_admin
+        end
+
+        it_should_behave_like "standard GET show"
+        it_should_behave_like "standard PUT update"
+    end
+end
+{% endhighlight %}
+
+This example makes use of the `it_should_behave_like` feature group ability in
+RSpec, allowing much of the test logic to be shared among controllers. Object
+Factories Instead of test fixtures (preloaded database objects), Threephase uses
+the [Factory Girl](https://github.com/thoughtbot/factory_girl) framework to use
+object factories in test cases. Object factories are simpler to maintain than
+fixtures, and minimizes work during development to data models that are in flux.
+
+## Graphics
+
+Threephase originally intended to use the Javascript graphics library
+[Processing.js](http://processingjs.org) to render the map, charts and graphs in
+the browser. Upon further investigation, the library seemed to lack helpful
+charting features that other libraries offered, and the odd support of syntax
+from the Java version of Processing made using the language somewhat unnatural
+(a pure Javascript API to Processing.js was discovered later).
+
+Instead, Threephase uses two different Javascript graphics libraries:
+[Raphaël](http://raphaeljs.com) for basic charting and mapping and
+[Flot](http: //code.google.com/p/flot/) for the piecewise graph
+necessary for the
+[average cost curve visualization](https://github.com/peplin/threephase/blob/master/public/javascripts/application.js#L157).
+Raphaël also has an existing charting extension,
+[gRaphaël](http://g.raphaeljs.com) which reduced the amount of boilerplate graph
+code that had to be written.
+
+### Performance
+
+The performance of both libraries is very good in modern browsers (performance
+tested in Mozilla Firefox and Google Chrome). The bottleneck for rendering
+complex visualizations at the moment is the time in downloading the data
+required from the server in the background, not rendering.
+
+## Database
+
+The majority of the objects in Threephase are stored using the standard
+object-relational mapping provided by Rails, backed by a PostgreSQL database.
+The objects in Threephase (and the physical entities in the real world) are
+highly relational, so this is a good choice not only for the wide support of SQL
+databases, but because it fits the data model well.
+
+## Asynchronous Tasks
+
+The browser-based nature of Threephase rests on HTTP, the most basic web
+protocol. HTTP has no knowledge of long running processes, and the relationship
+between a client and the server is finished after a single request/response
+cycle. There is not an immediately clear way to mesh this with the very
+demanding interaction required by games.
+
+### Motivation
+
+In order to provide reasonable response times, so players don't get impatient
+waiting for pages to load, the majority of the computation to update the game
+needs to happen outside of the normal player interaction cycle - whether
+updating one element or a thousand.
+
+A desktop game may use different threads of execution to make sure a player is
+never waiting for a network packet to finish downloading, or for a texture to
+load from the hard drive. In web applications, the server can use asynchronous
+task queues to accomplish the same thing.
+
+Whenever possible, computation is bundled up into a "task" and queued to run at
+a later time - ideally as soon as possible, so the player gets updated data, but
+with no guarantee that it will happen before the server returns a response to
+the client. If the job hasn't completed, it may return cached data that is
+valid, but not completely up-to-date. There is a trade-off between performance
+and liveliness, and in this case player perception of the game's speed is more
+important than absolutely current information. To accomplish this, Threephase
+uses the [Resque](https://github.com/defunkt/resque) background job library backed by a Redis database.
+
+### Task Examples
+
+Examples of work to be done in tasks include:
+
+* Charging customers based on their demand and the marginal price
+* Deducting power grid operating costs over a time period
+* Handling random events: research advancements that lower capital costs,
+    unionized worker strikes, etc.
+* Clearing the market price of each fuel
+
+Currently, Threephase only uses one simple task to update the game world. As
+more update logic is added, they will be done as tasks.
+
+*Continue to the next section, an
+[evaluation](/2011/05/threephase-evaluation/) of Threephase.*
+
+## Other Threephase Articles
+
+* [Overview](/2011/05/threephase/)
+* [Game Objects](/2011/05/threephase-game-objects/)
+* [Game Mechanics](/2011/05/threephase-mechanics/)
+* [Time](/2011/05/threephase-time/)
+* [Evaluation](/2011/05/threephase-time/)
