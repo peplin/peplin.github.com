@@ -4,8 +4,8 @@ title: The Multi-touch Table of August 23, 1966
 permalink: /2011/05/august23-multitouch/
 ---
 
-This post is part of a series describing the
-[August 23, 1966](/2011/05/august23/) project.
+*This post is part of a series describing the
+[August 23, 1966](/2011/05/august23/) project.*
 
 The multi-touch table created for the project is a rear diffused illumination
 design, and is housed in a core‐ten steel cabinet with recessed cooling fans and
@@ -48,3 +48,14 @@ off and confusing Tbeta.
 
 Although we used the surface as a display, gallery visitors had to use a
 traditional mouse to interact with the galaxy.
+
+*Continue to the next section, details of the
+[Wiremap](/2011/05/august23-wiremap/) display.*
+
+## Other August Articles
+
+* [August Overview](/2011/05/august23/)
+* [Twoverse](/2011/05/august23-twoverse/), the core software backend
+* [Wiremap](/2011/05/august23-wiremap/)
+* [Pulse Oximeter (Heartbeat Monitor)](/2011/05/august23-pulse-oximeter/)
+* [Audio Recordings](/2011/05/august23-audio/)

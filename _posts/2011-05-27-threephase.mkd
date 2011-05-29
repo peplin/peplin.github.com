@@ -6,8 +6,8 @@ permalink: /2011/05/threephase/
 
 ![Logo](/images/threephase/threephase-logo.jpg)
 
-This post is part of a series describing the [Threephase](/2011/05/threephase/)
-project.
+*This post is part of a series describing the [Threephase](/2011/05/threephase/)
+project.*
 
 Threephase is a web browser-based game simulating the electric power generation
 and transmission system. The project was completed over a two month period

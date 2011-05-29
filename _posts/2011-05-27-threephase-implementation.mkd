@@ -4,8 +4,8 @@ title: Implementation of Threephase
 permalink: /2011/05/threephase-implementation/
 ---
 
-This post is part of a series describing the [Threephase](/2011/05/threephase/)
-project.
+*This post is part of a series describing the [Threephase](/2011/05/threephase/)
+project.*
 
 ## Test-driven Development
 

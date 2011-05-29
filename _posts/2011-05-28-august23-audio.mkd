@@ -4,8 +4,8 @@ title: The Audio of August 23, 1966
 permalink: /2011/05/august23-audio/
 ---
 
-This post is part of a series describing the
-[August 23, 1966](/2011/05/august23/) project.
+*This post is part of a series describing the
+[August 23, 1966](/2011/05/august23/) project.*
 
 We had two recording sessions for the August project: field recordings for
 providing ambient sound in the airlock chamber and voice-over recordings for the
@@ -95,3 +95,12 @@ some spice. Some are pretty silly.
 
 {% assign jplayer-id = "4" %}
 {% include jplayer.html %}
+
+## Other August Articles
+
+* [August Overview](/2011/05/august23/)
+* [Twoverse](/2011/05/august23-twoverse/), the core software backend
+* [Multi-touch Table](/2011/05/august23-multitouch/)
+* [Wiremap](/2011/05/august23-wiremap/)
+* [Pulse Oximeter (Heartbeat Monitor)](/2011/05/august23-pulse-oximeter/)
+* [Audio Recordings](/2011/05/august23-audio/)

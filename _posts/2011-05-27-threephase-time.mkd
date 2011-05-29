@@ -4,8 +4,8 @@ title: The Simulated Time of Threephase
 permalink: /2011/05/threephase-time/
 ---
 
-This post is part of a series describing the [Threephase](/2011/05/threephase/)
-project.
+*This post is part of a series describing the [Threephase](/2011/05/threephase/)
+project.*
 
 A primary task for any game is making things move. The default approach in a
 single-player, desktop computer game is somewhat clear. The software has total

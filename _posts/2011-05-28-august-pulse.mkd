@@ -4,8 +4,8 @@ title: The Pulse Oximeter of August 23, 1966
 permalink: /2011/05/august23-pulse-oximeter/
 ---
 
-This post is part of a series describing the
-[August 23, 1966](/2011/05/august23/) project.
+*This post is part of a series describing the
+[August 23, 1966](/2011/05/august23/) project.*
 
 In researching ways to detect the human heartbeat, we found that
 [photoplethysmography](http://en.wikipedia.org/wiki/Photoplethysmograph)
@@ -62,3 +62,14 @@ of the pulse oximeter on a graph.
 * [Arduino program](https://github.com/peplin/august23/blob/master/src/gallery/PulseOximeter/PulseOximeter.pde)
 * [Heartbeat Viewer]()
 * [Integrated with Wiremap](https://github.com/peplin/august23/blob/master/src/gallery/WiremapClient/HeartbeatDetector.pde)
+
+*Continue to the next section, details of the
+[audio recordings](/2011/05/august23-audio/) of August.*
+
+## Other August Articles
+
+* [August Overview](/2011/05/august23/)
+* [Twoverse](/2011/05/august23-twoverse/), the core software backend
+* [Multi-touch Table](/2011/05/august23-multitouch/)
+* [Wiremap](/2011/05/august23-wiremap/)
+* [Audio Recordings](/2011/05/august23-audio/)

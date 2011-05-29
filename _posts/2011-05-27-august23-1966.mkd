@@ -44,6 +44,14 @@ into a three day interactive gallery installation. Visitors could configure and
 create their own personal star, then witness its birth, life and death in a
 virtual universe alongside others'.
 
+This writeup is split into a few separate posts:
+
+* [Twoverse](/2011/05/august23-twoverse/), the core software backend
+* [Multi-touch Table](/2011/05/august23-multitouch/)
+* [Wiremap](/2011/05/august23-wiremap/)
+* [Pulse Oximeter (Heartbeat Monitor)](/2011/05/august23-pulse-oximeter/)
+* [Audio Recordings](/2011/05/august23-audio/)
+
 ## Gallery Installation
 
 ![Gallery](/images/august23/gallery_installation.png)
@@ -214,3 +222,14 @@ Not all of the objects need obey the same time scale, since the goal of Twoverse
 isn't to be absolutely accurate. The time scale for stars could be greatly
 accelerated so we can ultimately see them collapse. For space travel, maybe it
 takes 3 hours instead of 3 days to go from Earth to the moon.
+
+*Continue to the next section, details of the software system
+[Twoverse](/2011/05/august23-twoverse/).*
+
+## Other August Articles
+
+* [Twoverse](/2011/05/august23-twoverse/), the core software backend
+* [Multi-touch Table](/2011/05/august23-multitouch/)
+* [Wiremap](/2011/05/august23-wiremap/)
+* [Pulse Oximeter (Heartbeat Monitor)](/2011/05/august23-pulse-oximeter/)
+* [Audio Recordings](/2011/05/august23-audio/)

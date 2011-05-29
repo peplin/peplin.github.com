@@ -4,8 +4,8 @@ title: The Wiremap of August 23, 1966
 permalink: /2011/05/august23-wiremap/
 ---
 
-This post is part of a series describing the
-[August 23, 1966](/2011/05/august23/) project.
+*This post is part of a series describing the
+[August 23, 1966](/2011/05/august23/) project.*
 
 The [Wiremap](http://wiremap.phedhex.com) is an innovative projection technique
 that displays a 3D image in space using a standard computer projector. The
@@ -82,3 +82,14 @@ Despite careful planning, we had trouble at the very end of the build phase
 accurately calibrating our Wiremap. The final transportation from our workspace
 to the gallery sealed the deal; we were never able to form a satisfactory
 image in the field after the move.
+
+*Continue to the next section, details of the
+[heartbeat monitor](/2011/05/august23-pulse-oximeter/).*
+
+## Other August Articles
+
+* [August Overview](/2011/05/august23/)
+* [Twoverse](/2011/05/august23-twoverse/), the core software backend
+* [Multi-touch Table](/2011/05/august23-multitouch/)
+* [Pulse Oximeter (Heartbeat Monitor)](/2011/05/august23-pulse-oximeter/)
+* [Audio Recordings](/2011/05/august23-audio/)

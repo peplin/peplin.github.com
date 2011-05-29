@@ -4,6 +4,9 @@ title: Twoverse, the universe of August 23, 1966
 permalink: /2011/05/august23-twoverse/
 ---
 
+*This post is part of a series describing the
+[August 23, 1966](/2011/05/august23/) project.*
+
 The software core of the August 23, 1966 project is a Java software system named
 "Twoverse," a parallel universe that exists only in the digital realm.
 
@@ -105,3 +108,14 @@ A screenshot of the multi-touch Client viewing the details of a single star.
 
 A screenshot of the multi-touch Client zoomed in for a closer look at a cluster
 of stars.
+
+*Continue to the next section, details of the
+[multi-touch table](/2011/05/august23-multitouch/).*
+
+## Other August Articles
+
+* [August Overview](/2011/05/august23/)
+* [Multi-touch Table](/2011/05/august23-multitouch/)
+* [Wiremap](/2011/05/august23-wiremap/)
+* [Pulse Oximeter (Heartbeat Monitor)](/2011/05/august23-pulse-oximeter/)
+* [Audio Recordings](/2011/05/august23-audio/)

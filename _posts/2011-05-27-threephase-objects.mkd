@@ -4,8 +4,8 @@ title: The Game Objects of Threephase
 permalink: /2011/05/threephase-game-objects/
 ---
 
-This post is part of a series describing the [Threephase](/2011/05/threephase/)
-project.
+*This post is part of a series describing the [Threephase](/2011/05/threephase/)
+project.*
 
 The primary geographical units of Threephase are the
 [Country](https://github.com/peplin/threephase/blob/master/app/models/game.rb),
