@@ -16,7 +16,8 @@ Master's in Information Networking (MSIN) candidates at the
 [Information Networking Institute](http://www.ini.cmu.edu) of Carnegie Mellon
 University (CMU).
 
-This article is an abriged version of the [final report](http://things.rhubarbtech.com/things/threephase/report.pdf),
+This article is an abriged version of the
+[final report](http://things.rhubarbtech.com/threephase/report.pdf),
 reformatted for the web and with some (less formal) comments and reflections
 added. I've split it up into a few posts:
 
