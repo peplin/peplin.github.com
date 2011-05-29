@@ -95,7 +95,7 @@ geographically distributed software systems.
 
 ### Sensing
 
-Modern research prefers wireless sensors over wired \autocite{pipeline}. These
+[Modern research][pipeline] prefers wireless sensors over wired. These
 systems are harder to disrupt, which is of greater concern when the system is
 out in the open and many network hops away from the central office. A widely
 distributed wired network involves a significant amount of extra infrastructure,
@@ -103,18 +103,16 @@ and damage to the infrastructure being monitoring often implies damage to the
 monitoring system itself. Wireless systems have the advantage of being easier to
 deploy, as they can self-organize into ad-hoc networks (see the figure below) as
 long as they are within range of another sensor node. Connectivity problems also
-tend to be isolated to individual units, and are easier to troubleshoot
-\autocite{pipeline}.
+tend to be isolated to individual units, and are easier to troubleshoot.
 
-![Ad-Hoc][http://things.rhubarbtech.com/images/infrastructure-monitoring/adhoc.png]
+![Ad-Hoc](http://things.rhubarbtech.com/images/infrastructure-monitoring/adhoc.png)
 
-{Wireless sensors along a pipeline form an ad-hoc
-wireless network and communicate only with nearby neighbors
-\autocite{pipeline}.}
+*Wireless sensors along a pipeline form an ad-hoc wireless network and
+communicate only with nearby neighbors ([source][pipeline])*
 
 Recent projects have taken a page (knowingly or not) from tools like the
 computer network monitoring application [Ganglia][] and now use a unified data
-format, regardless of sensor or data type \autocite{pipeline}. For example, a
+format, regardless of sensor or data type. For example, a
 single update could consist of:
 
 * Type of data (1 byte)
@@ -139,14 +137,14 @@ of guaranteeing a wide enough dispersal of communication relay and data
 discharge nodes to reach all of the levels of the hierarchy, compared to the
 somewhat arbitrary trees made in computer networks. 
 
-![Hierarchy][http://things.rhubarbtech.com/images/infrastructure-monitoring/hierarchy.png]
+![Hierarchy](http://things.rhubarbtech.com/images/infrastructure-monitoring/hierarchy.png)
 
-An example hierarchy for a network of sensor nodes \autocite{pipeline}.
+*An example hierarchy for a network of sensor nodes ([source][pipeline]).*
 
 A critical feature of these networks is the scalability of their performance:
 "[s]uch a dense array must be designed to be scalable, which means that the
 system performance does not degrade substantially, or at all, as the number of
-components increases" \autocite{smart-sensors}. The fact that each node only
+components increases" ([source][smart-sensors]). The fact that each node only
 communicates with its closest neighbors is a strong indication that such a
 design is scalable to tens of thousands of nodes.
 
@@ -155,14 +153,13 @@ design is scalable to tens of thousands of nodes.
 A significant impediment to a monitoring system's success is the amount of
 processing required to put the data into a useful form. The amount of data
 recorded for infrastructure components can be extensive, reaching multiple
-terabytes of data per day, but "[m]uch of
-such data [is] being collected but not used because processing is too
-costly" \autocite{civil-health}. Even with the recent advances in "massively
-distributed smart sensors" \autocite{civil-health}, infrastructure managers
-still lack a general computation framework to explore, experiment with and
-analyze the data. Controls software vendors are driven by the requirements set
-forth by operators, but these operators' demands are often only responding to
-what vendors have given them in the past. 
+terabytes of data per day, but "[m]uch of such data [is] being collected but not
+used because processing is too costly" ([source][civil-health]). Even with the
+recent advances in "massively distributed smart sensors", infrastructure
+managers still lack a general computation framework to explore, experiment with
+and analyze the data. Controls software vendors are driven by the requirements
+set forth by operators, but these operators' demands are often only responding
+to what vendors have given them in the past. 
 
 Data collection, storage, processing and querying is a general enough task that
 it could and should be standardized across all areas of infrastructure. Computer
@@ -186,7 +183,7 @@ to monitor computer grid infrastructure.
 > "The Nagios distribution provides only the basic set of sensors, but custom
 sensors can be developed by using any existing programming language. This means
 that Nagios can be used for monitoring virtually anything as long as appropriate
-sensor can be developed" \autocite{nagios}.
+sensor can be developed." ([source][nagios])
 
 Nagios provides a uniform interface to the monitored statistics, on
 top of which any number of processing and analysis applications can be built.
@@ -196,34 +193,34 @@ critical tasks could likely use this system without modification.
 
 ### State of the Art
 
-One recent project at the University of California, San Deigo set out to
-implement an extensible structural health monitoring platform using some of
-these open technologies \autocite{structural-health}. They proposed a system
-with many components, including:
+One [recent project][structural-health] at the University of California, San
+Deigo set out to implement an extensible structural health monitoring platform
+using some of these open technologies. They proposed a system with many
+components, including:
 
 * Networked sensor arrays
 * A high-performance centralized database
 * Computer vision analysis
 * Physics analysis
 * Visualizations that allow comparison between experimental and
-        numerical simulation data
+    numerical simulation data
 * Modeling and risk analysis
 
 This was an ambitious project, attempted to provide a standard way "to measure,
 acquire, process, and analyze the massive amount of data that is currently
 coming on-line (not to mention the terabytes of streaming data that will
 inundate potential users in the near future) in order to extract useful
-information concerning the condition assessment of the monitored structures"
-\autocite{structural-health}. Unfortunately, the project's web portal is no
-longer online and no further information about the project could be found. A
-likely cause of failure is that the system tried to combine too many components
-into a single piece. Monitoring and data querying is one of the few tasks that
-can be completely generalized across industries. Considering that computer
-vision analysis and risk modeling will likely change substantially between a
-pipeline operator and telecommunications operator, these systems should be left
-to the various industries to implement as they see fit. As long as the data
-collection system provides a uniform interface to query the monitoring
-statistics, it can still be of great value.
+information concerning the condition assessment of the monitored structures."
+Unfortunately, the project's web portal is no longer online and no further
+information about the project could be found. A likely cause of failure is that
+the system tried to combine too many components into a single piece. Monitoring
+and data querying is one of the few tasks that can be completely generalized
+across industries. Considering that computer vision analysis and risk modeling
+will likely change substantially between a pipeline operator and
+telecommunications operator, these systems should be left to the various
+industries to implement as they see fit. As long as the data collection system
+provides a uniform interface to query the monitoring statistics, it can still be
+of great value.
 
 ### SCADA
 
@@ -234,8 +231,8 @@ send monitoring data back to the operator and propagate control commands
 to infrastructure. These types of systems are popular in industrial environments
 as well, as a way to monitor and control heavy equipment. 
 
-There are many existing SCADA-style systems (an estimated 150-200 different
-protocols \autocite{scada-security}), dating back to the late 1960's.
+There are many existing SCADA-style systems (an estimated 150-200
+[different protocols][scada-security]), dating back to the late 1960's.
 SCADA is very popular with power utilities as a mechanism for coordinating
 generation capacity among power plant operators; the generators must react very
 quickly to changes in load, and an automated communication system is the only
@@ -251,11 +248,11 @@ In the last 20 years, SCADA software vendors have migrated towards using the
 standard Internet Protocol (IP) for communication. This is a widely accepted
 protocol in computing systems, and the success and diversity of the Internet
 proves its flexibility. The other most popular protocols are DeviceNet and
-ControlNet \autocite{scada-security}.
+ControlNet.
 
 Previously, operators would find themselves purchasing very large, completely
 proprietary systems designed to monitor just a single attribute of their system
-- for example, monitoring electrical power phase \autocite{wide-area-power}. An
+- for example, monitoring electrical [power phase][wide-area-power]. An
 operator's terminal could be littered with different applications, each for a
 very specific part of the system.  The integration between these components was
 poor because of the difficulties in sharing data among them.
@@ -273,30 +270,30 @@ few decades of deployment. Along with most of the population of the 1960s, very
 few operators were familiar with computer interfaces and thus it "was
 imperative that the [SCADA] operator interface be graphical in nature to provide
 the dispatchers with a similar look and feel to what they were used to"
-\autocite{dist-automation}.
+([source][dist-automation]).
 
 #### Security & Confidentiality
 
 As mentioned, the privacy and security of a SCADA system is especially of
 concern when using networks shared by others. In general, "[m]onitoring and
 controlling these systems is an enormous undertaking, requiring constant
-supervision" \autocite{scada-vulnerabilities}. They must be architected to avoid
-cascading failures so connectivity issues in one area of the Internet do not
-effect the stability of safety of a piece of critical infrastructure. SCADA
+supervision" ([source][scada-vulnerabilities]). They must be architected to
+avoid cascading failures so connectivity issues in one area of the Internet do
+not effect the stability of safety of a piece of critical infrastructure. SCADA
 systems are some of the most diverse and complex integrated systems, commonly
-containing "as many as 50,000 input/output modules for data collection"
-\autocite{scada-vulnerabilities}. Since infrastructure systems are so
-interdependent, failure or damage in one operator's infrastructure may cause a
-larger part of the infrastructure to become unstable. Many types of
-infrastructure are dependent on telecommunications to keep their SCADA systems
-running, and if standardization and collaboration continues across industries,
-the integration points will only become more prevalent. 
+containing "as many as 50,000 input/output modules for data collection." Since
+infrastructure systems are so interdependent, failure or damage in one
+operator's infrastructure may cause a larger part of the infrastructure to
+become unstable. Many types of infrastructure are dependent on
+telecommunications to keep their SCADA systems running, and if standardization
+and collaboration continues across industries, the integration points will only
+become more prevalent. 
 
 Knowing this, systems using a standard shared network with open protocols are
 not without fault. They allow for more efficient operation and
 potentially more collaboration, "but it also exposes the safety-critical
 industrial network to the myriad security problems of the Internet"
-\autocite{scada-security}.
+([source][scada-security]).
 
 It's important to distinguish between the control and monitoring halves of
 SCADA, as they have very different security requirements. Some types of
@@ -308,10 +305,10 @@ Some common strategies for improving the security of SCADA systems on an open
 network are:
 
 * Make certainly all network traffic is protected using common Internet
-            security measures such as Transport Layer security (TLS)
+    security measures such as Transport Layer security (TLS)
 * Establish industry-wide data security practices. 
 * Educate operators on these best practices. Many reported
-            security breaches were the result of operator error.
+    security breaches were the result of operator error.
 
 ### Openness
 
@@ -324,7 +321,7 @@ For example, the Federal Energy Regulatory Commission removed previously
 accessible statistics and documents from their website in the name of security,
 "but a 2003 investigation strongly suggests that advancing the economic
 interests of favored industries or keeping executive actions from being
-scrutinized are the actual motivations" \autocite{people-facts}.
+scrutinized are the actual motivations" ([source][people-facts]).
 
 Operators need a standard and objective process for determining the sensitivity
 of information, and should err more on the side of release than protection
@@ -333,23 +330,23 @@ vulnerabilities of certain kinds of infrastructure can be a net benefit when the
 target would be inadequately defended absent that revelation. A series of GAO
 reports about weaknesses in defensive measures at commercial nuclear power
 plants, for example, played a key role in overcoming industry resistance to
-stricter security standards" \autocite{dangerous}.
+stricter security standards" ([source][dangerous]).
 
 Computer engineers have long appreciated the massive amount of cognitive power
 accessible through the Internet, people ready and willing to tackle difficult
 problems. The same is true for infrastructure issues, and "government officials
 should release organizational information whenever society is more effective
-than terrorists at utilizing it" \autocite{dangerous}. This level of
+than terrorists at utilizing it". This level of
 transparency could both force utilities to "internalize more fully the costs of
-attacks" \autocite{dangerous} and encourage more self-interested regulatory
+attacks" and encourage more self-interested regulatory
 action to protect from attack in the first place.
 
 Attacks are so rare that as a private company operating a piece of
 infrastructure, it doesn't often make business sense to spend money on
 protection. The government lacks the regulatory power to make these industries
-account for the full social costs of these events - and up to 90\% of the
+account for the full social costs of these events - and up to 90% of the
 nation's critical infrastructure is privately owned and operated
-\autocite{freedom}. Private industry, even when operating publicly owned
+([source][freedom]). Private industry, even when operating publicly owned
 infrastructure, lacks strong incentives to properly protect it.
 
 In computing, open source cryptographic algorithms are more trusted and widely
@@ -388,7 +385,7 @@ Civil and computer engineers come from different backgrounds and don't have much
 shared history. The two industries have evolved with very different major
 players and cultures.
 
-#### Traditional Civil Engineering Ethos}
+#### Traditional Civil Engineering Ethos
 
 The first 20 years after monitoring systems were first widely deployed can be
 described as being embodied by a traditional civil engineering ethos. With the
@@ -485,11 +482,11 @@ support.
 
 Computer network monitoring systems are typically monitoring other software
 system and the monitoring is inherently very tightly woven with the application
-itself. This allows for a passive monitoring approach that gathers its data
-directly from the application, or by politely eavesdropping on network activity.
-This isn't possible in non-computing infrastructure where the "application" is
-something physical, without any explicit bits associated with it
-\autocite{reliable-grid-info}.
+itself. This allows for a [passive monitoring][reliable-grid-info] approach that
+gathers its data directly from the application, or by politely eavesdropping on
+network activity. This isn't possible in non-computing infrastructure where the
+"application" is something physical, without any explicit bits associated with
+it.
 
 Both types of monitoring accomplish the same end goal, but passive monitoring in
 computer networks is used primarily in an attempt to lower the performance
@@ -503,13 +500,13 @@ techniques.
 ### State of UI in SCADA
 
 The purpose of SCADA is to "allow operators to monitor and control systems"
-\autocite{scada-vulnerabilities}, so the presentation of data is a critical
+([source][scada-vulnerabilities]), so the presentation of data is a critical
 component that should receive equal consideration with sensor hardware and data
 security. Unfortunately, this hasn't been the case for many SCADA developers. A
-2005 safety study by the National Transportation Safety Board \autocite{ntsb} on
-SCADA for liquid pipelines found that inconsistent and problematic user
-interfaces were the cause of many accidents, challenging the claims that the
-systems are a success. The study concluded:
+2005 [safety study][ntsb] by the National Transportation Safety Board on SCADA
+for liquid pipelines found that inconsistent and problematic user interfaces
+were the cause of many accidents, challenging the claims that the systems are a
+success. The study concluded:
 
 > "The principle issue in the SCADA-related accidents investigated by the Safety
 Board was the delay in a controller's recognizing a leak and beginning efforts
@@ -519,7 +516,7 @@ ability to accurately evaluate SCADA data during abnormal operating conditions,
 the appropriateness of controller actions, the ability of the controller and the
 supervisor to make appropriate decisions, and the effectiveness of training in
 preparing controllers to interpret the SCADA system and react to abnormal
-conditions" \autocite{ntsb}.
+conditions."
 
 This highlights the importance of good interface design, as most of these issues
 are simply the result of controllers not understanding the information presented
@@ -528,9 +525,10 @@ incorrectly, dismiss repeated warnings because of frequent false positives, and
 those who can't get a good sense of the true health of the system in the field
 based on tabular data.
 
-![SCADA][http://things.rhubarbtech.com/images/infrastructure-monitoring/scada.png]
-}{}{A screenshot from a SCADA system for monitoring a
-pipeline \autocite{ntsb}.}
+![SCADA](http://things.rhubarbtech.com/images/infrastructure-monitoring/scada.png)
+
+*A screenshot from a SCADA system for monitoring a pipeline (from the NTSB
+study)*
 
 The study examined the role of SCADA systems in 13 pipeline accidents from 1992
 to 2004, and found that a SCADA system contributed to the accident in some form
@@ -545,7 +543,7 @@ ignored for a long time by an operator who has tuned them out, or a misdiagnosis
 of the root cause. As many as possible of these false positives should be
 handled by a low level of automatic control operations done by the computer,
 even if it means stopping system components for a brief period when not strictly
-necessary. Recent research on data center fingerprinting \autocite{fingerprint},
+necessary. Recent research on [data center fingerprinting][fingerprint],
 which identifies new incidents based on data collected during historical events,
 could be applied to such automatic failure identification and repair. The human
 operator should be brought into the loop only when a bigger system problem is
@@ -556,21 +554,21 @@ also required to minimize re-training and misinterpretation. This hasn't always
 happened, primarily because a lot of SCADA system development "occurred
 company-by-company due to the unique characteristics of each company's operating
 practices and other computer systems. For example, one company may use red to
-show an operating pump while another may use green" \autocite{ntsb}. Consistent,
+show an operating pump while another may use green" (from the NTSB study). Consistent,
 appropriate use of color is one of the major tenants of good user interface
 design and all existing displays should be evaluated to make sure they meet this
 standard. Other UI improvements that the NTSB suggest are:
 
 * Real-time comparison with historical data to recognize abnormalities,
-            especially in areas the operator many not be explicitly trained.
+    especially in areas the operator many not be explicitly trained.
 * Integrate company safety procedures into control systems to guide
-            operators down the correct resolution path.
+    operators down the correct resolution path.
 * Extended operator training - operators should be experts in the
-            system.
+    system.
 * Increase contrast between foreground and background colors.
 * Minimize the quantity of colors and make sure their meaning is
-            consistent between screens.
-* Target 40\% blank space on screens to minimize clutter.
+    consistent between screens.
+* Target 40% blank space on screens to minimize clutter.
 
 ### User Interfaces & User Experience
 
@@ -583,13 +581,13 @@ virtual world instead of buttons and charts. Research regarding
 different physical interfaces for computers, and the effect of integrating
 virtual elements with the real world found that they can "create a system that
 leverages the human mind's pattern recognition skills to detect anomalies on a
-live running network" \autocite{fps}.
+live running network" ([source][fps]).
 
 Naturally, due to the popularity of computer and video games among computer
-network operators and researchers, a few attempts have been made to create such
+network operators and researchers, a few [attempts][fps] have been made to create such
 an immersive visualization for network monitoring. The primary challenge is to
 carefully select "input and output metaphors within [the] real time 3D virtual
-environment," \autocite{fps} and it proved especially challenging because there
+environment," and it proved especially challenging because there
 is no obvious analogous physical element for network constructs - the activity
 is all bits flowing on wires. Physical infrastructure monitoring is not bothered
 as much by this issue, since at the root of most infrastructure monitoring task
@@ -608,7 +606,7 @@ In the control center, they're sitting in an office chair as always.
 
 ### Serious Games
 
-The idea of serious games is a  good example of a daring use of existing
+The idea of serious games is a good example of a daring use of existing
 interfaces in a novel way.
 
 >"The term serious games has developed as a rebuttal
@@ -616,7 +614,7 @@ to the idea that games are purely for leisure purposes and its use goes back to
 Plato's work on the importance of play as a teaching method. Recently, the
 serious games movement has emerged from academic communities identifying the
 power of play for supporting non-leisure activities such as education and
-training" \autocite{augmented-serious}.
+training." ([source][augmented-serious])
 
 Beyond training, serious games can also be used for monitoring and interacting
 with live environments in real-time. Using a first- or third-person viewpoint
@@ -637,19 +635,22 @@ entertainment and creative expression, game developers are creating increasingly
 detailed worlds. Some of the important features that could be applied to
 infrastructure management are highlighted by a few recent titles:
 
-![Mirror's Edge][http://things.rhubarbtech.com/images/infrastructure-monitoring/mirrorsedge.jpg]
+![Mirror's Edge](http://things.rhubarbtech.com/images/infrastructure-monitoring/mirrorsedge.jpg)
 
-* Valve's Half-Life 2 (2004) - provides advanced real-time physics
-    simulation that could be used for combining real-time sensor data and
-    prediction models.
-* Electronic Arts' Mirror's Edge (2007) - includes expansive, detailed
-    urban environments that could be used for building and bridge inspection.
-* Gas Powered Games' Supreme Commander 2 (2010) - gives top-down
-    strategic control of thousands of military units, which could be used for
-    routing traffic on busy streets, waterways and in the air.
-* Rail Simulator Development's RailWorks 2 (2010) - gives complete
-    control of accurately modeled passenger and cargo trains. With a connection
-    to a SCADA system, this game could be useful almost out of the box.
+* Valve's [Half-Life 2](http://orange.half-life2.com/) (2004) - provides
+    advanced real-time physics simulation that could be used for combining
+    real-time sensor data and prediction models.
+* Electronic Arts' [Mirror's Edge](http://www.ea.com/games/mirrors-edge) (2007) -
+    includes expansive, detailed urban environments that could be used for
+    building and bridge inspection.
+* Gas Powered Games' [Supreme Commander 2](http://www.supremecommander2.com/)
+    (2010) - gives top-down strategic control of thousands of military units,
+    which could be used for routing traffic on busy streets, waterways and in
+    the air.
+* Rail Simulator Development's [RailWorks 2](http://www.railsimulator.com/)
+    (2010) - gives complete control of accurately modeled passenger and cargo
+    trains. With a connection to a SCADA system, this game could be useful
+    almost out of the box.
 
 Most state-of-the-art game engines (the software that renders the world and
 controls the behavior of objects in it) are not available to the public
@@ -659,31 +660,33 @@ because of large communities of gamers and developers creating "mods" that
 twist the game engine into completely new forms. Some examples that suggest the
 possibilities for infrastructure management mods include:
 
-* Gary's Mod (for Half-Life 2) - strips down the game to its core
-        physics engine to allow creating devices as varied as operational
-        submarines, construction cranes and rocket ships.
-* Empires (for Half-Life 2) - extends the formerly single-play,
-        first-person only game to include a commander with a top-down view of
-        the battlefield who can give orders to players exploring the world. This
-        style of game closely matches the management hierarchy of many
-        infrastructure operators.
-* BusMod (for Grand Theft Auto 4) - in a game built for causing
-        violent mayhem in an urban environment, this mod highlights a more
-        mundane feature of the city and lets the player drive a bus route.
+* [Gary's Mod](http://www.garrysmod.com/) (for
+    [Half-Life 2](http://orange.half-life2.com/)) - strips down the game to
+    its core physics engine to allow creating devices as varied as operational
+    submarines, construction cranes and rocket ships.
+* [Empires](http://www.empiresmod.com/drupal/) (for Half-Life 2) - extends the
+    formerly single-play, first-person only game to include a commander with a
+    top-down view of the battlefield who can give orders to players exploring
+    the world. This style of game closely matches the management hierarchy of
+    many infrastructure operators.
+* [BusMod](http://www.gtagaming.com/downloads/gta-iv/vehicle-mods/2604)
+    (for [Grand Theft Auto 4](http://www.rockstargames.com/IV/)) - in a game
+    built for causing violent mayhem in an urban environment, this mod
+    highlights a more mundane feature of the city and lets the player drive a
+    bus route.
 
 A few open-source game engines are available, if the modding interface isn't
-sufficient for any specific monitoring task. Some research has been done on
-using one of these engines for a computer network monitoring task
-\autocite{fps}.
+sufficient for any specific monitoring task. [Some research][fps] has been done
+on using one of these engines for a computer network monitoring task.
 
 ## Conclusion
 
 Civil infrastructure is a notoriously underfunded part of our society. The
-ASCE's yearly infrastructure report cards \autocite{report-card} have been
-giving failing grades for over a decade, yet overall investment in
-infrastructure hasn't risen. The improvements proposed in this paper clearly
-cost money, something which few infrastructure managers have available for
-non-critical upgrades.
+ASCE's yearly infrastructure [report cards][report-card] have been giving
+failing grades for over a decade, yet overall investment in infrastructure
+hasn't risen. The improvements proposed in this paper clearly cost money,
+something which few infrastructure managers have available for non-critical
+upgrades.
 
 However, remember that the promise of real-time monitoring and SCADA was a
 decrease in total lifetime cost of infrastructure. This promise was largely
@@ -695,11 +698,32 @@ falling behind like the rest of America's infrastructure without proper
 consideration.
 
 The next evolution in monitoring must consider the true target of the system:
-the users.
+the users. Julian Bleecker's [Design Fiction][design-fiction] essay gets it right:
 
 >"Engineering makes things for end-users. Accounting makes things for markets,
-demographics and consumers. Design makes things for people"
-\autocite{design-fiction}.
+demographics and consumers. Design makes things for people."
 
 Engaging interfaces are not reserved exclusively for entertainment
 and pleasure, and neither is good design.
+
+[pipeline]: http://ieeexplore.ieee.org/xpl/freeabs_all.jsp?arnumber=4563333
+[augmented]: http://ieeexplore.ieee.org/xpl/freeabs_all.jsp?arnumber=568871
+[augmented-serious]: http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.158.7434
+[fps]: http://dblp.uni-trier.de/db/conf/netgames/netgames2006.html#HarropA06
+[design-fiction]: http://www.nearfuturelaboratory.com/2009/03/17/design-fiction-a-short-essay-on-design-science-fact-and-fiction/
+[people-facts]: http://ssrn.com/paper=777045
+[dangerous]: http://www.informaworld.com/smpp/content~db=all~content=a919474402
+[freedom]: http://heinonline.org/HOL/LandingPage?collection=journals&handle=hein.journals/aulr53&div=15&id=&page=
+[nagios]: http://portal.acm.org/citation.cfm?id=1272685
+[civil-health]: http://shm.sagepub.com/content/2/3/257.short
+[structural-health]: http://books.google.com/books?hl=en&lr=&id=RPXU1vBhIFMC&oi=fnd&pg=PA123&dq=Health+Monitoring+Framework+for+Bridges+and+Civil+Infrastructure&ots=_LI3GPLQF0&sig=Slwwo9mnAB0rGg68Yh88RqLgoYc#v=onepage&q=Health%20Monitoring%20Framework%20for%20Bridges%20and%20Civil%20Infrastructure&f=false
+[smart-sensors]: http://onlinelibrary.wiley.com/doi/10.1002/stc.48/abstract
+[dist-automation]: http://ieeexplore.ieee.org/xpl/freeabs_all.jsp?arnumber=560831
+[wide-area-power]: http://ieeexplore.ieee.org/xpl/freeabs_all.jsp?arnumber=1259313
+[scada-vulnerabilities]: http://portal.acm.org/citation.cfm?id=1047846.1047872
+[scada-security]: http://www.sciencedirect.com/science/article/B6V8G-4JXRWXY-1/2/b9d08f2cdd9717ffab6c60e9b7d658f1
+[reliable-grid-info]: http://dblp.uni-trier.de/db/conf/eagc/eagc2004.html#HolubKMR04
+[ntsb]: www.ntsb.gov/publictn/2005/ss0502.pdf
+[fingerprint]: http://dblp.uni-trier.de/db/conf/eurosys/eurosys2010.html#BodikGFWA10
+[report-card]: http://www.infrastructurereportcard.org/
+[ganglia]: http://monitor.millennium.berkeley.edu/
