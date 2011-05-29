@@ -27,7 +27,7 @@ participate in multiple games simultaneously, but with only one State in each
 game. The player assigns a name, research budget (which effects the cost of new
 technology) and a map to the new State.
 
-![Models](/images/threephase/city.png)
+![Models](http://things.rhubarbtech.com/images/threephase/city.png)
 
 ## Game/Country
 
@@ -110,7 +110,7 @@ of their generators, graphed in order of their average cost. The ideal,
 cost-minimizing strategy would run the generators in this order - cheapest
 first.
 
-![Average Cost Curve](/images/threephase/curve.png)
+![Average Cost Curve](http://things.rhubarbtech.com/images/threephase/curve.png)
 
 ## Average Cost Curve
 
@@ -142,7 +142,7 @@ and wind. In the current implementation, the block types and indices are chosen
 This can be improved using map generation algorithms to create more
 natural and useful land organization - mountain ranges, rivers, etc.
 
-![HUD](/images/threephase/overview.png)
+![HUD](http://things.rhubarbtech.com/images/threephase/overview.png)
 
 A screenshot of the State "heads-up display", which shows a map of the natural
 landscape, where the cities fall in relationship to natural resources, and
@@ -162,7 +162,7 @@ by finding all blocks within a certain radius of the City, scaled based on the
 population. Larger cities will extend further out from their center point, so
 they can be expected to utilize a wider area of natural resources.
 
-![Map](/images/threephase/discount.png)
+![Map](http://things.rhubarbtech.com/images/threephase/discount.png)
 
 On the in-game map, the natural resource indices of the land beneath each City
 can have an effect on the price of local generation. Blocks within a certain
@@ -228,7 +228,7 @@ hierarchy, allowing them to share the flexibility enjoyed by generators.
 power storage devices, and other component classes all have
 these attributes.
 
-![Technical Components](/images/threephase/technical-components.png)
+![Technical Components](http://things.rhubarbtech.com/images/threephase/technical-components.png)
 
 Generators, transmission lines and power storage devices all inherit from a
 common parent type - the `TechnicalComponent`. This allows the game to share

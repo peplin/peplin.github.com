@@ -43,7 +43,7 @@ geographically distributed edge servers to which the clients connect. Since
 feasible over a WAN (due to the many different router configurations between
 the source and destination), the stream is duplicated once per end user.
 
-![Centralized](/images/astral/centralized.png)
+![Centralized](http://things.rhubarbtech.com/images/astral/centralized.png)
 
 In contrast, a peer-to-peer approach could take the producer's stream and seed
 it into the network at different (potentially geographically dispersed) points.
@@ -52,7 +52,7 @@ viewing to others, using a fairly determined portion of their available
 bandwidth. A real-world distribution would look much like a telephone fan-out
 system for school and office closings.
 
-![Idea](/images/astral/idea.png)
+![Idea](http://things.rhubarbtech.com/images/astral/idea.png)
 
 ## Design & Architecture
 
@@ -84,7 +84,7 @@ bandwidth limitations of common household Internet connections limit the number
 of forwarded streams per node to one or two, creating an interesting network
 graph of consumer chains.
 
-![Architecture](/images/astral/architecture.png)
+![Architecture](http://things.rhubarbtech.com/images/astral/architecture.png)
 
 After installing the Astral client, the user visits the URL of astral-web in a
 browser. This displays a list of all available streams. Each stream has a
@@ -215,7 +215,7 @@ interface is extremely simple; it is very similar to hitting play YouTube. The
 Flash applet also natively supports streaming from any attached device, be it a
 USB webcam or Firewire HD camera.
 
-![Stream Uploading](/images/astral/source-view.png)
+![Stream Uploading](http://things.rhubarbtech.com/images/astral/source-view.png)
 
 ### User Interface for Selecting Stream
 
@@ -314,7 +314,7 @@ Interestingly, the visualizations on each node are not identical due to their
 different viewpoint of the network, and thus incomplete information.
 Purposefully, none of the nodes has complete global knowledge.
 
-![Visualization](/images/astral/visualization.png)
+![Visualization](http://things.rhubarbtech.com/images/astral/visualization.png)
 
 ## Conclusion
 

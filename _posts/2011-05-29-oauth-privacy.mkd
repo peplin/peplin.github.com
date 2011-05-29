@@ -298,7 +298,7 @@ stored scope. There is no way for the third-party to access a resource to which
 the user did not specifically grant access (unless there are security holes in
 the resource server).
 
-![Facebook OAuth](/images/oauth/fb.png)
+![Facebook OAuth](http://things.rhubarbtech.com/images/oauth/fb.png)
 
 This is a screenshot of the OAuth access grant for the New York Times Facebook
 application. Facebook informs users of the resources requested by the
@@ -324,7 +324,7 @@ access for previously authorized applications:
 > "To revoke access to this linked service and for more information visit the
 Sync section of your MySpace account."
 
-![MySpace OAuth](/images/oauth/myspace.png)
+![MySpace OAuth](http://things.rhubarbtech.com/images/oauth/myspace.png)
 
 This is a screenshot of the extended permissions on MySpace OAuth access grant
 page. MySpace added proprietary permissions parameters to the original
@@ -349,7 +349,7 @@ reasonable (but dangerously incorrect) for a user to assume that their data is
 still covered by the Facebook privacy policy, and at no greater risk of exposure
 after authorizing the application for access.
 
-![Facebook OAuth 2](/images/oauth/fb-noprivacy.png)
+![Facebook OAuth 2](http://things.rhubarbtech.com/images/oauth/fb-noprivacy.png)
 
 This is especially important since once a user's data is transferred, it could
 be stored indefinitely on the third-party servers. By granting OAuth access to
@@ -497,7 +497,7 @@ the user should be shown a prominent warning and a description of the specific
 discrepancies. The user should be able to manually grant access even in this
 case.
 
-![Facebook OAuth Mockup](/images/oauth/fb-privacy-BAD.png)
+![Facebook OAuth Mockup](http://things.rhubarbtech.com/images/oauth/fb-privacy-BAD.png)
 
 This is a mockup of an extended OAuth access page with a privacy policy
 mismatch. If the user's privacy settings do not match the usage requested by the
