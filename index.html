@@ -50,7 +50,7 @@ title: Christopher Peplin
 <div class="grid_4"><div class="block">
     <h2><a href="/posts/">Posts <span class="subheader">more</span></a></h2>
     <ul class="posts">
-    {% for post in site.posts limit: 8 %}
+    {% for post in site.posts limit: 7 %}
         <li><span class="date">{{ post.date | date: "%B %e, %Y" }}</span>
             <a href="{{ post.url }}">{{ post.title }}</a>
         </li>
