@@ -1,6 +1,7 @@
 require 'rubygems'
 require 'rake'
 require 'fileutils'
+require 'date'
 
 desc "Draft a new post"
 task :new do
@@ -8,7 +9,7 @@ task :new do
   name = STDIN.gets.chomp
   system("git checkout -b #{name}")
 
-  path = "_posts/#{name}.mkd"
+  path = "_posts/#{Date.today}-#{name}.mkd"
   File.open(path, 'a') do |f|
     f.puts "---"
     f.puts "layout: post"
