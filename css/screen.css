@@ -80,6 +80,11 @@ code {
   font-size: 14px;
 }
 
+blockquote {
+  margin-left: 20px;
+  font-style: italic;
+}
+
 /* Sections */
 
 ul.nav {
@@ -255,6 +260,17 @@ ul.code li:last-child {
   margin-top: 10px;
 }
 
+#map {
+  margin-left: auto;
+  margin-right: auto;
+  height: 300px;
+  width: 500px;
+}
+
+.audioplayer {
+  margin: 10px auto;
+}
+
 /* Photo grid */
 
 #photo-grid h2 {
@@ -322,5 +338,11 @@ ul.posts {
 
 .date {
   color: #888;
+}
+
+.post img, .post iframe {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 

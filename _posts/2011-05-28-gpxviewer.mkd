@@ -1,0 +1,74 @@
+---
+layout: post
+title: Viewing GPX files in Embedded Google Maps
+permalink: /2011/05/gpxviewer/
+---
+
+While making [field recordings](/2011/05/august23-audio/) for the
+[August 23, 1966](/2011/05/august23-1966/) project two years ago, I carried
+along a small GPS logger. I sat on the resulting
+[GPX](http://en.wikipedia.org/wiki/GPS_eXchange_Format) file while the project
+wrapped up, but now that I've posted an in-depth recap of the project I thought
+linking the location with the audio files would be an interesting experiment.
+
+A quick search led me to [Kaz Okuda's](http://notions.okuda.ca/) project on
+Google Code, [gpxviewer](http://code.google.com/p/gpxviewer/) - a perfect match.
+From the project's page:
+
+> The GPX viewer is a 100% client-side JavaScript GPX file viewer that uses
+Google Maps to map waypoints and tracklogs.
+
+> GPX files are a standard GPS data format that is supported by many software
+applications. It is an XML based data format which lends itself nicely to being
+parsed in JavaScript.
+
+> Since it is written entirely in JavaScript, this script can be added to any web
+page with minimal effort and little or no server code. Just copy a GPX file to
+your web site, make a web page with an embedded Google Map, include the script,
+and initialize it.
+
+The script works fine, but it hasn't been updated since 2007 and is only
+compatible with the now deprecated Google Maps API v2. I
+[forked](https://github.com/peplin/gpxviewer) the project to
+GitHub and added support for version 3 of the Google Maps API. I also changed
+the coding style of the library has been changed a bit, for clarity.
+
+(Kaz, I hope you don't mind - I'd be happy to get this work merged back in with
+your project. Google Code just doesn't lend itself well to parallel
+development.)
+
+## Usage
+
+With jQuery, using the library is as simple as:
+
+{% highlight js %}
+function loadGPXFileIntoGoogleMap(map, filename) {
+    $.ajax({url: filename,
+        dataType: "xml",
+        success: function(data) {
+          var parser = new GPXParser(data, map);
+          parser.setTrackColour("#ff0000");
+          parser.setTrackWidth(5);
+          parser.setMinTrackPointDelta(0.001);
+          parser.centerAndZoom(data);
+          parser.addTrackpointsToMap();
+          parser.addWaypointsToMap();
+        }
+    });
+}
+
+$(document).ready(function() {
+    var mapOptions = {
+      zoom: 8,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    var map = new google.maps.Map(document.getElementById("map"),
+        mapOptions);
+    loadGPXFileIntoGoogleMap(map, "myTracks.gpx");
+});
+{% endhighlight %}
+
+## Source Code
+
+* [Fork with Google Maps API v3 Compatibility](https://github.com/peplin/gpxviewer)
+* [Original Google Code Project](http://code.google.com/p/gpxviewer/)

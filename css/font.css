@@ -1,4 +1,10 @@
 @font-face {
     font-family: Museo-Slab;
+    /* http://code.google.com/p/chromium/issues/detail?id=31833
+    The header fon't doesn't properly bold in Chrome, but this workaround causes
+    the kerning to be kind of screwed up. I'll leave it as it is for now.
+    font-weight: normal;
+    font-style: normal;
+    */
     src: url('fonts/museo-slab-500.otf');
 }

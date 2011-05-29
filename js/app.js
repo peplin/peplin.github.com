@@ -8,10 +8,11 @@ $(document).ready(function() {
 
     loadPhotoGrid();
     loadGithubDetails();
+    loadAudioPlayers();
 });
 
 function loadPhotoGrid() {
-    if($("photo-grid")) {
+    if($("#photo-grid").length > 0) {
         $.ajax({url: "http://api.flickr.com/services/rest",
             data: {
                 method: "flickr.people.getPublicPhotos",
@@ -85,5 +86,36 @@ function sortGithubRepositories() {
     var list = $("ul.code");
     $.each(repos, function(i, li){
         list.append(li);
+    });
+}
+
+function loadAudioPlayers() {
+    $("ul.audio-playlist").each(function(i, playlist) {
+        $(playlist).hide();
+        var entries = [];
+        $(playlist).find("li a").each(function(i, entry) {
+            entries.push({
+                name: $(entry).text(),
+                mp3: $(entry).attr("href"),
+                free: true
+            });
+        });
+        var playlist = new Playlist($(playlist).attr("data-id"),
+            entries,
+            {swfPath: "/js/vendor/jPlayer",
+                // errorAlerts: true,
+                solution: "flash",
+                supplied: "mp3",
+                ready: function() {
+                    playlist.displayPlaylist();
+                    playlist.playlistInit(false);
+                },
+                ended: function() {
+                    playlist.playlistNext();
+                },
+                play: function() {
+                    $(this).jPlayer("pauseOthers");
+                }
+        });
     });
 }

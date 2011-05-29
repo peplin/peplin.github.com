@@ -1,0 +1,50 @@
+---
+layout: post
+title: The Multi-touch Table of August 23, 1966
+permalink: /2011/05/august23-multitouch/
+---
+
+This post is part of a series describing the
+[August 23, 1966](/2011/05/august23/) project.
+
+The multi-touch table created for the project is a rear diffused illumination
+design, and is housed in a core‐ten steel cabinet with recessed cooling fans and
+an access panel on the rear vertical wall. The touch surface is a 1/2"
+polycarbonate sheet with an adhesive projection film applied to the underside
+(acting as a diffuser for the projected image).
+
+Infrared light is projected at the diffuser from below (inside the cabinet) the
+touch surface. The table used an array of six multiple LED lamps. When an object
+touches the surface it reflects more light than the diffuser or objects far away
+from the surface. The change in light is detected by a webcam placed inside the
+cabinet, and the signal processed by our software as user input.
+
+## Multi-touch Software
+
+The multi-touch table used [The Beta](http://ccv.nuigroup.com/), from the NUI
+Group, to process the video stream from the webcam. The Beta, tbeta for short,
+is an open source tool that analyzes video to find tracking data for objects it
+recognizes as fingers or cursor devices. The software provides a great deal of
+control over the video parameters (high-pass filter, amplification, threshold,
+etc.) that adapts well to many types of multi-touch displays.
+
+Tbeta outputs the tracking data using the [TUIO protocol](http://tuio.org/),
+which is an open framework for receiving input events in various programming
+environments. For this project, the TUIO events sent by tbeta were received
+using the open source Java TUIO library in a
+[Processing sketch](https://github.com/peplin/august23/blob/master/src/gallery/MultitouchClient/TuioController.pde).
+
+The [Twoverse post](/2011/05/august23-twoverse/) includes some screenshots of
+the user interface displayed on the multi-touch table.
+
+### Results
+
+Despite careful calibration and testing in our workspace, the final move to the
+gallery threw the multi-touch table out of alignment and with the remaining
+time, we were unable to make it sufficiently responsive enough to user
+interaction. The distribution of IR light on the table's surface was difficult
+to control, and hot spots had the habit of throwing the exposure of the webcam
+off and confusing Tbeta.
+
+Although we used the surface as a display, gallery visitors had to use a
+traditional mouse to interact with the galaxy.
