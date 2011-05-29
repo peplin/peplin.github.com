@@ -3,12 +3,15 @@ $(document).ready(function() {
       zoom: 8,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };
-    var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+    if($("#map").length) {
+        var map = new google.maps.Map(document.getElementById("map"),
+                mapOptions);
 
-    var gpxFiles = $("a.gpx").get();
-    $.each(gpxFiles, function(i, file) {
-        loadGPXFileIntoGoogleMap(map, $(file).attr("href"));
-    });
+        var gpxFiles = $("a.gpx").get();
+        $.each(gpxFiles, function(i, file) {
+            loadGPXFileIntoGoogleMap(map, $(file).attr("href"));
+        });
+    }
 });
 
 function loadGPXFileIntoGoogleMap(map, filename) {
