@@ -76,6 +76,11 @@ code {
   font-size: 14px;
 }
 
+blockquote {
+  margin-left: 20px;
+  font-style: italic;
+}
+
 /* Sections */
 
 ul.nav {
