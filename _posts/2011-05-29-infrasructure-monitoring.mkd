@@ -4,6 +4,9 @@ title: Monitoring Civil Infrastructure
 permalink: /2011/05/civil-infrastructure-monitoring/
 ---
 
+*A [PDF](http://things.rhubarbtech.com/infrastructure-monitoring/infra-monitoring-report.pdf)
+of this post is available*
+
 ## Introduction
 
 Civil engineers were some of the first to take advantage of the information
