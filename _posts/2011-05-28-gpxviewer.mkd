@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Viewing GPX files in Embedded Google Maps
+permalink: /2011/05/gpxviewer/
 ---
 
 While making [field recordings](/2011/05/august23-audio/) for the
