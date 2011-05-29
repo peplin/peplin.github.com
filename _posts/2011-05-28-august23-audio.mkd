@@ -17,8 +17,64 @@ These recordings were made in and around the University of Michigan campus. I
 sought out the sounds of wind passing through narrow walkways, the hum of
 machinery, and other background sounds.
 
-<a href="/files/august/audio.gpx" class="gpx"></a>
 <div id="map"></div>
+
+<a href="/files/august/audio.gpx" class="gpx"></a>
+
+<ul class="audio-playlist" data-id="1">
+    <li><a href="http://things.rhubarbtech.com/august23/audio/ambient1.mp3">Ambient 1</a></li>
+    <li><a href="http://things.rhubarbtech.com/august23/audio/ambient2.mp3">Ambient 2</a></li>
+    <li><a href="http://things.rhubarbtech.com/august23/audio/ambient3.mp3">Ambient 3</a></li>
+    <li><a href="http://things.rhubarbtech.com/august23/audio/ambient4.mp3">Ambient 4</a></li>
+    <li><a href="http://things.rhubarbtech.com/august23/audio/ambient5.mp3">Ambient 5</a></li>
+    <li><a href="http://things.rhubarbtech.com/august23/audio/ambient6.mp3">Ambient 6</a></li>
+    <li><a href="http://things.rhubarbtech.com/august23/audio/ambient7.mp3">Ambient 7</a></li>
+</ul>
+
+{% assign jplayer-id = "1" %}
+{% include jplayer.html %}
 
 ## Headset Narration
 
+<ul class="audio-playlist" data-id="2">
+    <li><a href="http://things.rhubarbtech.com/august23/audio/narration1.mp3">Narration 1</a></li>
+    <li><a href="http://things.rhubarbtech.com/august23/audio/narration2.mp3">Narration 2</a></li>
+    <li><a href="http://things.rhubarbtech.com/august23/audio/narration3.mp3">Narration 3</a></li>
+    <li><a href="http://things.rhubarbtech.com/august23/audio/narration4.mp3">Narration 4</a></li>
+    <li><a href="http://things.rhubarbtech.com/august23/audio/narration5.mp3">Narration 5</a></li>
+    <li><a href="http://things.rhubarbtech.com/august23/audio/narration6.mp3">Narration 6</a></li>
+    <li><a href="http://things.rhubarbtech.com/august23/audio/narration7.mp3">Narration 7</a></li>
+    <li><a href="http://things.rhubarbtech.com/august23/audio/narration8.mp3">Narration 8</a></li>
+    <li><a href="http://things.rhubarbtech.com/august23/audio/narration9.mp3">Narration 9</a></li>
+</ul>
+
+
+{% assign jplayer-id = "2" %}
+{% include jplayer.html %}
+
+## Mission Control Instructions
+
+<ul class="audio-playlist" data-id="3">
+    <li><a href="http://things.rhubarbtech.com/august23/audio/sequence1.mp3">Sequence 1</a></li>
+    <li><a href="http://things.rhubarbtech.com/august23/audio/sequence2.mp3">Sequence 2</a></li>
+    <li><a href="http://things.rhubarbtech.com/august23/audio/sequence3.mp3">Sequence 3</a></li>
+    <li><a href="http://things.rhubarbtech.com/august23/audio/sequence4.mp3">Sequence 4</a></li>
+    <li><a href="http://things.rhubarbtech.com/august23/audio/sequence5.mp3">Sequence 5</a></li>
+</ul>
+
+{% assign jplayer-id = "3" %}
+{% include jplayer.html %}
+
+## Miscellaneous
+
+<ul class="audio-playlist" data-id="g">
+    <li><a href="http://things.rhubarbtech.com/august23/audio/grabbag1.mp3">Misc. 1</a></li>
+    <li><a href="http://things.rhubarbtech.com/august23/audio/grabbag2.mp3">Misc. 2</a></li>
+    <li><a href="http://things.rhubarbtech.com/august23/audio/grabbag3.mp3">Misc. 3</a></li>
+    <li><a href="http://things.rhubarbtech.com/august23/audio/grabbag4.mp3">Misc. 4</a></li>
+    <li><a href="http://things.rhubarbtech.com/august23/audio/grabbag5.mp3">Misc. 5</a></li>
+    <li><a href="http://things.rhubarbtech.com/august23/audio/grabbag6.mp3">Misc. 6</a></li>
+</ul>
+
+{% assign jplayer-id = "4" %}
+{% include jplayer.html %}

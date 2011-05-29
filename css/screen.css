@@ -258,6 +258,12 @@ ul.code li:last-child {
   width: 500px;
 }
 
+.audioplayer {
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* Photo grid */
 
 #photo-grid h2 {
