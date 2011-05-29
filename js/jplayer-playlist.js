@@ -110,13 +110,21 @@ Playlist.prototype = {
         $(this.cssSelector.jPlayer).jPlayer("play");
     },
     playlistNext: function() {
-        var index = (this.current + 1 < this.playlist.length) ? this.current + 1 : 0;
-        this.playlistChange(index);
+        var index = this.current + 1;
+        if(index < this.playlist.length) {
+            this.playlistChange(index);
+        } else {
+            this.playlistChange(0);
+            $(this.cssSelector.jPlayer).jPlayer("stop");
+        }
     },
     playlistPrev: function() {
-        var index = (this.current - 1 >= 0) ? this.current - 1 : this.playlist.length - 1;
-        this.playlistChange(index);
+        var index = this.current - 1;
+        if(index >= 0) {
+            this.playlistChange(index);
+        } else {
+            this.playlistChange(0);
+            $(this.cssSelector.jPlayer).jPlayer("stop");
+        }
     }
 };
-
-
