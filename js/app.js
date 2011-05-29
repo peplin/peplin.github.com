@@ -103,7 +103,7 @@ function loadAudioPlayers() {
         var playlist = new Playlist($(playlist).attr("data-id"),
             entries,
             {swfPath: "/js/vendor/jPlayer",
-                errorAlerts: true,
+                // errorAlerts: true,
                 solution: "flash",
                 supplied: "mp3",
                 ready: function() {
