@@ -783,10 +783,11 @@ Astral is available as an open source project on
 
 ### Acknowledgements
 
-Thanks to the students in the 18-845 course of Spring 2011 at Carnegie Mellon
-University who kindly review this paper and offered their feedback. Thanks also
-to Professor [David O'Hallaron](http://www.cs.cmu.edu/~droh/) and Kushal Dalmia
-for their help with research for the project over the semester.
+Thanks to the students in the [18-845 course](http://www.ece.cmu.edu/~ece845/)
+of Spring 2011 at Carnegie Mellon University who kindly review this paper and
+offered their feedback. Thanks also to Professor [David
+O'Hallaron](http://www.cs.cmu.edu/~droh/) and Kushal Dalmia for their help with
+research for the project over the semester.
 
 [cluster-monitoring]: http://portal.acm.org/citation.cfm?id=1037150.1037153
 [ganglia]: http://www.sciencedirect.com/science/article/B6V12-4CMHWWX-2/2/b6b44ba67c732867d1c3881c510b2953
