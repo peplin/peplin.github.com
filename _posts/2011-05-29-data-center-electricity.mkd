@@ -3,7 +3,7 @@ layout: post
 title: Data Center Efficiency & Renewable Energy
 ---
 
-*A [PDF](http://things.rhubarbtech.com/data-center-efficiency/dc-efficienty-report.pdf)
+*A [PDF](http://things.rhubarbtech.com/data-center-efficiency/dc-efficiency-report.pdf)
 of this article is available*
 
 ## Abstract
