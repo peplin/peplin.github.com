@@ -25,33 +25,6 @@ automatically. I'll go over the basics of the cookbook if you don't use Chef.
 
 [Chef cookbook]: https://github.com/peplin/asterisk-cookbook
 
-## Caveats
-
-There are a few known issues with this setup.
-
-The Google account you use will appear logged into Google Talk anytime the
-server is running. Messages sent to the server will just get lost in the ether.
-I set up a separate Google account with my Voice number so this wouldn't be an
-issue. If you already have an established Voice number that you don't want to
-change, another option is to create a second Google account for chat only -
-although then you lose the ability to use the inlined chat in Gmail. If anyone
-has a better solution for this, I'd love to know about it.
-
-Incoming calls are somewhat unreliable. Sometimes the phone will ring, but after
-picking it up you just get dead air. My cell phone keeps ringing when this
-happens so I'm still able to pick up the call. It's annoying, however, and I'd
-love to find the root cause.
-
-I suspect that Google's requirement that you hit "1" when accepting a call via
-SIP is the problem. This Asterisk config attempts to do that automatically for
-you, but it took me quite a while to nail down that process and it's most likely
-still not working. Sometimes jabbing "1" when I get dead air seems to wake it
-up, but not every time.
-
-Otherwise, outgoing calls work quite well. The only issue I've ever had is if
-I'm using all of my upstream bandwidth doing something else, but that's not
-unique to Asterisk. Some QoS controls in your router should help out with that.
-
 ## Install the Package
 
 The best place to get the Asterisk package is the official asterisk.org
@@ -203,3 +176,31 @@ Finally, this file links together your Google account (defined previous in the
 
 The last step is to enable Google Talk as an extension in your Google Voice
 account. This should be pretty straightforward.
+
+## Caveats
+
+There are a few known issues with this setup.
+
+The Google account you use will appear logged into Google Talk anytime the
+server is running. Messages sent to the server will just get lost in the ether.
+I set up a separate Google account with my Voice number so this wouldn't be an
+issue. If you already have an established Voice number that you don't want to
+change, another option is to create a second Google account for chat only -
+although then you lose the ability to use the inlined chat in Gmail. If anyone
+has a better solution for this, I'd love to know about it.
+
+Incoming calls are somewhat unreliable. Sometimes the phone will ring, but after
+picking it up you just get dead air. My cell phone keeps ringing when this
+happens so I'm still able to pick up the call. It's annoying, however, and I'd
+love to find the root cause.
+
+I suspect that Google's requirement that you hit "1" when accepting a call via
+SIP is the problem. This Asterisk config attempts to do that automatically for
+you, but it took me quite a while to nail down that process and it's most likely
+still not working. Sometimes jabbing "1" when I get dead air seems to wake it
+up, but not every time.
+
+Otherwise, outgoing calls work quite well. The only issue I've ever had is if
+I'm using all of my upstream bandwidth doing something else, but that's not
+unique to Asterisk. Some QoS controls in your router should help out with that.
+
