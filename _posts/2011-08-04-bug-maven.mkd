@@ -35,7 +35,7 @@ archetype itself - the trickiest part was finding an existing OSGi bundle
 archetype that fit my needs and adding in the Bug Labs libraries.
 
 This is the first archetype I've made, and I'm a little rusty on the internals
-of Maven, so if you have trouble I'd be happy to work through it with yuo - just
+of Maven, so if you have trouble I'd be happy to work through it with you - just
 [file an issue](https://github.com/peplin/buglabs-maven-archetype/issues) in
 the GitHub project.
 
