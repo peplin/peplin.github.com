@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "rdiosync"
+title: Filesystem Music Collection Sync to Rdio
 permalink: /2011/08/rdio-filesystem-collection-sync
 ---
 
