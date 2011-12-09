@@ -1,0 +1,39 @@
+---
+layout: post
+title: chipKIT Compatible Arduino-based Makefile
+permalink: /2011/12/chipkit-arduino-makefile
+---
+
+The [Arduino][] is a great platform for rapid prototyping hardware devices.
+If you need to squeeze a bit more performance out of your project, I've recently
+found the [Digilent chipKIT][] a great drop-in replacement board.
+
+The chipKIT is based on the PIC32 microcontroller (as opposed to the Ardunio's
+Atmel ATmega chips), and thus uses a different toolchain for compiling. The
+folks at Digilent have kindly released a new version of the Arduino IDE renamed
+[MPIDE][] which includes the pic32 compilers and other tools.
+
+If you're not wild about GUI IDEs, there are a few Arduino-compatible Makefiles
+floating around that allow you to build and deploy code from the command line.
+None of these that I've found have supported the chipKIT until now - I've
+published on GitHub an [extended version][GitHub] of Martin Oldfield's
+[Arduino.mk][] that works with the tools provided by MPIDE.
+
+The biggest change is allowing the tool names to be overriden - e.g. you need to
+use `pic32-gcc` instead of `avr-gcc`. To use it, follow Martin's instructions
+but instead of including `Arduino.mk` at the bottom of your Makefile, just
+include `chipKIT.mk` instead.
+
+Thanks for Martin for the well-documented Makefile - this would have taken much
+longer had it not been so clearly explained.
+
+## Source
+
+* Download the chipKIT.mk Makefile from [GitHub][].
+* Check out Martin Oldfield's [original project][Arduino.mk].
+
+[GitHub]: https://github.com/peplin/arduino.mk
+[Arduino.mk]: http://mjo.tc/atelier/2009/02/arduino-cli.html
+[MPIDE]: https://github.com/chipKIT32/chipKIT32-MAX/downloads
+[Digilent chipKIT]: http://www.digilentinc.com/Products/Catalog.cfm?NavPath=2,892&Cat=18
+[Arduino]: https://github.com/peplin/arduino.mk
