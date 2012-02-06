@@ -1,0 +1,101 @@
+---
+layout: post
+title: Maximizing USB Bulk Transfer Throughput
+---
+
+Ever get so stuck on a problem that web searches only lead back to your own
+forum post with the original question? This post is hopefully an end to that for
+some people.
+
+> A few months ago, I ran into a performance problem with USB bulk transfers on
+> the chipKIT, an Arduino-compatible PIC32 microcontroller. I posed this question
+> to the chipKIT and Microchip communities:
+>
+> I'm just getting started with USB programming using the recently released
+> Microchip library on the chipKIT with the network shield. I've tried to learn as
+> much as I can about proper USB programming and it's been good for the most part
+> - however, I'm stuck at a ~75KB/s bulk transfer speed.
+
+At Ford, we created a device for the [OpenXC][] project that spits out discrete
+messages to a host PC over USB as fast as possible. The current strategy is to
+use JSON delimited by newlines sent via a bulk transfer endpoint. I trimmed down
+the GenericUSB example to test the maximum transfer rate of such a device, and
+created a Python receiver for the host (it uses libusb as the underlying USB
+library). The benchmarking code is available at [GitHub][].
+
+On the chipKIT side, the main loop is pretty simple: it continuously writes a 45
+byte JSON message to the USB endpoint:
+
+    while(true) {
+        while(usb.HandleBusy(handleInput));
+        handleInput = usb.GenWrite(DATA_ENDPOINT, messageBuffer, messageSize);
+    }
+
+In Python it's a similar loop that requests a read of some size until it hits
+10MB transferred. This is the actual PyUSB read function that gets called:
+
+    device.read(self.endpoint, self.message_size)
+
+The original question continues:
+
+> If you download the benchmarkUSB.pde sketch to the chipKIT, then run "python
+> receiver.py" it will read 10MB from the device with various "read request" sizes
+> ranging from 64 bytes (one packet) to 1KB.
+>
+> It's my understanding that requesting more data from the host at a time will
+> increase throughput as messaging overhead drops - for some reason, this isn't
+> the case for my code. You'll see as the request size increases the throughput
+> actually drops from 75KB/s to even lower numbers.
+
+## Potential Solutions
+
+The most common answer I found to throughput issues was to increase the amount
+of data requested by the host. This seems like sound advice, but it just wasn't
+fixing the problem for me.
+
+Another bit of advice (from Professor Ed Olson at the University of Michigan)
+was to use asynchronous requests so that multiple USB request blocks (URB) were
+always in flight. I found this enhancement mentioned elsewhere, and it is in
+line with the other potential fix - making sure the USB device is always busy
+sending data.
+
+Unfortunately, switching to asynchronous requests had no effect either - the
+benchmark still showed abysmal throughput on the order of 50 - 70KB/s.
+
+## The Fix
+
+The problem ended up being much simpler and had more to do with one of the core
+design principles of USB. After shelving this issue for a few months, I
+revisited the problem and something caught my eye.
+
+No matter how many bytes were requested on the host, from 64 to 4096, the read
+operation only every returned 45 bytes - one message. USB uses 64 byte packets,
+and it uses a less than 64 byte packet (traditionally but not limited to a zero
+length packet) to indicate the end of a transfer. Were we causing a lot of extra
+overhead by ending every transfer after 45 byets?
+
+I padded out the 45 byte test message I was using to 64 bytes, and now it is
+**much** faster (70KB/s from Python to 650+ KB/s). Previously, we requested 1024
+bytes but got 45, which is less than a full 64 byte packet so of course, the
+transfer was closed.
+
+In hindsight this seems like a pretty important thing to know about USB, but
+being new to driver development, it wasn't obvious and I couldn't find any
+references to how the less-than-max length packet can effect performance
+elsewhere.
+
+The complete fix for OpenXC's use case will be to make sure every message is
+padded out to 64 bytes and to request bulk transfer sizes that are big enough to get
+good throughput but small enough to not be too delayed. I have yet to confirm,
+but my understanding is that if we request a 4KB read and don't mark the end of
+the transfer with a less-than-max length packet, the host device will block
+waiting for the rest of the requested data.
+
+## References
+
+* [Benchmarking code][GitHub]
+* [chipKIT forum post](http://www.chipkit.cc/forum/viewtopic.php?f=7&t=503)
+* [Microchip forum post](http://www.microchip.com/forums/m610161.aspx)
+
+[OpenXC]: http://openxcplatform.com
+[GitHub]: https://github.com/openxc/arduino-transfer-benchmarking
