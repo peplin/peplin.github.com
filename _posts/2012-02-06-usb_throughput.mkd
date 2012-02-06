@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Maximizing USB Bulk Transfer Throughput
+permalink: /2012/02/bulk-usb-throughput
 ---
 
 Ever get so stuck on a problem that web searches only lead back to your own
