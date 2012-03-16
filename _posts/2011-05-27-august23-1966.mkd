@@ -23,7 +23,7 @@ team consisted of four people from three departments:
 * [Jiangang Hao](http://gmbcg.blogspot.com/) (also astrophysics)
 * [John Walters](http://www.johndanielwalters.com/) (art & design, specifically sculpture)
 
-In November 2008, we [proposed](/files/august23/proposal.pdf) that over the next
+In November 2008, we [proposed](/files/august/proposal.pdf) that over the next
 semester we would:
 
 "[...] explore the possibility of a collaborative universe creation
