@@ -1,0 +1,82 @@
+---
+layout: post
+title: "Git with Smart HTTP in Cygwin"
+permalink: /2013/01/cygwin-git-https
+---
+
+Executive summary: In order to use git in [Cygwin](http://www.cygwin.com/) with
+Smart HTTPS style URLs, you need to also install the `libsasl2` and
+`ca-certificates` packages.
+
+I recently set up a new Cygwin environment to test and document the process
+of cloning and using one of the [OpenXC][] repositories from GitHub in
+Windows, since this is a very popular platform for many users.
+Unfortunately many people were being blocked at the very first step, just
+attempting to clone the repository.
+
+GitHub transitioned a little while back to using Smart HTTP by default for all
+public repositories. This is great because even for folks that need to commit
+to repositories, they can skip the SSH key dance if they aren't already using
+that in their daily routine. This seems to be especially the case for Windows
+users.
+
+So for OpenXC, a new users installs Cygwin with the "git" package and
+attempts to clone the repository, and it explodes:
+
+    $ git clone https://github.com/openxc/openxc-android
+    Cloning into 'openxc-android'...
+    /usr/lib/git-core/git-remote-https.exe: error while loading shared
+        libraries: ?: cannot open shared object file: No such file or directory
+
+I was able to figure out which library was missing by using `cygcheck`:
+
+    $ cygcheck /usr/lib/git-core/git-remote-https.exe
+    C:\cygwin\lib\git-core\git-remote-https.exe
+      C:\cygwin\bin\cygcrypto-0.9.8.dll
+        C:\cygwin\bin\cygwin1.dll
+          C:\Windows\system32\KERNEL32.dll
+            C:\Windows\system32\API-MS-Win-Core-RtlSupport-L1-1-0.dll
+            C:\Windows\system32\ntdll.dll
+
+        ... <snip> ...
+
+        C:\cygwin\bin\cyglber-2-4-2.dll
+        C:\cygwin\bin\cygldap-2-4-2.dll
+          C:\cygwin\bin\cygssl-1.0.0.dll
+        C:\cygwin\bin\cygssh2-1.dll
+    cygcheck: track_down: could not find cygsasl2-2.dll
+
+This tells me that `libsasl2` is missing, so install that from the Cygwin
+package manager.
+
+Try the clone again and it still fails:
+
+    $ git clone https://github.com/openxc/openxc-android.git
+    Cloning into 'openxc-android'...
+    error: error setting certificate verify locations:
+      CAfile: /usr/ssl/certs/ca-bundle.crt
+      CApath: none while accessing
+            https://github.com/openxc/openxc-android.git/info/refs
+    fatal: HTTP request failed
+
+By default, Cygwin doesn't have the CA root certificates installed, so
+nothing using SSL will work properly. Install the `ca-certificates` package
+to install those.
+
+Finally, success:
+
+    $ git clone https://github.com/openxc/openxc-android
+    Cloning into 'openxc-android'...
+    remote: Counting objects: 13997, done.
+    remote: Compressing objects: 100% (2759/2759), done.
+    remote: Total 13997 (delta 7568), reused 13989 (delta 7560)
+    Receiving objects: 100% (13997/13997), 9.30 MiB | 1.04 MiB/s, done.
+    Resolving deltas: 100% (7568/7568), done.
+
+This problem was a little difficult to debug because I don't think very many
+people encounter it. Typically when someone installs Cygwin, they also install a
+base set of packages that includes things like `curl`. Well, one of the `curl`
+package's many dependencies are both `libsasl2` and `ca-certificates`, which
+explains why many people do not encounter this problem.
+
+[OpenXC]: http://openxcplatform.com
