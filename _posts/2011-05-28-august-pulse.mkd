@@ -26,13 +26,14 @@ the luminance peaks used for determining the heart rate.
 This project required knowledge of
 [signal processing filters](http://www.swarthmore.edu/NatSci/echeeve1/Ref/FilterBkgrnd/Filters.html)
 and [operational amplifiers](http://web.telia.com/~u85920178/begin/opamp00.htm).
-This [schematic](https://github.com/peplin/august23/raw/master/doc/heartmonitor/schematic-final.png)
+This [schematic](https://github.com/peplin/pulse-oximeter/blob/master/docs/schematic-final.png)
 describes the circut used inside the pulse oximeter. It is also
-provided as a [Fritzing](http://fritzing.org/) [file](https://github.com/peplin/august23/raw/master/doc/heartmonitor/schematic.fz).
+provided as a [Fritzing](http://fritzing.org/)
+[file](https://raw.github.com/peplin/pulse-oximeter/master/docs/schematic.fz).
 
 ![Pulse](http://things.rhubarbtech.com/images/august23/schematic-final.png)
 
-For fun, you can look at the [original schematic](https://github.com/peplin/august23/raw/master/doc/heartmonitor/schematic-draft.jpg).
+For fun, you can look at the [original schematic](https://github.com/peplin/pulse-oximeter/blob/master/docs/schematic-draft.jpg).
 
 ## Implementation
 
@@ -47,9 +48,9 @@ stable heart rate from most visitors in under 15 seconds.
 Our device used the amplified signal of an inexpensive photo-resistor passed
 through a high pass filter and captured by an [Arduino microcontroller](http://www.arduino.cc/).
 The microcontroller
-[fed an averaged luminosity](https://github.com/peplin/august23/blob/master/src/gallery/PulseOximeter/PulseOximeter.pde)
+[fed an averaged luminosity](https://github.com/peplin/pulse-oximeter/blob/master/pox/pox.pde)
 to a [Processing](http://processing.org/)
-[sketch](https://github.com/peplin/august23/blob/master/src/gallery/WiremapClient/HeartbeatDetector.pde)
+[sketch](https://github.com/peplin/pulse-oximeter/blob/master/viewer/viewer.pde)
 on the host computer, which analyzed the signal for peaks. The peaks were then
 converted to a frequency, and passed along to the
 [gallery software](https://github.com/peplin/august23/blob/master/src/gallery/WiremapClient/WiremapClient.pde).
@@ -62,8 +63,8 @@ of the pulse oximeter on a graph.
 
 ## Source Code
 
-* [Arduino program](https://github.com/peplin/august23/blob/master/src/gallery/PulseOximeter/PulseOximeter.pde)
-* [Heartbeat Viewer]()
+* [Arduino program](https://github.com/peplin/pulse-oximeter/blob/master/pox/pox.pde)
+* [Heartbeat Viewer](https://github.com/peplin/pulse-oximeter/blob/master/viewer/viewer.pde)
 * [Integrated with Wiremap](https://github.com/peplin/august23/blob/master/src/gallery/WiremapClient/HeartbeatDetector.pde)
 
 *Continue to the next section, details of the
