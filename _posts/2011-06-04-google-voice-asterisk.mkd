@@ -4,178 +4,120 @@ title: A Google Voice Landline with Asterisk
 permalink: /2011/05/google-voice-asterisk
 ---
 
-Inspired by a recent
-[Maximum PC article](http://www.maximumpc.com/article/how-tos/how_build_your_own_home_phone_server),
+<div class="pullout">
+This article was <strong>updated May 2013</strong> with new instructions for
+Asterisk 11.
+</div>
+
+Inspired by a recent [Maximum PC
+article](http://www.maximumpc.com/article/how-tos/how_build_your_own_home_phone_server),
 I recently set up a land line telephone that supports both incoming and outgoing
 calls from my Google Voice number. I opted to use an installation of Asterisk in
-on a standard Ubuntu server instead of using one of the pre-built PBX
-Linux distributions. The process involved enough fiddling and Google searching
-that I thought a summary of how my setup works could be helpful for others.
+on an Arch Linux server instead of using one of the pre-built PBX Linux
+distributions. The process involved enough fiddling and Google searching that I
+thought a summary of how my setup works could be helpful for others.
 
-You can probably guess by the recent addition of calling to Gmail that Google is
-using VoIP protocols to shuffle Voice traffic around. Thankfully, they're
-somewhat standard, and Asterisk recently added official support for it. Just
-like the calling feature in Gmail, an Asterisk server can connect to Google and
-send/receive calls.
-
-## Chef Cookbook
-
-I've written a [Chef cookbook][] that does most of this configuration
-automatically. I'll go over the basics of the cookbook if you don't use Chef.
-
-[Chef cookbook]: https://github.com/peplin/asterisk-cookbook
+I compiled this setup by following the official [Asterisk guide to enabling
+Google Voice](https://wiki.asterisk.org/wiki/display/AST/Calling+using+Google)
+and by mixing in a few other tips.
 
 ## Install the Package
 
-The best place to get the Asterisk package is the official asterisk.org
-repository. Add it to your `/etc/apt/sources.list`:
-
-    deb http://packages.asterisk.org/deb natty main
-
-Then install the PGP key and update your package lists:
-
-    sudo apt-key adv --keyserver subkeys.pgp.net --recv-keys 175E41DF
-    sudo apt-get update
-
-Finally, install the two packages we need:
-
-    sudo apt-get install asterisk-1.8 asterisk-dahdi
+In Arch, Asterisk is available in the
+[AUR](https://aur.archlinux.org/packages/asterisk/).
 
 ## Configuration
 
-There are five configuration files to change:
+There a few Asterisk configuration files to change:
 
-### `/etc/asterisk/sip.conf`
+### `/etc/asterisk/motif.conf`
 
-* Set `localnet` to the IP range of your LAN, e.g.
-    `192.168.1.0/255.255.255.0`
-* `tcpenable = 'yes'`
-* `disallow = 'all'`
-* `allow = ...` for `ulaw`, `gsm`, `ilbc`, and `speex`
-* `externip` must be set to your external (i.e. WAN) IP address
+Add this to the end of the file:
 
-Finally, in the `[authentication]` section, add the details for your user
-account:
+{% highlight sh %}
 
-    [DESIRED_ASTERISK_USERNAME]
-    secret=YOUR_DESIRED_PASSWORD
-    type=friend
-    callerid="Your Name <username>"
-    host=dynamic
-    context=outbound
+[google]
+context=incoming-motif
+disallow=all
+allow=ulaw
+connection=google
+transport=google
+
+{% endhighlight %}
+
+### `/etc/asterisk/modules.conf`
+
+Add this to the end of the file:
+
+{% highlight sh %}
+
+load => chan_motif.so
+load => res_xmpp.so
+
+{% endhighlight %}
 
 ### `/etc/asterisk/extensions.conf`
 
-This file sets up all routing paths for getting calls from Google to your user.
-This configuration is probably a bit more than is required (and is a mashup of a
-few different blog posts), but it's working for me at the moment:
+Find the `[local]` section of this file and add this to set up outgoing calls:
 
-    [general]
-    static=yes
-    writeprotect=no
-    clearglobalvars=no
+{% highlight sh %}
 
-    [globals]
-    CONSOLE=Console/dsp             ; Console interface for demo
-    IAXINFO=guest                   ; IAXtel username/password
-    TRUNK=Zap/G2                    ; Trunk interface
-    TRUNKMSD=1                  ; MSD digits to strip (usually 1 or 0)
+exten => _1XXXXXXXXXX,1,Dial(Motif/google/${EXTEN}@voice.google.com,,r)
 
-    [default]
-    exten => s,1,Set(CALLERID(name)=${DB(cidname/${CALLERID(num)})})
-    exten => s,n,Dial(SIP/YOUR_ASTERISK_USERNAME, 10)
-    exten => s,n, Hangup
-    exten => YOUR_ASTERISK_USERNAME, 1, Dial(SIP/YOUR_ASTERISK_USERNAME, 10)
+{% endhighlight %}
 
-    [google-in]
-    exten => YOUR_ASTERISK_USERNAME, 1, GotoIf(${DB_EXISTS(gv_dialout/channel)}?bridged)
-    exten => YOUR_ASTERISK_USERNAME, n, NoOp(Callerid  ${CALLERID(name)})
-    exten => YOUR_ASTERISK_USERNAME, n, Set(CALLERID(num)=${SHIFT(CALLERID(name),@)})
-    exten => YOUR_ASTERISK_USERNAME, n, Set(CALLERID(name)=${DB(cidname/${CALLERID(num)})})
-    exten => YOUR_ASTERISK_USERNAME, n, Dial(SIP/YOUR_ASTERISK_USERNAME, 20, aD(:1))
-    exten => YOUR_ASTERISK_USERNAME, n(bridged),Bridge(${DB_DELETE(gv_dialout/channel)}, p)
+At the end of the file, add this new `incoming-motif` section. Replace
+`asterisk-username` with your user account in Asterisk. This enables incoming
+calls and corrects the Caller ID.
 
-    [outbound]
-    include => seven-digit
-    include => local-devices
-    include => tollfree
-    include => talk-gmail-outbound
-    include => talk-numeric-outbound
-    include => dial-uri
+{% highlight sh %}
 
-    [local-devices]
-    exten => YOUR_ASTERISK_EXTENSION_NUM, 1, Dial(SIP/YOUR_ASTERISK_USERNAME, 10)
+[incoming-motif]
+exten => s,1,NoOp()
+ same => n,Set(crazygooglecid=${CALLERID(name)})
+ same => n,Set(stripcrazysuffix=${CUT(crazygooglecid,@,1)})
+ same => n,Set(CALLERID(all)=${stripcrazysuffix})
+ same => n,Dial(SIP/asterisk-username,20,D(:1))
 
-    [tollfree]
-    exten => _411, 1, Dial(SIP/18004664411@proxy.ideasip.com,60)
-    exten => _1800NXXXXXX,1,Dial(SIP/${EXTEN}@proxy.ideasip.com,60)
-    exten => _1888NXXXXXX,1,Dial(SIP/${EXTEN}@proxy.ideasip.com,60)
-    exten => _1877NXXXXXX,1,Dial(SIP/${EXTEN}@proxy.ideasip.com,60)
-    exten => _1866NXXXXXX,1,Dial(SIP/${EXTEN}@proxy.ideasip.com,60)
+{% endhighlight %}
 
-    [seven-digit]
-    exten => _NXXXXXX,1,Set(CALLERID(dnid)=1512${CALLERID(dnid)})
-    exten => _NXXXXXX,n,Goto(1512${EXTEN},1)
-    exten => _NXXNXXXXXX,1,Set(CALLERID(dnid)=1${CALLERID(dnid)})
-    exten => _NXXNXXXXXX,n,Goto(1${EXTEN},1)
+### `/etc/asterisk/sip.conf`
 
-    [talk-gmail-outbound]
-    exten => _[a-z].@gmail.com,1,Dial(gtalk/google/${EXTEN}@gmail.com)
-    exten => _[A-Z].@gmail.com,1,Dial(gtalk/google/${EXTEN}@gmail.com)
+Replace `asterisk-username` with your desired Asterisk username and
+`asterisk-password` with your desired password - you'll use this account
+information to log in to your Asterisk server from a SIP phone.
 
-    [talk-numeric-outbound]
-    exten => _1XXXXXXXXXX,1,Dial(gtalk/google/+${EXTEN}@voice.google.com)
-    exten => _+1XXXXXXXXXX,1,Dial(gtalk/google/+${EXTEN}@voice.google.com)
+{% highlight sh %}
 
-    [dial-uri]
-    exten => _[a-z].,1,Dial(SIP/${EXTEN}@${SIPDOMAIN},120,tr)
-    exten => _[A-Z].,1,Dial(SIP/${EXTEN}@${SIPDOMAIN},120,tr)
-    exten => _X.,1,Dial(SIP/${EXTEN}@${SIPDOMAIN},120,tr)
+[asterisk-username]
+type=peer
+secret=asterisk-password
+host=dynamic
+context=local
 
-### `/etc/asterisk/jabber.conf`
+{% endhighlight %}
 
-This file configures the authentication details for your Google account (Jabber
-is the protocol used by GTalk, and it's technically how you log in). This file
-contains your Google password, so make sure it's only readable by your user or
-root.
+### `/etc/asterisk/xmpp.conf`
 
-    [general]
-    autoregister=yes
+Replace `your.google.voice.account@gmail.com` with your actual Gmail address
+and `your-google-voice-password` with your Google account password. If you use
+Google's two-factor authentication, you will need to create an
+application-specific password.
 
-    [google]
-    type=client
-    serverhost=talk.google.com
-    username=YOUR_GOOGLE_ACCOUNT@gmail.com/Talk
-    secret=YOUR_GOOGLE_PASSWORD
-    port=5222
-    statusmessage=Asterisk Server - Not a Human
-    status=xaway
-
-### `/etc/asterisk/gtalk.conf`
-
-Finally, this file links together your Google account (defined previous in the
-`jabber.conf` file) with Google Voice.
-
-
-    [general]
-    context=google-in		; Context to dump call into
-    allowguest=yes
-
-    [guest]			; special account for options on guest account
-    disallow=all
-    allow=ulaw
-
-    [gtalk]
-    username=YOUR_GOOGLE_USER@gmail.com
-    disallow=all
-    allow=ulaw
-    context=google-in
-    connection=google
-
-## Google Voice Configuration
-
-The last step is to enable Google Talk as an extension in your Google Voice
-account. This should be pretty straightforward.
+{% highlight sh %}
+[google]
+type=client
+serverhost=talk.google.com
+username=your.google.voice.account@gmail.com
+secret=your-google-voice-password
+priority=1
+port=5222
+usetls=yes
+usesasl=yes
+status=available
+statusmessage="Asterisk Server - Not a Human"
+timeout=5
+{% endhighlight %}
 
 ## Caveats
 
@@ -189,18 +131,26 @@ change, another option is to create a second Google account for chat only -
 although then you lose the ability to use the inlined chat in Gmail. If anyone
 has a better solution for this, I'd love to know about it.
 
-Incoming calls are somewhat unreliable. Sometimes the phone will ring, but after
+Incoming calls are not bulletproof - occasionally the phone will ring, but after
 picking it up you just get dead air. My cell phone keeps ringing when this
 happens so I'm still able to pick up the call. It's annoying, however, and I'd
 love to find the root cause.
 
-I suspect that Google's requirement that you hit "1" when accepting a call via
-SIP is the problem. This Asterisk config attempts to do that automatically for
-you, but it took me quite a while to nail down that process and it's most likely
-still not working. Sometimes jabbing "1" when I get dead air seems to wake it
-up, but not every time.
+Other times, if you accidentally logged into Google Talk somewhere else, the
+local SIP phone won't ring at all. My current workaround is to reboot Asterisk
+via a cronjob every night, so at least it gets back to normal fairly quickly.
 
 Otherwise, outgoing calls work quite well. The only issue I've ever had is if
 I'm using all of my upstream bandwidth doing something else, but that's not
 unique to Asterisk. Some QoS controls in your router should help out with that.
 
+## Chef Cookbook
+
+When I originally set up Asterisk, I wrote a [Chef cookbook][] that did most of
+this configuration automatically. I no longer use Chef to manage my system
+configuration (nothing against Chef, it was just overkill for my setup and Arch
+Linux moves too quickly), so I'm not actively maintaining that cookbook anymore.
+If you use Chef, it may be a good starting point, and I'd be happy to transfer
+control of the cookbook over to you.
+
+[Chef cookbook]: https://github.com/peplin/asterisk-cookbook
