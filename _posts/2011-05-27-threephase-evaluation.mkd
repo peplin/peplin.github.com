@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Evaluation of Threephase
-permalink: /2011/05/threephase-evaluation/
 ---
 
 *This post is part of a series describing the [Threephase](/2011/05/threephase/)

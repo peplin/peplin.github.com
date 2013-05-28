@@ -1,7 +1,6 @@
 ---
 layout: post
 title: The Simulated Time of Threephase
-permalink: /2011/05/threephase-time/
 ---
 
 *This post is part of a series describing the [Threephase](/2011/05/threephase/)
@@ -65,7 +64,7 @@ calculate the marginal price of power on each of the three days, not on average.
 It is possible to use an integral in some situations where the calculations per
 day are unimportant, and this method is preferred if possible.
 
-![Marginal Price](http://things.rhubarbtech.com/images/threephase/mp.png) 
+![Marginal Price](http://things.rhubarbtech.com/images/threephase/mp.png)
 
 ## Update Scope
 

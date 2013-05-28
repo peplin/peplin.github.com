@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Monitoring Civil Infrastructure
-permalink: /2011/05/civil-infrastructure-monitoring/
+permalink: /2011/05/civil-infrastructure-monitoring
 ---
 
 *A [PDF](http://things.rhubarbtech.com/infrastructure-monitoring/infra-monitoring-report.pdf)
@@ -138,7 +138,7 @@ capabilities for communication and sensing, the role of these nodes are bound by
 their physical capabilities. Hierarchical organization becomes a simpler problem
 of guaranteeing a wide enough dispersal of communication relay and data
 discharge nodes to reach all of the levels of the hierarchy, compared to the
-somewhat arbitrary trees made in computer networks. 
+somewhat arbitrary trees made in computer networks.
 
 ![Hierarchy](http://things.rhubarbtech.com/images/infrastructure-monitoring/hierarchy.png)
 
@@ -162,7 +162,7 @@ recent advances in "massively distributed smart sensors", infrastructure
 managers still lack a general computation framework to explore, experiment with
 and analyze the data. Controls software vendors are driven by the requirements
 set forth by operators, but these operators' demands are often only responding
-to what vendors have given them in the past. 
+to what vendors have given them in the past.
 
 Data collection, storage, processing and querying is a general enough task that
 it could and should be standardized across all areas of infrastructure. Computer
@@ -230,9 +230,9 @@ of great value.
 Supervisory Control and Data Acquisition (SCADA) is an all-encompassing
 descriptor for real-time communication systems that connect infrastructure to
 operators. SCADA systems can be uni- or bi-directional - that is they can both
-send monitoring data back to the operator and propagate control commands 
+send monitoring data back to the operator and propagate control commands
 to infrastructure. These types of systems are popular in industrial environments
-as well, as a way to monitor and control heavy equipment. 
+as well, as a way to monitor and control heavy equipment.
 
 There are many existing SCADA-style systems (an estimated 150-200
 [different protocols][scada-security]), dating back to the late 1960's.
@@ -290,7 +290,7 @@ operator's infrastructure may cause a larger part of the infrastructure to
 become unstable. Many types of infrastructure are dependent on
 telecommunications to keep their SCADA systems running, and if standardization
 and collaboration continues across industries, the integration points will only
-become more prevalent. 
+become more prevalent.
 
 Knowing this, systems using a standard shared network with open protocols are
 not without fault. They allow for more efficient operation and
@@ -309,7 +309,7 @@ network are:
 
 * Make certainly all network traffic is protected using common Internet
     security measures such as Transport Layer security (TLS)
-* Establish industry-wide data security practices. 
+* Establish industry-wide data security practices.
 * Educate operators on these best practices. Many reported
     security breaches were the result of operator error.
 
@@ -434,7 +434,7 @@ in the development and expansion of applications.
 
 Standard, open communication protocols also played an important role early on,
 especially with the development of the Internet. Without a freely implementable
-communication standard, the World Wide Web could not have succeeded. 
+communication standard, the World Wide Web could not have succeeded.
 
 Finally, openness has been a core tenant of security from the start of
 computing. Even today, many large software companies share fine-grained details

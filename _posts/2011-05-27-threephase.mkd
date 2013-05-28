@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Threephase - A Browser-based Electric Power System Game
-permalink: /2011/05/threephase/
 ---
 
 ![Logo](http://things.rhubarbtech.com/images/threephase/threephase-logo.jpg)

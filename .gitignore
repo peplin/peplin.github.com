@@ -1,4 +1,4 @@
-.bzr/
-.git/
-serve/
-_site/
+.bzr
+.git
+serve
+_site
