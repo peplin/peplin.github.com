@@ -142,7 +142,7 @@ Carnegie Mellon University,
 [Gipsys](https://www.ece.cmu.edu/~nsf-education/software.html), excels in the
 technical but isn't approachable enough to engage those with a passing interest.
 Since this project started, IBM released a web-based city planning serious game,
-[CityOne](www.ibm.com/cityone), which asks players to make public policy decisions to improve
+[CityOne](http://www.ibm.com/cityone), which asks players to make public policy decisions to improve
 efficiency in their virtual city. IBM's take on serious games is unfortunately
 less of a challenging, immersive virtual world and more of a marketing tool.
 
