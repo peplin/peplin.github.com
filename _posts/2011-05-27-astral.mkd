@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Astral - Efficiently Distributing Live Video
+permalink: /2011/05/astral/
 ---
 
 [Astral](https://github.com/peplin/astral) is a peer-to-peer content

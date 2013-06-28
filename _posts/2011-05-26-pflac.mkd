@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Parallelizing the FLAC Encoder
+permalink: /2011/05/pflac/
 ---
 
 A couple of years ago, a friend (Max Miller) and I worked on a project to

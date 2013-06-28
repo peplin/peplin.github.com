@@ -1,7 +1,7 @@
 ---
 layout: post
 title: A Google Voice Landline with Asterisk
-permalink: /2011/05/google-voice-asterisk
+permalink: /2011/05/google-voice-asterisk/
 ---
 
 <div class="pullout">
