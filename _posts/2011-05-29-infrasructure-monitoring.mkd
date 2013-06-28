@@ -726,7 +726,7 @@ and pleasure, and neither is good design.
 [scada-vulnerabilities]: http://portal.acm.org/citation.cfm?id=1047846.1047872
 [scada-security]: http://www.sciencedirect.com/science/article/B6V8G-4JXRWXY-1/2/b9d08f2cdd9717ffab6c60e9b7d658f1
 [reliable-grid-info]: http://dblp.uni-trier.de/db/conf/eagc/eagc2004.html#HolubKMR04
-[ntsb]: www.ntsb.gov/publictn/2005/ss0502.pdf
+[ntsb]: http://www.ntsb.gov/publictn/2005/ss0502.pdf
 [fingerprint]: http://dblp.uni-trier.de/db/conf/eurosys/eurosys2010.html#BodikGFWA10
 [report-card]: http://www.infrastructurereportcard.org/
 [ganglia]: http://monitor.millennium.berkeley.edu/
