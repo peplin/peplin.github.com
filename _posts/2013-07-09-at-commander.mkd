@@ -1,0 +1,94 @@
+---
+layout: post
+title: "Configuring Bluetooth modules with AT-commander"
+---
+
+<div class="pullout">
+
+<strong>Summary</strong>: As a part of the <a
+href="http://openxcplatform.com">OpenXC platform</a>, I have released the <a
+href="https://github.com/openxc/AT-commander">AT-commander</a> C library to help
+programatically configure Bluetooth devices like the Roving Networks <a
+href="http://www.rovingnetworks.com/products/RN42">RN-42</a> (i.e. SparkFun's <a
+href="https://www.sparkfun.com/products/10269">BlueSMiRF</a>).
+
+</div>
+
+The RN-42 based BlueSmirf from SparkFun is a great development board for
+prototyping Bluetooth applications, and it's fairly easy to configure. It uses
+an "AT" command set (here's the <a
+href="https://www.sparkfun.com/datasheets/Wireless/Bluetooth/rn-bluetooth-um.pdf">entire
+command set for the RN-42</a>), which are simple, short ASCII commands you can
+send over the Bluetooth or the UART side of the module. The basic procedure is
+to put the device into "command mode" with `$$$`, after which point you can use
+the various AT commands.
+
+![SparkFun BlueSMiRF](/images/bluesmirf.jpg)
+
+(Image is copyright [SparkFun](http://sparkfun.com) under [CC BY-NC-SA
+3.0](http://creativecommons.org/licenses/by-nc-sa/3.0/))
+
+Other devices use similarly styled AT commands, like Xbee radios (here's the <a
+href="https://dlnmh9ip6v2uc.cloudfront.net/learn/materials/29/22AT%20Commands.pdf">AT
+command set for the Xbee radios</a> from SparkFun). The concept is similar, but
+the individual commands are different as is the special characters to get into
+command mode (on the Xbee it's `+++`).
+
+![Xbee Radio](/images/xbee.jpg)
+
+(Image is copyright [SparkFun](http://sparkfun.com) under [CC BY-NC-SA
+3.0](http://creativecommons.org/licenses/by-nc-sa/3.0/))
+
+As I mentioned, using AT commands is very straightforward...but it's a huge pain
+if you have to do it very often. It's also a major hurdle for someone not
+familiar with command line terminals, UART, or Bluetooth SPP tools. My
+experience building a vehicle interface for the <a
+href="http://openxcplatform.com/">OpenXC platform</a> led me to create a C
+library - the [AT-commander](https://github.com/openxc/AT-commander) - that can
+take the annoyance out of configuring AT-compatible devices.
+
+## Introducing AT-commander
+
+The [AT-commander][] is a C library to control a device via UART that responds
+to an AT command set (like an RN-42). It's especially designed for use on an
+embedded platform like an [Arduino](http://www.arduino.cc/),
+[chipKIT](http://www.digilentinc.com/Products/Catalog.cfm?NavPath=2,892&Cat=18),
+[Mbed](http://mbed.org/) or [Blueboard](https://www.sparkfun.com/products/9931),
+but is designed with a flexible API so it can be used on any platform.
+
+Let's just right to the code. Here's an example of how to configure the baud
+rate of an attached AT-compatible device:
+
+{% highlight c %}
+
+AtCommanderConfig config;
+config.platform = AT_PLATFORM_RN42;
+config.write_function = write_byte
+config.read_function = read_byte
+config.delay_function = delay;
+
+// Set the baud to 115200, if it's not already correct
+bool baud_set = at_commander_set_baud(&config, 115200);
+
+{% endhighlight %}
+
+You must pass a few simple functions to the library that can read and write
+bytes to your UART interface, and everything else is handled by the library. All
+of the `at_commander_*` functions automatically detect the current baud rate in
+order to enable command mode, taking away one of the biggest headaches with
+configuring an AT device.
+
+## Code
+
+The library is hosted at [GitHub](https://github.com/openxc/AT-commander), where
+there are additional docs and example programs for Arduino and any LPC17xx based
+development board. All of the code is released under the BSD license, courtesy
+Ford Motor Company.
+
+The library currently supports entering and exiting command mode, setting the
+UART baud rate, changing the device name and soft rebooting. To see it in
+action, check out the OpenXC vehicle interface firmware's [Bluetooth
+initialization](https://github.com/openxc/cantranslator/blob/master/src/bluetooth.cpp)
+code.
+
+[AT-commander]: https://github.com/openxc/AT-commander
