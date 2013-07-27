@@ -1,0 +1,85 @@
+---
+layout: post
+title: Maximum BlueSMirF.
+---
+
+<div class="pullout">
+
+If you are using a Roving Networks <a
+href="http://www.rovingnetworks.com/products/RN42">RN-42</a> (e.g. SparkFun's <a
+href="https://www.sparkfun.com/products/10269">BlueSMiRF</a>) and need to
+get anywhere the maximum throughput (~23KB/s), you must use hardware flow
+control on the UART interface.
+
+</div>
+
+Until I started working at Ford on the [OpenXC Platform][openxc], most embedded
+concepts were new to me. I had used the [Arduino](http://arduino.cc) quite bit,
+but didn't go much beyond the capabilities of the Arduino libraries.
+
+When I started work to evolve the first OpenXC prototypes into a more robust
+firmware for the chipKIT ([VI firmware](http://vi-firmware.openxcplatform.com)),
+I learned that backing these useful
+[Serial](http://arduino.cc/en/reference/serial) interfaces on the Arduino is
+something called UART.
+
+Fast-forward a few months, and I'm adding Bluetooth support to the [vehicle
+interface](http://openxcplatform.com/vehicle-interface/index.html) using the
+[BlueSMiRF module from
+SparkFun](http://openxcplatform.com/vehicle-interface/index.html). This is a
+really useful breakout board for the RN-42 that can be very quickly wired up to
+one of the UART interfaces on an embedded board to make it instantly wireless
+(using Bluetooth SPP).
+
+Here's where things got confusing: there's a lot of data pouring out of a car,
+so I needed to squeeze every bit of performance out of the RN-42 possible. The
+[RN-42 datasheet
+(PDF)](https://www.sparkfun.com/datasheets/Wireless/Bluetooth/rn-42-ds.pdf)
+reports that the maximum data rate is **3Mbps** and it supports baud rates up to
+**921Kbps**. After [a little
+tweaking](https://github.com/openxc/cantranslator/blob/master/src/platform/pic32/uart.cpp#L83)
+it's possible to run UART on the [chipKIT
+Max32](http://www.digilentinc.com/Products/Detail.cfm?Prod=CHIPKIT-MAX32) way
+beyond 115200, so you're ready to pump data into the RN-42 at the limit of
+921Kbps.
+
+Except...it really doesn't work well. The chipKIT happily dumped data at 921Kbps
+onto the RN-42's UART Rx/Tx lines, but not all of the data made it through the
+Bluetooth interface to an Android tablet. After a few seconds, the transfer
+completely stopped and the RN-42 would become unresponsive - I couldn't even get
+back to the command mode (i.e. the `$$$` mode) to check the settings.
+
+After a few e-mails with helpful Roving Networks engineers, I discovered my
+first mistake - too used to the typical Arduino situation, where the data rate is
+low and things "just work", I only attached Rx, Tx, 3.3v and ground to the
+BlueSMiRF and not "those other two" pins - RTS and CTS.
+
+## Hardware Flow Control
+
+Those two pins are for hardware flow control, which in addition to some software
+support on the micro, turn out to be critical for pushing high data rates on
+UART. The RTS and CTS pins are used by the sender and receiver to throttle the
+data stream when necessary to keep buffers from overflowing. Without that, the
+RN-42 is overwhelmed by the amount of traffic and starts dropping data. I wasn't
+able to get a good explanation for why it eventually becomes unresponsive, but a
+decent guess is a bug in the firwmare that leads to an unrecoverable error state
+(fixed by restarting the module).
+
+Once I enabled hardware flow control, the data stream became immediately much
+more reliable and the RN-42 never crashed again. However, I did discover one
+other limitation: even with flow control, the throughput over Bluetooth never
+approaches anywhere near this theoretical max data rate of 3Mbps. I confirmed
+with the engineers that the rate is only possible if you run the Bluetooth stack
+on your micro, and not the RN-42 (at which point...why did you buy the
+RN-42 with such a price premium, anyway?). The actual maximum throughput over
+Bluetooth SPP for the BlueSMiRF/RN-42 is about 23KB/s from my experience. As a
+result, there's really no reason to use a baud rate higher than 230400 (any data
+beyond that rate will just be dropped on the floor by the RN-42).
+
+Compared to the theoretical Bluetooth maximum, you do take a hit with the RN-42;
+for mine and many other applications, I think it's worth the penalty because it
+means your micro doesn't need to run a Bluetooth stack of its own (speaking of
+which, anyone know of a good open source Bluetooth stack?).
+
+
+[openxc]: http://openxcplatform.com
