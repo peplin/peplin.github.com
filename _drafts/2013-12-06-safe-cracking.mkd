@@ -1,0 +1,49 @@
+---
+layout: post
+title: Safe Cracking
+---
+
+<div class="pullout">
+
+</div>
+
+picture of locked safe
+
+moved in, as far as we knew the combo was lost.
+
+house built in 1890s, old farmhouse
+
+lived with it for 2 years, then as moving out felt pressure to give it a go
+
+thought of different ways to try and automate it, read about painstaking safe
+cracking
+
+thought about having a 'safe cracking' party but cost was high (300-400+) and
+recommendations online were that there are very few locksmiths that can do it
+these days
+
+
+http://en.allexperts.com/q/Antique-Safes-3774/2012/4/hall-safe-lock-company-3.htm
+
+Duke University Archive -
+http://library.duke.edu/digitalcollections/broadsides_bdsny81557/
+
+then suddenly, this caught my eye
+
+TODO add fainter version
+
+the writing was very faint - I carefully removed it from the wall and was able
+to read it under the right lighting conditions, mostly.
+
+![Safe Combination](/images/safe-combination.jpg)
+
+there's still a lot of mystery.
+
+show trasncoded
+
+waht's p with bar over it?
+
+is the last number 60 or 69?
+
+how do i actually use these numbers?
+
