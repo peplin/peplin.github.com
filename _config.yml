@@ -1,4 +1,14 @@
 markdown: rdiscount
-pygments: true
 production: true
 permalink: pretty
+gems:
+    - jekyll-sitemap
+    - jekyll-redirect-from
+exclude:
+  - vendor
+  - README.md
+  - Makefile
+  - Gemfile
+  - Gemfile.lock
+  - CHANGELOG.md
+  - .travis.yml
