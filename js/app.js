@@ -13,7 +13,7 @@ $(document).ready(function() {
 
 function loadPhotoGrid() {
     if($("#photo-grid").length > 0) {
-        $.ajax({url: "http://api.flickr.com/services/rest",
+        $.ajax({url: "https://api.flickr.com/services/rest",
             data: {
                 method: "flickr.people.getPublicPhotos",
                 user_id: "52818162@N00",
@@ -76,7 +76,7 @@ function loadGithubDetails() {
 
 function sortGithubRepositories() {
     var repos = $("ul.code li").get();
-    repos.sort(function(a, b){ 
+    repos.sort(function(a, b){
         var keyA = $(a).find(".watchers").text();
         var keyB = $(b).find(".watchers").text();
         if (keyA < keyB) return 1;
