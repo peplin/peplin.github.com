@@ -12,10 +12,9 @@ more efficient and offloads much of the work from the origin servers to the
 edges of the network.
 
 This project was completed over the course of the Spring 2011 semester in the
-[Distributed Systems (18-842)](http://www.ece.cmu.edu/~ece842/S11/) course at
-Carnegie Mellon University, taught by Professor Bill Nace. The Astral team
-included myself, [Fabian Popa](http://fabianpopa.com/), Darshana Advani and
-Anusha Varshney.
+Distributed Systems (18-842) course at Carnegie Mellon University, taught by
+Professor Bill Nace. The Astral team included myself, [Fabian
+Popa](http://fabianpopa.com/), Darshana Advani and Anusha Varshney.
 
 This post is a modified version of the final report the team wrote
 collaboratively and submitted with the project. It has been reformatted for the

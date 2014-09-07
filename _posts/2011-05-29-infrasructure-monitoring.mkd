@@ -114,7 +114,7 @@ tend to be isolated to individual units, and are easier to troubleshoot.
 communicate only with nearby neighbors ([source][pipeline])*
 
 Recent projects have taken a page (knowingly or not) from tools like the
-computer network monitoring application [Ganglia][] and now use a unified data
+computer network monitoring application Ganglia and now use a unified data
 format, regardless of sensor or data type. For example, a
 single update could consist of:
 
@@ -646,7 +646,7 @@ infrastructure management are highlighted by a few recent titles:
 * Electronic Arts' [Mirror's Edge](http://www.ea.com/games/mirrors-edge) (2007) -
     includes expansive, detailed urban environments that could be used for
     building and bridge inspection.
-* Gas Powered Games' [Supreme Commander 2](http://www.supremecommander2.com/)
+* Gas Powered Games' Supreme Commander 2
     (2010) - gives top-down strategic control of thousands of military units,
     which could be used for routing traffic on busy streets, waterways and in
     the air.
@@ -729,4 +729,3 @@ and pleasure, and neither is good design.
 [ntsb]: https://www.ntsb.gov/safety/safetystudies/SS0502.html
 [fingerprint]: http://dblp.uni-trier.de/db/conf/eurosys/eurosys2010.html#BodikGFWA10
 [report-card]: http://www.infrastructurereportcard.org/
-[ganglia]: http://monitor.millennium.berkeley.edu/

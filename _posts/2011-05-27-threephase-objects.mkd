@@ -179,15 +179,14 @@ the player selects a
 from a list of [available technologies](https://github.com/peplin/threephase/blob/master/db/fixtures/050_generator_types.rb).
 
 Each Country can customize the list of available GeneratorTypes to simulate
-different time periods and regulatory environments (e.g. before advanced
-nuclear or coal with carbon capture and sequestration). The player can compare
-the available GeneratorTypes based on their attributes to decide which would be
-the best choice for their portfolio. The current interface is a simple table,
+different time periods and regulatory environments (e.g. before advanced nuclear
+or coal with carbon capture and sequestration). The player can compare the
+available GeneratorTypes based on their attributes to decide which would be the
+best choice for their portfolio. The current interface is a simple table,
 sortable by column. Additional comparison visualizations can make the choices
 easier to understand, and convey some of the issues with new technologies.
-[Lauren Fleishman's work](http://sds.hss.cmu.edu/risk/fleishman/InformationMaterials.html)
-in summarizing and comparing generators is a good inspiration for the user
-interface.
+Lauren Fleishman's work at CMU in summarizing and comparing generators is a good
+inspiration for the user interface.
 
 ## Generator Type Attributes
 

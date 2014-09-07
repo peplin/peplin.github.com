@@ -23,12 +23,12 @@ and thus less light passes through to the detector. When the blood flows away,
 more light is let through. This fluctuation can be measured and the timing of
 the luminance peaks used for determining the heart rate.
 
-This project required knowledge of
-[signal processing filters](http://www.swarthmore.edu/NatSci/echeeve1/Ref/FilterBkgrnd/Filters.html)
-and [operational amplifiers](http://web.telia.com/~u85920178/begin/opamp00.htm).
-This [schematic](https://github.com/peplin/pulse-oximeter/blob/master/docs/schematic-final.png)
-describes the circut used inside the pulse oximeter. It is also
-provided as a [Fritzing](http://fritzing.org/)
+This project required knowledge of [signal processing
+filters](http://www.swarthmore.edu/NatSci/echeeve1/Ref/FilterBkgrnd/Filters.html)
+and operational amplifiers. This
+[schematic](https://github.com/peplin/pulse-oximeter/blob/master/docs/schematic-final.png)
+describes the circut used inside the pulse oximeter. It is also provided as a
+[Fritzing](http://fritzing.org/)
 [file](https://raw.github.com/peplin/pulse-oximeter/master/docs/schematic.fz).
 
 ![Pulse](http://things.rhubarbtech.com/images/august23/schematic-final.png)
