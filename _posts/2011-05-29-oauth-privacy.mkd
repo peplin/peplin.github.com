@@ -674,7 +674,7 @@ risks of data exposure:
     should be required to explicitly request each protected resource in the
     scope parameter beyond this pseudonym, to make it clear to users and
     developers what information is accessible to each party.
-* Users should be allowed to modify the valid [lifetime of access tokens][].
+* Users should be allowed to modify the valid lifetime of access tokens.
     They should be able to to grant single use or other time-limited access
     tokens instead of the default permanent ones.
 
@@ -711,6 +711,5 @@ of Privacy. Washington, D.C.: National Academies Press, 2003. Chap. 1,2.
 [OpenID]: http://openid.net/
 [OAuth2 Specification]: http://tools.ietf.org/html/draft-ietf-oauth-v2-10
 [P3P 1.1 draft specification]: http://www.w3.org/TR/P3P11
-[lifetime of access tokens]: http://sole.dimi.uniud.it/~antonina.dattolo/papers/2009/book/Dattolo-apweb2009pdf#page=120.
 [Web2ID]: http://doi.acm.org/10.1145/1655028.1655036
 [PDF]: http://things.rhubarbtech.com/pdf/oauth-privacy-report.pdf

@@ -337,4 +337,3 @@ the state of the art in video streaming.
 
 * [Python client](https://github.com/peplin/astral)
 * [Sinatra web application](https://github.com/peplin/astral-web)
-* [Deployed version](http://astral.rhubarbtech.com/) of web application
