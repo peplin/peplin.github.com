@@ -14,10 +14,9 @@ and digital interaction technologies, the interpretation can become
 re-manifestation, where the observer tells a personal story of the cosmos.
 
 In 2009, I along with three teammates at the University of Michigan tried to
-make sense of that question. We received a grant as a part of the
-[GROCS](http://www.dc.umich.edu/dmc/grocs/index.html) program, which was started
-to try and encourage inter-departmental collaboration unified by technology. The
-team consisted of four people from three departments:
+make sense of that question. We received a grant as a part of the GROCS program,
+which was started to try and encourage inter-departmental collaboration unified
+by technology. The team consisted of four people from three departments:
 
 * Myself, Chris Peplin (computer science)
 * [Brian Nord](http://flavors.me/briannord) (physics, specifically cosmology)

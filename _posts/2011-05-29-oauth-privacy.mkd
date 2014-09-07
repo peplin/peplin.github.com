@@ -287,8 +287,9 @@ details of the possible values up to the authorizing and resource servers,
 meaning that each OAuth provider has a different set of permitted scope values
 and valid combinations. For example, Facebook's implementation of the OAuth2
 draft describes a set of "[extended permissions][]" that can be requested via
-the scope parameter. [MySpace][] made their own proprietary modifications to the
-original OAuth protocol to implement a similar feature.
+the scope parameter. MySpace made their own proprietary modifications to the
+original OAuth protocol to implement a similar feature (as of September 2014
+this seems to no longer be available).
 
 Typically, the user will see a human-readable description of the scope requested
 on the authorization screen. If they accept, the scope is stored alongside the
@@ -705,7 +706,6 @@ of Privacy. Washington, D.C.: National Academies Press, 2003. Chap. 1,2.
 [Extended Permissions]: http://developers.facebook.com/docs/authentication/permissions
 [permission hub]: http://www.ico.gov.uk/upload/documents/library/data_protection/detailed_specialist_guides/edentity_hp_idm_paper_for_web.pdf
 [Personal Data Store]: http://wiki.eclipse.org/Personal_Data_Store_Overview
-[MySpace]: http://wiki.developer.myspace.com/index.php?title=Extended_Permissions
 [OAuth]: http://oauth.net
 [OAuth Specification]: http://oauth.net/core/1.0/
 [OpenID]: http://openid.net/

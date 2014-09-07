@@ -351,12 +351,12 @@ solution to seriously reduce that number will they take action.
 
 [KOOM]: http://www.youtube.com/watch?v=sOJoB38OxK0
 [DCMAP]: http://www.datacentermap.com
-[PGE]: http://www.pge.com/includes/docs/pdfs/mybusiness/energysavingsrebates/incentivesbyindustry/hightech/C-4166.pdf
+[PGE]: http://www.pge.com/includes/docs/pdfs/mybusiness/energysavingsrebates/incentivesbyindustry/common/server_virtualization_consolidation.pdf
 
 [THIN]: http://www.vxl.net/fckeditor/editor/filemanager/connectors/aspx/fckeditor/userfiles/file/VXL%20Green%20Benefits%20-Thin%20Clients.pdf
 [REV]: http://www.mckinsey.com/clientservice/bto/pointofview/pdf/Revolutionizing_Data_Center_Efficiency.pdf
 [GREEN]: http://www.greenpeace.org/usa/en/media-center/reports/make-it-green-cloud-computing/
 
-[SMART]: http://www.mendeley.com/research/smart-2020-enabling-the-low-carbon-economy-in-the-information-age/
+[SMART]: http://www.smart2020.org/_assets/files/02_Smart2020Report.pdf
 [LAW]: http://www.energystar.gov/ia/products/downloads/Public_Law109-431.pdf
 [STAR]: http://www.energystar.gov/ia/partners/prod_development/downloads/EPA_Datacenter_Report_Congress_Final1.pdf
