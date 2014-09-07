@@ -2,6 +2,7 @@
 layout: post
 title: The Mechanics of Threephase
 permalink: /2011/05/threephase-mechanics/
+redirect_from: /2011/05/27/threephase-mechanics/
 ---
 
 *This post is part of a series describing the [Threephase](/2011/05/threephase/)

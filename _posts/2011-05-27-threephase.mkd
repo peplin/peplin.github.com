@@ -123,7 +123,7 @@ system as its core game mechanic.
 
 ![SimCity 2000](http://things.rhubarbtech.com/images/threephase/simcity.png)
 
-[Source](www.gamegoldies.org/simcity-2000)
+[Source](http://www.gamegoldies.org/simcity-2000)
 
 Electricity transmission surfaced as a game mechanic in recent computer games as
 well, such as [Darwinia](http://www.introversion.co.uk) and the new massively

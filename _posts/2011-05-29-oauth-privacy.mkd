@@ -1,6 +1,7 @@
 ---
 layout: post
 title: OAuth for Privacy
+redirect_from: /2011/05/oauth-privacy/
 ---
 
 *I wrote this paper for Professor Lorrie Cranor's Privacy Policy, Law &

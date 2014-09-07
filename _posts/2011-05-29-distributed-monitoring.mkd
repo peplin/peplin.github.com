@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Massively Distributed Monitoring
+redirect_from: /2011/05/distributed-monitoring/
 ---
 
 *A [PDF](http://things.rhubarbtech.com/distributed-monitoring/distributed-monitoring-report.pdf)
@@ -29,7 +30,7 @@ optimizations are also enumerated.
 
 Computer system architecture shifted three major times in the past 30 years.
 Individual, personal computers gave way to mainframes and thin clients. The tide
-shifted back to powerful end-user clients in the 1990's. Now, the cloud and 
+shifted back to powerful end-user clients in the 1990's. Now, the cloud and
 web services embody somewhat of a throwback to the mainframe era.
 
 A web service is both distributed and centralized - distributed in that the
