@@ -50,11 +50,10 @@ function loadGithubDetails() {
         var repo = segments.pop();
         var username = segments.pop();
 
-        $.ajax({url: "http://github.com/api/v2/json/repos/show/" + username +
-                "/" + repo,
+        $.ajax({url: "http://api.github.com/repos/" + username + "/" + repo,
             dataType: "jsonp",
             success: function(data) {
-                var repoData = data.repository;
+                var repoData = data.data;
                 if(repoData) {
                     var meta = $("<div>").addClass("meta");
                     var watchers_link = $("<a>").addClass("watchers").attr(
