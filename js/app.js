@@ -67,24 +67,8 @@ function loadGithubDetails() {
                     header.after(description);
                     header.after(meta);
                 }
-                sortGithubRepositories();
             }
         });
-    });
-}
-
-function sortGithubRepositories() {
-    var repos = $("ul.code li").get();
-    repos.sort(function(a, b){
-        var keyA = $(a).find(".watchers").text();
-        var keyB = $(b).find(".watchers").text();
-        if (keyA < keyB) return 1;
-        if (keyA > keyB) return -1;
-        return 0;
-    });
-    var list = $("ul.code");
-    $.each(repos, function(i, li){
-        list.append(li);
     });
 }
 

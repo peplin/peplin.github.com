@@ -224,19 +224,19 @@ ul.code li:last-child {
   line-height: 93%;
 }
 
-.github h3 {
+.code h3 {
   font-size: 14px;
   margin-bottom: 0;
   display: inline;
 }
 
-.github a {
+.code a {
   text-decoration: none;
   font-family: Museo-Slab, Trebuchet, Tahoma, Arial, sans-serif;
   font-size: 12px;
 }
 
-.github p {
+.code p {
   font-size: 13px;
   line-height: 1.1em;
 }
