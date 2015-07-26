@@ -1,39 +1,68 @@
-require 'rubygems'
-require 'rake'
-require 'fileutils'
-require 'date'
+require 'html/proofer'
+require 'rake/testtask'
+require 'open-uri'
 
-desc "Draft a new post"
-task :new do
-  puts "What should we call this post for now?"
-  name = STDIN.gets.chomp
-  system("git checkout -b #{name}")
-
-  path = "_posts/#{Date.today}-#{name}.mkd"
-  File.open(path, 'a') do |f|
-    f.puts "---"
-    f.puts "layout: post"
-    f.puts "title: \"#{name}\""
-    f.puts "---"
+def build
+  if not system "bundle exec jekyll build"
+    raise "Build failed"
   end
-  system("git add #{path}")
 end
 
-desc "Startup Jekyll"
-task :start do
-  edit_config("production", "false")
-  sh "jekyll --server"
-  edit_config("production", "true")
+def serve(port=nil, local_dev=true)
+  Process.spawn("bundle exec jekyll serve --host 0.0.0.0 #{"-P #{port}" if port } -w")
 end
 
-task :default => :start
+namespace :test do
+  Rake::TestTask.new(:unit_tests) do |test|
+    test.libs << 'test'
+    test.test_files = FileList['tests/**/test_*.rb']
+    test.verbose = true
+  end
+end
 
-## Helpers
-## Thanks to https://github.com/dbarbosa/dbarbosa.me
+task :test do
+  begin
+    pid = serve(4001, false)
 
-def edit_config(option_name, value)
-  config = File.read("_config.yml")
-  regexp = Regexp.new('(^\s*' + option_name + '\s*:\s*)(\S+)(\s*)$')
-  config.sub!(regexp,'\1'+value+'\3')
-  File.open("_config.yml", 'w') {|f| f.write(config)}
+    10.times do
+      begin
+        open("http://localhost:4001")
+        break
+      rescue SystemCallError
+        sleep 2
+      end
+    end
+
+    HTML::Proofer.new("./_site",
+        :href_ignore => ["#"],
+        :alt_ignore => [
+        ],
+        :disable_external => true,
+        :check_favicon => false,
+        :parallel => { :in_processes => 4},
+    ).run
+    sleep 2
+    Rake::Task['test:unit_tests'].invoke
+  ensure
+    # TODO this causes a big interrupt trackback but it's OK to ignore, but it
+    # would be nice to silence that so the test output is more visible.
+    Process.kill(:SIGINT, pid)
+  end
+end
+
+task :clean do
+  rm_rf "./_site"
+end
+
+task :serve do
+  pid = serve()
+  Process.wait(pid)
+end
+
+task :build do
+  build()
+end
+
+task :tidy do
+  system 'find _site -name "*.html" -exec echo {} \; -exec tidy -errors -q {} \;'
 end
