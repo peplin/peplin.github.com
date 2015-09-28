@@ -2,13 +2,20 @@
 layout: default
 ---
 
-<div class="grid_4"><header class="block minimal">
-    <h2><a href="/">Christopher Peplin</a>
-        <a href="/"><span class="subheader">home</span></a>
-    </h2>
-</header></div>
-<div class="clear"></div>
+<div class="row">
+    <div class="col-md-4">
+        <header class="block minimal">
+        <h2><a href="/">Christopher Peplin</a>
+            <a href="/"><span class="subheader">home</span></a>
+        </h2>
+        </header>
+    </div>
+</div>
 
-<div class="page grid_8">
-{{ content }}
+<div class="row">
+    <div class="col-md-8">
+        <div class="page">
+            {{ content }}
+        </div>
+    </div>
 </div>

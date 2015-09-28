@@ -69,23 +69,22 @@ function loadAudioPlayers() {
         var entries = [];
         $(playlist).find("li a").each(function(i, entry) {
             entries.push({
-                name: $(entry).text(),
+                title: $(entry).text(),
                 mp3: $(entry).attr("href"),
                 free: true
             });
         });
-        var playlist = new Playlist($(playlist).attr("data-id"),
+        var player = new jPlayerPlaylist({
+                jPlayer: "#jquery_jplayer_" + $(playlist).data("id"),
+                cssSelectorAncestor: "#jp_container_" + $(playlist).data("id")
+            },
             entries,
             {swfPath: "/js/vendor/jPlayer",
                 // errorAlerts: true,
-                solution: "flash",
+                solution: "html",
                 supplied: "mp3",
-                ready: function() {
-                    playlist.displayPlaylist();
-                    playlist.playlistInit(false);
-                },
                 ended: function() {
-                    playlist.playlistNext();
+                    player.playlistNext();
                 },
                 play: function() {
                     $(this).jPlayer("pauseOthers");
