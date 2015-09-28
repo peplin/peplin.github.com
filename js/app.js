@@ -1,11 +1,4 @@
 $(document).ready(function() {
-    WebFont.load({
-        custom: {
-            families: ['museo'],
-            urls: ['/css/font.css']
-        }
-    });
-
     loadPhotoGrid();
     loadGithubDetails();
     loadAudioPlayers();
