@@ -205,6 +205,11 @@ footer p {
   margin-bottom: 8px;
 }
 
+.block ul li img {
+    margin: 0;
+}
+
+
 /* GitHub section */
 
 .code h3 {
