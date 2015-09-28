@@ -151,7 +151,7 @@ footer p {
 
 @media (min-width: 1000px) {
     .block, .sidebar, .page {
-      min-height: 480px;
+      min-height: 490px;
     }
 }
 
@@ -202,7 +202,7 @@ footer p {
 
 .block ul li {
   margin-left: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 /* GitHub section */
