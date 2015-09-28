@@ -10,7 +10,7 @@ function loadPhotoGrid() {
             data: {
                 method: "flickr.people.getPublicPhotos",
                 user_id: "52818162@N00",
-                per_page: 9,
+                per_page: 15,
                 format: "json",
                 api_key: "55115d73f4005b232247ecef716803f6"
             },
@@ -43,7 +43,7 @@ function loadGithubDetails() {
         var repo = segments.pop();
         var username = segments.pop();
 
-        $.ajax({url: "http://api.github.com/repos/" + username + "/" + repo,
+        $.ajax({url: "https://api.github.com/repos/" + username + "/" + repo,
             dataType: "jsonp",
             success: function(data) {
                 var repoData = data.data;
@@ -54,10 +54,8 @@ function loadGithubDetails() {
                     var forks_link = $("<a>").addClass("forks").attr(
                             "href", url + "/network").text(repoData.forks);
                     var header = listItem.find("h3");
-                    var description = $("<p>").text(repoData.description);
                     meta.append(watchers_link);
                     meta.append(forks_link);
-                    header.after(description);
                     header.after(meta);
                 }
             }

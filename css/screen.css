@@ -141,18 +141,24 @@ footer p {
 
 .block, .sidebar, .page {
   margin-top: 10px;
+  padding-bottom: 15px;
   background-color: #FFF;
-  height: 315px;
   -webkit-border-radius: 0 0 3px 3px; -moz-border-radius: 0 0 3px 3px; border-radius: 0 0 3px 3px;
   -webkit-box-shadow: 0px 0px 2px rgba(0,0,0,.25);
   -moz-box-shadow: 0px 0px 2px rgba(0,0,0,.25);
   box-shadow: 0px 0px 2px rgba(0,0,0,.25);
 }
 
+@media (min-width: 1000px) {
+    .block, .sidebar, .page {
+      min-height: 480px;
+    }
+}
+
 header.block {
   padding: 8px 5px;
   margin-top: 0;
-  height: 50px;
+  min-height: 40px;
 }
 
 header h1 {
@@ -174,13 +180,18 @@ header.block.minimal {
   height: 20px;
 }
 
+footer ul.nav {
+    font-size: 14px;
+    font-weight: normal;
+}
+
 footer {
   text-align: right;
   padding-bottom: 10px;
 }
 
 footer p {
-  font-size: 10px;
+  font-size: 14px;
 }
 
 .block ul {
@@ -243,7 +254,6 @@ ul.code li:last-child {
 }
 
 .forks, .watchers {
-  width: 20px;
   display: inline-block;
   padding-right: 20px;
   text-align: right;
@@ -289,8 +299,11 @@ i.twitter-icon {
 
 /* Photo grid */
 
-#photo-grid {
-    margin: 0 auto;
+@media (min-width: 1200px) {
+    #photo-grid {
+        width: 80%;
+        margin: 0 auto;
+    }
 }
 
 #photo-grid h2 {
