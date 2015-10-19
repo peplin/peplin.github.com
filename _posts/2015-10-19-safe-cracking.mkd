@@ -1,17 +1,17 @@
 ---
 layout: post
-title: Safe Cracking At Home
+title: Safe Cracking at Home
 ---
 
 One of the most interesting places I've lived with my family is a late 19th
 century farmhouse in Ann Arbor. The house is huge, maybe 4000 sq. ft, and we
-lived in an apartment occupying the entire first floor.
+lived in an apartment occupying the entire first floor. The most notable,
+permanent fixture in the apartment is this massive safe:
 
-The most notable, permanent fixture in the apartment is this massive safe:
 
-![picture of locked safe]()
+![Front of closed safe](/images/safe-cracking/front.jpg)
 
-Our landlord mentioned it was so big and heavy, that the safe was wheeled in
+Our landlord mentioned that it was so big and heavy, the safe was wheeled in
 while the house was still under construction and the building was completed
 around it. The safe was locked, and she didn't have the combination.
 
@@ -29,6 +29,8 @@ that drilling would be very destructive and might not work. We let the ideas go,
 and just lived with the massive block of metal in our peripheral vision. The
 cats stared at it while in the litter box.
 
+## Giving Up
+
 Two weeks from the end of our lease, I found myself sitting in front of the
 safe, feeling terrible about leaving such a challenge behind.
 
@@ -45,6 +47,8 @@ the possible types of locks and how they might be unlocked. I hadn't even
 thought of how it might be challenging to figure out the unlocking process even
 if I had the code.
 
+## Sticky Notes
+
 Again, I felt like giving up, but I thought of how this might related to
 cracking a computer password in the 21st century. The most efficient way is
 often social engineering, especially if you can find the password on a sticky
@@ -60,9 +64,18 @@ able to read it under the right lighting conditions, mostly.
 
 ![Safe Combination](/images/safe-cracking/safe-combination.jpg)
 
-However, There's still a lot of mystery. What does p with bar over it mean? Is
+Transcribed:
+
+```
+67 p-bar x 2 79
+115 p-bar x 1 = 60
+```
+
+There's still a lot of mystery. What does p with bar over it mean? Is
 the last number 60 or 69? How do I actually use these numbers with the safe's
 controls to open it?
+
+## Spinning the Dial
 
 I was able to solve the last question thanks to the digitized [Duke University
 Archive](https://library.duke.edu/rubenstein/uarchives) and this original
@@ -78,7 +91,8 @@ could decode the notation on the masking tape:
 
 The p with a bar over it turned out to be from the Latin "post", meaning after.
 The last person to unlock the safe may have been a doctor, because I found this
-is a common abbreviation in medicine.
+is a common abbreviation in medicine (or maybe a physicist, as a leared p-bar
+also stands for antiprotons).
 
 The final procedure to unlock the safe was:
 
@@ -90,22 +104,24 @@ The final procedure to unlock the safe was:
 It took only a few attempts once I found this formula, and finally the handle
 turned:
 
-![Safe cracked open]()
+![Safe cracked open](/images/safe-cracking/unlocked.jpg)
+
+## Riches
 
 Immediately, I realized that trying to drill into the door would have been
 futile due to the depth:
 
-![Thick safe door]()
+![Thick safe door](/images/safe-cracking/thick-door.jpg)
 
 Even worse, a brute force physical approach would have wrecked the decoration on
 the interior door:
 
-![Interior door decoration]()
+![Interior door decoration](/images/safe-cracking/interior-door.jpg)
 
-The suspense was pretty high at this point. The whole point of cracking a safe
-is to get what's inside:
+The suspense was high. The whole point of cracking a safe is to get what's
+inside:
 
-![Empty.]()
+![Empty.](/images/safe-cracking/empty-safe.jpg)
 
 Alas, it was empty except for a 20-year old thermostat and an old German stamp:
 
