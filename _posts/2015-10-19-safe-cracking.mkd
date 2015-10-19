@@ -8,8 +8,7 @@ century farmhouse in Ann Arbor. The house is huge, maybe 4000 sq. ft, and we
 lived in an apartment occupying the entire first floor. The most notable,
 permanent fixture in the apartment is this massive safe:
 
-
-![Front of closed safe](/images/safe-cracking/front.jpg)
+<img src="/images/safe-cracking/front.jpg" class="img-responsive" title="Front of closed safe"/>
 
 Our landlord mentioned that it was so big and heavy, the safe was wheeled in
 while the house was still under construction and the building was completed
@@ -56,13 +55,13 @@ note near the computer in question. Whomever last opened this safe surely wrote
 the combination down somewhere. Suddenly, this caught my eye, in the doorjam of
 an adjacent utility closet:
 
-![Tape on Door Jam](/images/safe-cracking/safe-tape-on-door.jpg)
+<img class="img-responsive" src="/images/safe-cracking/safe-tape-on-door.jpg" title="Tape on Door Jam" />
 
 Why is there a small piece of masking tape in the door jam? I looked closer and
 noticed it had very faint markings. I carefully removed it from the wall and was
 able to read it under the right lighting conditions, mostly.
 
-![Safe Combination](/images/safe-cracking/safe-combination.jpg)
+<img class="img-responsive" src="/images/safe-cracking/safe-combination.jpg" title="Safe Combination" />
 
 Transcribed:
 
@@ -82,12 +81,12 @@ Archive](https://library.duke.edu/rubenstein/uarchives) and this original
 [instruction sheet for a Hall's
 safe](http://library.duke.edu/digitalcollections/broadsides_bdsny81557/).
 
-<iframe src="http://library.duke.edu/digitalcollections/embed/broadsides_bdsny81557/" width="625" height="800" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen></iframe>
+<iframe class="img-responsive" src="http://library.duke.edu/digitalcollections/embed/broadsides_bdsny81557/" width="625" height="800" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen></iframe>
 
 By seeing the description of how to unlock the safe with some sample numbers, I
 could decode the notation on the masking tape:
 
-![Decoded Safe Combination](/images/safe-cracking/safe-combination-notes.jpg)
+<img class="img-responsive" src="/images/safe-cracking/safe-combination-notes.jpg" title="Decoded Safe Combination" />
 
 The p with a bar over it turned out to be from the Latin "post", meaning after.
 The last person to unlock the safe may have been a doctor, because I found this
@@ -104,28 +103,28 @@ The final procedure to unlock the safe was:
 It took only a few attempts once I found this formula, and finally the handle
 turned:
 
-![Safe cracked open](/images/safe-cracking/unlocked.jpg)
+<img class="img-responsive" src="/images/safe-cracking/unlocked.jpg" title="Safe cracked open" />
 
 ## Riches
 
 Immediately, I realized that trying to drill into the door would have been
 futile due to the depth:
 
-![Thick safe door](/images/safe-cracking/thick-door.jpg)
+<img class="img-responsive" src="/images/safe-cracking/thick-door.jpg" title="Thick safe door" />
 
 Even worse, a brute force physical approach would have wrecked the decoration on
 the interior door:
 
-![Interior door decoration](/images/safe-cracking/interior-door.jpg)
+<img class="img-responsive" src="/images/safe-cracking/interior-door.jpg" title="Interior door decoration" />
 
 The suspense was high. The whole point of cracking a safe is to get what's
 inside:
 
-![Empty.](/images/safe-cracking/empty-safe.jpg)
+<img class="img-responsive" src="/images/safe-cracking/empty-safe.jpg" title="Empty." />
 
 Alas, it was empty except for a 20-year old thermostat and an old German stamp:
 
-![Deutfches Reich Stamp](/images/safe-cracking/stamp-from-safe.jpg)
+<img class="img-responsive" src="/images/safe-cracking/stamp-from-safe.jpg" title="Deutfches Reich Stamp" />
 
 The stamp is from approximately 1922, German Deutsches Reich 100000 Mark Postage
 Stamp. It's available for a few dollars online, so while this exercise didn't
