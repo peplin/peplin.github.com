@@ -1,0 +1,104 @@
+---
+layout: post
+title: PyGATT - Bluetooth Low Energy (BLE) and Python
+---
+
+When I started working on the [Stratos Card](https://stratoscard.com), the
+card's Bluetooth Low Energy (BLE) interface was one of the first things
+designed. This was my first experience with BLE and I was learning the details
+of the protocol and how we could stretch it to support something more
+complicated than a simple sensor. We ended up (like many others using BLE) with
+an RPC service built on top of GATT services and characteristics.
+
+<div class="pullout"> This post is about the origins <a
+href="https://github.com/stratosinc/pygatt">PyGATT</a>, a Python library we
+built to interact with BLE peripherals from a standard (non-mobile) desktop or
+laptop development environment. </div>
+
+## Mobile First?
+
+Once we drafted the BLE interface in firmware, I searched for but found very few
+BLE testing tools or libraries for desktop development environments. In 2014 it
+seemed like most engineers jumped straight to prototyping BLE applications on
+mobile devices (likely their target platform since BLE is popular for
+wearables). I was interested in a more flexible environment so we could automate
+our hardware testing with a continuous integration server. The non-mobile tools
+I did find were all interactive or GUI-based, without a good way to
+programatically control the connection.
+
+Perhaps unsurprisingly, the tooling for "regular" Bluetooth 2.0/3.0 doesn't seem
+much better. I experienced Bluetooth 2.0/3.0's simplest profile, SPP,
+while developing [OpenXC](http://openxcplatform.com)'s wireless vehicle
+interface. Without jumping into the complicated world of BlueZ (the primary
+Bluetooth stack for Linux), connecting and pairing was a command-line interface
+game and I/O for SPP was just a "dumb" COM port.
+
+I think the reason for the lack of good tooling for any version of Bluetooth on
+the desktop is the simple fact that it just isn't the target platform for the
+majority of Bluetooth devices. I don't write code on my phone though, and the
+potential for automated testing and CI was a big incentive for me to have a
+desktop interface.
+
+## BlueZ's gatttool
+
+An incredibly useful tool from BlueZ for experimenting with BLE is `gatttool`
+(Linux only). It provides an interface to all of the basic features of BLE -
+connecting, bonding and reading and writing characteristics, etc.. Michael
+Saunby ([@msaunby](https://github.com/msaunby)) created a brilliant [Python
+wrapper](https://github.com/msaunby/ble-sensor-pi) for `gatttool`, specifically
+to connect to TI's SensorTag project. When I discovered his project, I realized
+the missing piece for BLE on a desktop was a standard API for the Bluetooth
+stack running on the host OS. BlueZ's support for BLE was still half-baked (it's
+more complete now) and Microsoft only introduced support in Windows 8.
+
+At least on Linux we could take Michael's approach with `gatttool` and change
+the API to be more generic and not device specific. The design grew organically
+out of his original SensorTag code as I began to understand the quirks of
+wrapping a command line tool with an API. The first API was still very specific
+to `gatttool`, but using it with [CSR8510-based USB
+adapter](https://www.adafruit.com/products/1327)  to connect to the Stratos Card
+proved to be fairly reliable.
+
+## Cross-Platform Support
+
+Eventually, we started looking for ways to provide cross-platform support on
+Windows and Mac OS X. The fact that `gattttool` is using BlueZ means that it
+requires Linux. We got by for a while by running the code in an Ubuntu VM
+(provisioned with Vagrant), but that couldn't scale - our CI is in Linux, QA
+testers use Mac OS X, and manufacturing testing uses Windows. All three required
+access to the same BLE interface.
+
+The [Bluegiga BLED112
+dongle](https://www.bluegiga.com/en-US/products/bled112-bluetooth-smart-dongle/)
+is compelling because it has a self-contained BLE stack and doesn't require any
+software support on the host computer. The adapter uses the proprietary but
+well-documented BGAPI from Bluegiga and Jeff Rowberg
+([@jrowberg](https://github.com/jrowberg/)) already [implemented it in Python
+for us](https://github.com/jrowberg/bglib).
+
+Steven Sloboda ([@sloboste](https://github.com/sloboste)), one of the great
+summer interns at Stratos, bolted BGLIB into PyGATT and refactored the API to
+support different BLE backend implementations.
+
+## PyGATT
+
+And so, [PyGATT](https://github.com/stratosinc/pygatt) is born. PyGATT provides a
+BLE adapter agnostic Python API to interact with BLE peripherals. It currently
+supports any BLE adapter compatible with BlueZ in Linux, and any
+BGAPI-compatible adapter on any platform. Here's an example using a
+BGAPI-compatible adapter to connect and read characteristic:
+
+```
+import pygatt.backends
+
+# The BGAPI backend will attemt to auto-discover the serial device name of the
+# attached BGAPI-compatible USB adapter.
+adapter = pygatt.backends.BGAPIBackend()
+device = adapter.connect('01:23:45:67:89:ab')
+value = device.char_read("a1e8f5b1-696b-4e4c-87c6-69dfe0b0093b")
+```
+
+Find the code on [GitHub](https://github.com/stratosinc/pygatt). This project is
+the work of a number of contributors - find those that I didn't mention here in
+the [contributors
+list](https://github.com/stratosinc/pygatt/graphs/contributors).
