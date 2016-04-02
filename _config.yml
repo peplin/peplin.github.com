@@ -1,4 +1,3 @@
-markdown: rdiscount
 production: true
 permalink: pretty
 gems:
