@@ -5,7 +5,7 @@ permalink: /2011/05/gpxviewer/
 ---
 
 While making [field recordings](/2011/05/august23-audio/) for the
-[August 23, 1966](/2011/05/august23-1966/) project two years ago, I carried
+[August 23, 1966](/2011/05/august23/) project two years ago, I carried
 along a small GPS logger. I sat on the resulting
 [GPX](http://en.wikipedia.org/wiki/GPS_eXchange_Format) file while the project
 wrapped up, but now that I've posted an in-depth recap of the project I thought

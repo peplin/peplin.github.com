@@ -1,6 +1,6 @@
 production: true
 permalink: pretty
-gems:
+plugins:
     - jekyll-sitemap
     - jekyll-redirect-from
 exclude:
