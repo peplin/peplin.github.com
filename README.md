@@ -1,4 +1,6 @@
 # christopherpeplin.com
 
-Directory structure for Jekyll version (and some code) borrowed from
-https://github.com/chrisjacob/jekyll-boilerplate.
+Notes to myself on how to build this thing.
+
+bundle exec jekyll serve
+
