@@ -20,10 +20,10 @@ function loadPhotoGrid() {
                 var grid = $("#photo-grid");
                 $(data.photos.photo).each(function(i, photo) {
                     var element = "";
-                    photo.thumbnail = "http://farm" + photo.farm +
+                    photo.thumbnail = "https://farm" + photo.farm +
                         ".static.flickr.com/" + photo.server + "/" +
                         photo.id + "_" + photo.secret + "_" + "s.jpg";
-                    photo.url = "http://www.flickr.com/photos/" +
+                    photo.url = "https://www.flickr.com/photos/" +
                         photo.owner + "/" + photo.id;
 
                     grid.append('<a target="_blank" href="' + photo.url + '">' +
