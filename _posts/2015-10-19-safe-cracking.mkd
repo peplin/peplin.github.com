@@ -79,9 +79,9 @@ controls to open it?
 I was able to solve the last question thanks to the digitized [Duke University
 Archive](https://library.duke.edu/rubenstein/uarchives) and this original
 [instruction sheet for a Hall's
-safe](http://library.duke.edu/digitalcollections/broadsides_bdsny81557/).
+safe](https://library.duke.edu/digitalcollections/broadsides_bdsny81557/).
 
-<iframe class="img-responsive" src="http://library.duke.edu/digitalcollections/embed/broadsides_bdsny81557/" width="625" height="800" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen></iframe>
+<iframe src='//idn.duke.edu/ark:/87924/r4fj2ck30?embed=true' height='500px' width='100%' frameborder='0' marginwidth='0' marginheight='0' scrolling='no' allowfullscreen></iframe>
 
 By seeing the description of how to unlock the safe with some sample numbers, I
 could decode the notation on the masking tape:
