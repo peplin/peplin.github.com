@@ -105,15 +105,15 @@ by all of the other visitors to the gallery. A second computer near the
 multi-touch table offers a view of the entire universe via a web browser, with
 instructions on how to keep tabs on stars from home.
 
-This [video](http://vimeo.com/5368587) gives a sense of what the final gallery
+This [video](https://vimeo.com/5368587) gives a sense of what the final gallery
 installation looked like, and hopefully a sense of the experience.
 
 <iframe
     src="http://player.vimeo.com/video/5368587?title=0&amp;byline=0&amp;portrait=0"
     width="600" height="405" frameborder="0"></iframe><p><a
-    href="http://vimeo.com/5368587">August 23, 1966</a> from <a
-    href="http://vimeo.com/user1934112">Christopher Peplin</a> on <a
-    href="http://vimeo.com">Vimeo</a>.</p>
+    href="https://vimeo.com/5368587">August 23, 1966</a> from <a
+    href="https://vimeo.com/user1934112">Christopher Peplin</a> on <a
+    href="https://vimeo.com">Vimeo</a>.</p>
 
 ## Abstract
 
