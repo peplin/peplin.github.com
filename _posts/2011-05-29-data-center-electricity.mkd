@@ -353,10 +353,10 @@ solution to seriously reduce that number will they take action.
 [DCMAP]: http://www.datacentermap.com
 [PGE]: http://www.pge.com/includes/docs/pdfs/mybusiness/energysavingsrebates/incentivesbyindustry/common/server_virtualization_consolidation.pdf
 
-[THIN]: http://www.vxl.net/fckeditor/editor/filemanager/connectors/aspx/fckeditor/userfiles/file/VXL%20Green%20Benefits%20-Thin%20Clients.pdf
-[REV]: http://www.mckinsey.com/clientservice/bto/pointofview/pdf/Revolutionizing_Data_Center_Efficiency.pdf
+[THIN]: https://web.archive.org/web/20120105204900/http://www.vxl.net/fckeditor/editor/filemanager/connectors/aspx/fckeditor/userfiles/file/VXL%20Green%20Benefits%20-Thin%20Clients.pdf
+[REV]: https://web.archive.org/web/20081010033501/http://www.mckinsey.com/clientservice/bto/pointofview/pdf/Revolutionizing_Data_Center_Efficiency.pdf
 [GREEN]: http://www.greenpeace.org/international/en/publications/reports/make-it-green-cloud-computing/
 
-[SMART]: http://www.smart2020.org/_assets/files/02_Smart2020Report.pdf
+[SMART]: https://web.archive.org/web/20201213111837/http://www.smart2020.org/_assets/files/02_Smart2020Report.pdf
 [LAW]: http://www.energystar.gov/ia/products/downloads/Public_Law109-431.pdf
 [STAR]: http://www.energystar.gov/ia/partners/prod_development/downloads/EPA_Datacenter_Report_Congress_Final1.pdf

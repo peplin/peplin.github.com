@@ -40,8 +40,8 @@ combination than brute force. This seemed like it might be a good activity when
 not packing moving boxes.
 
 The only marking on the safe were the company that manufactured or distributed
-it - Hall's Safe & Lock Company. I found a [post in an antiques
-forum](http://en.allexperts.com/q/Antique-Safes-3774/2012/4/hall-safe-lock-company-3.htm) describing
+it - Hall's Safe & Lock Company. I found a post in an antiques
+forum (allexperts.com, sadly now removed from the web) describing
 the possible types of locks and how they might be unlocked. I hadn't even
 thought of how it might be challenging to figure out the unlocking process even
 if I had the code.

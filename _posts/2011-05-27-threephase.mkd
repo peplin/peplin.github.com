@@ -55,12 +55,12 @@ The game's source code is provided under an MIT open source license at
 
 This project would not have been possible without the assitance of my advisors
 and professors at CMU. The course I mentioned was taught by:
-[Dr. Lester Lave](http://public.tepper.cmu.edu/facultydirectory/FacultyDirectoryProfile.aspx?id=88)
+Dr. Lester Lave
 (who sadly passed away shortly after the completion of this project),
-[Dr. Marija Ilić](http://www.ece.cmu.edu/~milic/) and [Dr. Jovan Ilić](http://www.linkedin.com/pub/jovan-ilic/5/846/319).
+[Dr. Marija Ilić](http://www.ece.cmu.edu/~milic/) and Dr. Jovan Ilić.
 
 The advisors for this project in particular were
-[Dr. Jay Apt](http://public.tepper.cmu.edu/facultydirectory/FacultyDirectoryProfile.aspx?id=211)
+[Dr. Jay Apt](https://www.cmu.edu/tepper/faculty-and-research/faculty-by-area/profiles/apt-jay.html)
 and [Dr. Gabriela Hug](http://www.ece.cmu.edu/directory/details/4617).
 
 ### Current Player Actions & Abilities
@@ -115,7 +115,7 @@ power system.
 
 The power system is frequently included in computer and video games, dating at
 least back to Maxis' SimCity of 1989 (and the version that I played,
-[SimCity 2000](http://www.gamegoldies.org/simcity-2000)). Electricity appears even
+[SimCity 2000](https://web.archive.org/web/20131227072619/http://www.gamegoldies.org/simcity-2000/). Electricity appears even
 earlier in board games, where controlling the power & water utilities in
 Monopoly garnered players a key advantage. More recently, the German board game
 [Power Grid](http://www.riograndegames.com/games.html?id=5) used the power
@@ -123,7 +123,7 @@ system as its core game mechanic.
 
 ![SimCity 2000](http://things.rhubarbtech.com/images/threephase/simcity.png)
 
-[Source](http://www.gamegoldies.org/simcity-2000)
+[Source](https://web.archive.org/web/20131227072619/http://www.gamegoldies.org/simcity-2000/)
 
 Electricity transmission surfaced as a game mechanic in recent computer games as
 well, such as [Darwinia](http://www.introversion.co.uk) and the new massively
@@ -143,7 +143,7 @@ Carnegie Mellon University,
 [Gipsys](https://www.ece.cmu.edu/~nsf-education/software.html), excels in the
 technical but isn't approachable enough to engage those with a passing interest.
 Since this project started, IBM released a web-based city planning serious game,
-[CityOne](http://www.ibm.com/cityone), which asks players to make public policy decisions to improve
+[CityOne](http://gamesforcities.com/database/cityone-a-smarter-planet-game/), which asks players to make public policy decisions to improve
 efficiency in their virtual city. IBM's take on serious games is unfortunately
 less of a challenging, immersive virtual world and more of a marketing tool.
 

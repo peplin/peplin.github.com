@@ -4,20 +4,21 @@ title: Filesystem Music Collection Sync to Rdio
 permalink: /2011/08/rdio-filesystem-collection-sync
 ---
 
-[Rdio][] is pretty neat, but I've been missing out on some of the fun because I
-can't sync my music collection to my Rdio account. I don't use iTunes or Windows
-Media Player, so the [Rdio Desktop](http://www.rdio.com/#/apps/desktop/) Music
-Collector doesn't do me much good.
+<div class="pullout">
+Sadly, the music streaming service Rdio shut down in December 2015. This post
+is preserved in its honor.</div>
 
-Thankfully, there's a great [Rdio API](http://developer.rdio.com/page) that we
-can use to manually sync from the filesystem. I put together a command-line
-Python tool that takes care of the job, or at least it did for me. You can run
-it multiple times safely, as it keeps track of which albums have already been
-uploaded. 
+***
+
+Rdio is pretty neat, but I've been missing out on some of the fun because I
+can't sync my music collection to my Rdio account. I don't use iTunes or Windows
+Media Player, so the Rdio Desktop Music Collector doesn't do me much good.
+
+Thankfully, there's a great Rdio API that we can use to manually sync from the
+filesystem. I put together a command-line Python tool that takes care of the
+job, or at least it did for me. You can run it multiple times safely, as it
+keeps track of which albums have already been uploaded.
 
 The tool is available on GitHub at
 [rdiosync](https://github.com/peplin/rdiosync) - I hope it's helpful for someone
 else, too.
-
-[Rdio]: http://rdio.com
-[collection]: http://help.rdio.com/customer/portal/articles/58971-collection

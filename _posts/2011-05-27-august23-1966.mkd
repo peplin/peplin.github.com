@@ -19,9 +19,9 @@ which was started to try and encourage inter-departmental collaboration unified
 by technology. The team consisted of four people from three departments:
 
 * Myself, Chris Peplin (computer science)
-* [Brian Nord](http://flavors.me/briannord) (physics, specifically cosmology)
+* Brian Nord (physics, specifically cosmology)
 * [Jiangang Hao](http://gmbcg.blogspot.com/) (astrophysics)
-* [John Walters](http://www.johndanielwalters.com/) (art & design, specifically sculpture)
+* John Walters (art & design, specifically sculpture)
 
 In November 2008, we [proposed](/files/august/proposal.pdf) that over the next
 semester we would:

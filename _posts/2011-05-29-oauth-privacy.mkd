@@ -701,7 +701,7 @@ of Privacy. Washington, D.C.: National Academies Press, 2003. Chap. 1,2.
 [identity metasystem]: http://msdn.microsoft.com/en-us/library/ms996456.aspx
 [stronger ties]: http://www.eweek.com/c/a/Security/OAuth-Is-the-New-Hotness-In-Identity-Management-572745/
 [keynote address]: http://www.youtube.com/watch?gl=US&hl=uk&v=RrpajcAgR1E
-[princess]: http://hueniverse.com/2010/09/twitter-a-hot-princess-google-an-empty-castle/
+[princess]: https://web.archive.org/web/20160304015210/http://hueniverse.com/2010/09/15/twitter-a-hot-princess-google-an-empty-castle/
 [P3P]: http://www.w3.org/P3P/
 [Extended Permissions]: http://developers.facebook.com/docs/authentication/permissions
 [permission hub]: http://ico.org.uk/about_us/research/~/media/documents/library/Data_Protection/Detailed_specialist_guides/EDENTITY_HP_IDM_PAPER_FOR_WEB.ashx

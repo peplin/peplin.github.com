@@ -161,7 +161,7 @@ and storage methods. Common infrastructure metrics include:
 ### Challenges
 
 The world of data center monitoring is changing rapidly. The developers of the
-popular monitoring tool [Ganglia][] remark that "high performance systems today have
+popular monitoring tool Ganglia remark that "high performance systems today have
 sharply diverged from the monolithic machines of the past and now face the same
 set of challenges as that of large-scale distributed systems."
 
@@ -476,7 +476,7 @@ Javascript.
 ### Goals
 
 The primary motivation for Astral is the group project in Carnegie Mellon
-University's [18-842](http://ece842.com) Distributed Systems class. A team of
+University's 18-842 Distributed Systems class. A team of
 four developers (including myself) designed and implemented the peer discovery &
 organization protocol and streaming video service over the Spring 2011 semester.
 My own development efforts were also focused on adding a statistics generating
@@ -735,7 +735,6 @@ O'Hallaron](http://www.cs.cmu.edu/~droh/) and Kushal Dalmia for their help with
 research for the project over the semester.
 
 [cluster-monitoring]: http://portal.acm.org/citation.cfm?id=1037150.1037153
-[ganglia]: http://www.sciencedirect.com/science/article/B6V12-4CMHWWX-2/2/b6b44ba67c732867d1c3881c510b2953
 [traffic]: http://ieeexplore.ieee.org/xpl/freeabs_all.jsp?arnumber=1045780
 [astrolabe]: http://portal.acm.org/citation.cfm?id=762485
 [monalisa]: http://dblp.uni-trier.de/db/journals/corr/corr0306.html#cs-DC-0306096
@@ -744,7 +743,7 @@ research for the project over the semester.
 [astral]: /2011/05/astral
 [ruby-benchmark]: http://www.rubyenterpriseedition.com/comparisons.html
 [redis]: http://redis.io/
-[passenger]: http://www.modrails.com/
+[passenger]: https://www.phusionpassenger.com/
 [nginx]: http://nginx.org/
 [mongodb]: http://www.mongodb.org/
 [collectd]: http://collectd.org/

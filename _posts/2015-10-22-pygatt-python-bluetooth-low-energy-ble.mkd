@@ -3,7 +3,7 @@ layout: post
 title: PyGATT - Bluetooth Low Energy (BLE) and Python
 ---
 
-When I started working on the [Stratos Card](https://stratoscard.com), the
+When I started working on the Stratos Card, the
 card's Bluetooth Low Energy (BLE) interface was one of the first things we
 designed. This was my first experience with BLE and I was learning the details
 of the protocol and how we could stretch it to support something more

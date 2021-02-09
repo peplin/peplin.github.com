@@ -4,13 +4,14 @@ title: Maximum BlueSMirF.
 ---
 
 <div class="pullout">
-
-If you are using a Roving Networks <a
-href="http://www.rovingnetworks.com/products/RN42">RN-42</a> (e.g. SparkFun's <a
+<p>If you are using a Roving Networks
+RN-42 (e.g. SparkFun's <a
 href="https://www.sparkfun.com/products/10269">BlueSMiRF</a>) and need to
 get anywhere the maximum throughput (~23KB/s), you must use hardware flow
-control on the UART interface.
+control on the UART interface.</p>
 
+<p>Roving Networks, the manufacturer of the RN-42, was acquired by Microchip
+Technology in 2012.</p>
 </div>
 
 Until I started working at Ford on the [OpenXC Platform][openxc], most embedded
@@ -39,7 +40,7 @@ reports that the maximum data rate is **3Mbps** and it supports baud rates up to
 **921Kbps**. After [a little
 tweaking](https://github.com/openxc/cantranslator/blob/master/src/platform/pic32/uart.cpp#L83)
 it's possible to run UART on the [chipKIT
-Max32](http://www.digilentinc.com/Products/Detail.cfm?Prod=CHIPKIT-MAX32) way
+Max32](https://chipkit.net/wpcproduct/chipkit-max32/) way
 beyond 115200, so you're ready to pump data into the RN-42 at the limit of
 921Kbps.
 

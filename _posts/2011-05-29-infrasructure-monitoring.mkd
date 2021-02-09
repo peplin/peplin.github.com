@@ -235,7 +235,7 @@ to infrastructure. These types of systems are popular in industrial environments
 as well, as a way to monitor and control heavy equipment.
 
 There are many existing SCADA-style systems (an estimated 150-200
-[different protocols][scada-security]), dating back to the late 1960's.
+different protocols), dating back to the late 1960's.
 SCADA is very popular with power utilities as a mechanism for coordinating
 generation capacity among power plant operators; the generators must react very
 quickly to changes in load, and an automated communication system is the only
@@ -295,8 +295,8 @@ become more prevalent.
 Knowing this, systems using a standard shared network with open protocols are
 not without fault. They allow for more efficient operation and
 potentially more collaboration, "but it also exposes the safety-critical
-industrial network to the myriad security problems of the Internet"
-([source][scada-security]).
+industrial network to the myriad security problems of the Internet".
+([source](https://web.archive.org/web/20110628223055/http://www.sciencedirect.com/science/article/pii/S0167404806000514)).
 
 It's important to distinguish between the control and monitoring halves of
 SCADA, as they have very different security requirements. Some types of
@@ -667,13 +667,12 @@ possibilities for infrastructure management mods include:
     [Half-Life 2](http://orange.half-life2.com/)) - strips down the game to
     its core physics engine to allow creating devices as varied as operational
     submarines, construction cranes and rocket ships.
-* [Empires](http://www.empiresmod.com/drupal/) (for Half-Life 2) - extends the
+* [Empires](https://www.empiresmod.com/) (for Half-Life 2) - extends the
     formerly single-play, first-person only game to include a commander with a
     top-down view of the battlefield who can give orders to players exploring
     the world. This style of game closely matches the management hierarchy of
     many infrastructure operators.
-* [BusMod](http://www.gtagaming.com/downloads/gta-iv/vehicle-mods/2604)
-    (for [Grand Theft Auto 4](http://www.rockstargames.com/IV/)) - in a game
+* BusMod (for [Grand Theft Auto 4](http://www.rockstargames.com/IV/)) - in a game
     built for causing violent mayhem in an urban environment, this mod
     highlights a more mundane feature of the city and lets the player drive a
     bus route.
@@ -724,8 +723,7 @@ and pleasure, and neither is good design.
 [dist-automation]: http://ieeexplore.ieee.org/xpl/freeabs_all.jsp?arnumber=560831
 [wide-area-power]: http://ieeexplore.ieee.org/xpl/freeabs_all.jsp?arnumber=1259313
 [scada-vulnerabilities]: http://portal.acm.org/citation.cfm?id=1047846.1047872
-[scada-security]: http://www.sciencedirect.com/science/article/B6V8G-4JXRWXY-1/2/b9d08f2cdd9717ffab6c60e9b7d658f1
 [reliable-grid-info]: http://dblp.uni-trier.de/db/conf/eagc/eagc2004.html#HolubKMR04
-[ntsb]: https://www.ntsb.gov/safety/safetystudies/SS0502.html
+[ntsb]: https://web.archive.org/web/20080921124616/http://www.ntsb.gov/publictn/2005/SS0502.pdf
 [fingerprint]: http://dblp.uni-trier.de/db/conf/eurosys/eurosys2010.html#BodikGFWA10
 [report-card]: http://www.infrastructurereportcard.org/

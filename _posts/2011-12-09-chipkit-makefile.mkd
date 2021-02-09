@@ -33,7 +33,7 @@ longer had it not been so clearly explained.
 * Check out Martin Oldfield's [original project][Arduino.mk].
 
 [GitHub]: https://github.com/peplin/arduino.mk
-[Arduino.mk]: http://mjo.tc/atelier/2009/02/arduino-cli.html
+[Arduino.mk]: https://mjoldfield.com/atelier/2009/02/arduino-cli.html
 [MPIDE]: https://github.com/chipKIT32/chipKIT32-MAX/downloads
 [Digilent chipKIT]: http://www.digilentinc.com/Products/Catalog.cfm?NavPath=2,892&Cat=18
 [Arduino]: https://github.com/peplin/arduino.mk

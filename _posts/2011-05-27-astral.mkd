@@ -323,7 +323,7 @@ the costs of centralized distribution aren't as high as we initially predicted
 with distributing via a peer-to-peer network may not be worth the trouble,
 especially considering the extra challenge with collecting accurate statistics
 about stream consumers. In the industry, the video distribution company
-[Joost](http://www.joost.com/)
+[Joost](https://en.wikipedia.org/wiki/Joost)
 [dropped support](http://techcrunch.com/2008/12/17/joost-just-gives-up-on-p2p/)
 for their peer-to-peer distribution system in favor of a more traditional,
 centralized approach with Flash in 2008.
