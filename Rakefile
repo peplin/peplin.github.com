@@ -10,7 +10,23 @@ task :test do
       :disable_external => false,
       :check_favicon => false,
       :parallel => { :in_processes => 4},
-      :assume_extension => true
+      :assume_extension => true,
+      :typhoeus =>
+        {
+          :followlocation => true,
+          :headers => {
+            "User-Agent" => "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36",
+            "Connection" => "close",
+          },
+          "cookiefile" => "/tmp/html_proofer_cookies",
+          "cookiejar" => "/tmp/html_proofer_cookies",
+          :connecttimeout => 60,
+          :timeout => 60,
+          :ssl_verifypeer => false,
+          :ssl_verifyhost => 0
+        },
+      :hydra => { :max_concurrency => 2 },
+      :parallel => { :in_processes => 4}
   }
 
   HTMLProofer.check_directory("./_site", options).run
