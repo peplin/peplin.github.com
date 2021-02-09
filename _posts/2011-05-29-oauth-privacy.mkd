@@ -286,7 +286,7 @@ permissions this application is requesting. The OAuth specification leaves the
 details of the possible values up to the authorizing and resource servers,
 meaning that each OAuth provider has a different set of permitted scope values
 and valid combinations. For example, Facebook's implementation of the OAuth2
-draft describes a set of "[extended permissions][]" that can be requested via
+draft describes a set of "extended permissions" that can be requested via
 the scope parameter. MySpace made their own proprietary modifications to the
 original OAuth protocol to implement a similar feature (as of September 2014
 this seems to no longer be available).
@@ -698,12 +698,11 @@ IEEE Computer Society, 2007, pp. 99–106. isbn: 0-7695-2943-7.
 Stephen T. Kent and Lynette I. Millett. Who Goes There?: Authentication Through the Lens
 of Privacy. Washington, D.C.: National Academies Press, 2003. Chap. 1,2.
 
-[identity metasystem]: http://msdn.microsoft.com/en-us/library/ms996456.aspx
+[identity metasystem]: https://docs.microsoft.com/en-us/previous-versions/dotnet/articles/ms996456(v=msdn.10)?redirectedfrom=MSDN
 [stronger ties]: http://www.eweek.com/c/a/Security/OAuth-Is-the-New-Hotness-In-Identity-Management-572745/
 [keynote address]: http://www.youtube.com/watch?gl=US&hl=uk&v=RrpajcAgR1E
 [princess]: https://web.archive.org/web/20160304015210/http://hueniverse.com/2010/09/15/twitter-a-hot-princess-google-an-empty-castle/
 [P3P]: http://www.w3.org/P3P/
-[Extended Permissions]: http://developers.facebook.com/docs/authentication/permissions
 [permission hub]: http://ico.org.uk/about_us/research/~/media/documents/library/Data_Protection/Detailed_specialist_guides/EDENTITY_HP_IDM_PAPER_FOR_WEB.ashx
 [Personal Data Store]: http://wiki.eclipse.org/Personal_Data_Store_Overview
 [OAuth]: http://oauth.net
@@ -711,5 +710,5 @@ of Privacy. Washington, D.C.: National Academies Press, 2003. Chap. 1,2.
 [OpenID]: http://openid.net/
 [OAuth2 Specification]: http://tools.ietf.org/html/draft-ietf-oauth-v2-10
 [P3P 1.1 draft specification]: http://www.w3.org/TR/P3P11
-[Web2ID]: http://doi.acm.org/10.1145/1655028.1655036
+[Web2ID]: https://dl.acm.org/doi/10.1145/1655028.1655036
 [PDF]: http://things.rhubarbtech.com/pdf/oauth-privacy-report.pdf

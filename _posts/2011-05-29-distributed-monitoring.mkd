@@ -734,12 +734,12 @@ offered their feedback. Thanks also to Professor [David
 O'Hallaron](http://www.cs.cmu.edu/~droh/) and Kushal Dalmia for their help with
 research for the project over the semester.
 
-[cluster-monitoring]: http://portal.acm.org/citation.cfm?id=1037150.1037153
+[cluster-monitoring]: https://dl.acm.org/doi/10.5555/1037150.1037153
 [traffic]: http://ieeexplore.ieee.org/xpl/freeabs_all.jsp?arnumber=1045780
-[astrolabe]: http://portal.acm.org/citation.cfm?id=762485
+[astrolabe]: https://dl.acm.org/doi/10.1145/762483.762485
 [monalisa]: http://dblp.uni-trier.de/db/journals/corr/corr0306.html#cs-DC-0306096
 [pipeline]: http://ieeexplore.ieee.org/xpl/freeabs_all.jsp?arnumber=4563333
-[network imprecision]: http://portal.acm.org/citation.cfm?id=1855748
+[network imprecision]: https://dl.acm.org/doi/10.5555/1855741.1855748
 [astral]: /2011/05/astral
 [ruby-benchmark]: http://www.rubyenterpriseedition.com/comparisons.html
 [redis]: http://redis.io/
