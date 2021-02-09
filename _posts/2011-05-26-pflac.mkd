@@ -338,5 +338,5 @@ this post.
 
 ## References
 
-* [FLAC Format Specification](http://flac.sourceforge.net/format.html)
-* [FLAC Project Documentation](http://flac.sourceforge.net/api/index.html)
+* [FLAC Format Specification](https://xiph.org/flac/format.html)
+* [FLAC Project Documentation](https://xiph.org/flac/api/index.html)
