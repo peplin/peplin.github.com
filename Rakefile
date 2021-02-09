@@ -5,9 +5,8 @@ require 'open-uri'
 task :test do
   options = {
       :href_ignore => ["#"],
-      :alt_ignore => [
-      ],
-      :disable_external => false,
+      :alt_ignore => [],
+      :disable_external => true,
       :check_favicon => false,
       :parallel => { :in_processes => 4},
       :assume_extension => true,
@@ -26,7 +25,6 @@ task :test do
           :ssl_verifyhost => 0
         },
       :hydra => { :max_concurrency => 10 },
-      :parallel => { :in_processes => 4}
   }
 
   HTMLProofer.check_directory("./_site", options).run
