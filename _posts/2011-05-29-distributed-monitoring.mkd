@@ -571,77 +571,21 @@ be performed at each supernode to further diminish the number of updates.
 update requests in a 100,000 node cluster. The cells contain the total number of
 requests per second received by the sink.*
 
-<table>
-<thead>
-    <tr>
-        <td>Depth / Batch Window Size</td>
-        <td>0</td>
-        <td>5s</td>
-        <td>10s</td>
-        <td>30s</td>
-    </tr>
-</thead>
-<tbody>
-    <tr>
-        <td>One Level (Baseline Centralized)</td>
-        <td>100,000</td>
-        <td>20,000</td>
-        <td>10,000</td>
-        <td>3,333</td>
-    </tr>
-    <tr>
-        <td>Two Level (1000 supernodes)</td>
-        <td>1,000</td>
-        <td>200</td>
-        <td>100</td>
-        <td>33</td>
-    </tr>
-        <td>Three Level (10 + 1000 Supernodes)
-        <td>10</td>
-        <td>2</td>
-        <td>1</td>
-        <td>0.33</td>
-    </tr>
-</tbody>
-</table>
+|Depth / Batch Window Size|0|5s|10s|30s|
+|---|---|---|---|---|
+|One Level (Baseline Centralized)|100,000|20,000|10,000|3,333|
+|Two Level (1000 supernodes)|1,000|200|100|33|
+|Three Level (10 + 1000 supernodes)|10|2|1|0.33|
 
 *The effects of hierarchy depth and batch window delay on the worst case
 freshness in a 100,000 node cluster. The cells contain the worst possible update
 delay in seconds.*
 
-<table>
-<thead>
-    <tr>
-        <td>Depth / Batch Window Size</td>
-        <td>0</td>
-        <td>5s</td>
-        <td>10s</td>
-        <td>30s</td>
-    </tr>
-</thead>
-<tbody>
-    <tr>
-        <td>One Level (Baseline Centralized)</td>
-        <td>0</td>
-        <td>5s</td>
-        <td>10s</td>
-        <td>30s</td>
-    </tr>
-    <tr>
-        <td>Two Level (1000 supernodes)</td>
-        <td>0 + 2 hops</td>
-        <td>10s</td>
-        <td>20s</td>
-        <td>60s</td>
-    </tr>
-        <td>Three Level (10 + 1000 Supernodes)
-        <td>0 + 3 hops</td>
-        <td>15s</td>
-        <td>30s</td>
-        <td>90s</td>
-    </tr>
-</tbody>
-</table>
+|Depth / Batch Window Size|0|5s|10s|30s|
+|---|---|---|---|---|
+|One Level (Baseline Centralized)|0|5s|10s|30s
+|Two Level (1000 supernodes)|0 + 2 hops|10s|20s|60s|
+|Three Level (10 + 1000 supernodes)|0 + 3 hops|15s|30s|90s|
 
 ![Graph 1](http://things.rhubarbtech.com/distributed-monitoring/images/graph1.png)
 
@@ -797,7 +741,7 @@ research for the project over the semester.
 [monalisa]: http://dblp.uni-trier.de/db/journals/corr/corr0306.html#cs-DC-0306096
 [pipeline]: http://ieeexplore.ieee.org/xpl/freeabs_all.jsp?arnumber=4563333
 [network imprecision]: http://portal.acm.org/citation.cfm?id=1855748
-[astral]: http://christopherpeplin.com/2011/05/astral
+[astral]: /2011/05/astral
 [ruby-benchmark]: http://www.rubyenterpriseedition.com/comparisons.html
 [redis]: http://redis.io/
 [passenger]: http://www.modrails.com/
