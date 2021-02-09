@@ -20,12 +20,12 @@ task :test do
           },
           "cookiefile" => "/tmp/html_proofer_cookies",
           "cookiejar" => "/tmp/html_proofer_cookies",
-          :connecttimeout => 60,
-          :timeout => 60,
+          :connecttimeout => 120,
+          :timeout => 120,
           :ssl_verifypeer => false,
           :ssl_verifyhost => 0
         },
-      :hydra => { :max_concurrency => 2 },
+      :hydra => { :max_concurrency => 10 },
       :parallel => { :in_processes => 4}
   }
 

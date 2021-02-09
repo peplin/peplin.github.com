@@ -114,16 +114,14 @@ power system.
 ### Computer & Video Games
 
 The power system is frequently included in computer and video games, dating at
-least back to Maxis' SimCity of 1989 (and the version that I played,
-[SimCity 2000](https://web.archive.org/web/20131227072619/http://www.gamegoldies.org/simcity-2000/). Electricity appears even
-earlier in board games, where controlling the power & water utilities in
-Monopoly garnered players a key advantage. More recently, the German board game
-[Power Grid](http://www.riograndegames.com/games.html?id=5) used the power
-system as its core game mechanic.
+least back to Maxis' SimCity of 1989 (and the version that I played, SimCity
+2000. Electricity appears even earlier in board games, where controlling the
+power & water utilities in Monopoly garnered players a key advantage. More
+recently, the German board game [Power
+Grid](http://www.riograndegames.com/games.html?id=5) used the power system as
+its core game mechanic.
 
 ![SimCity 2000](http://things.rhubarbtech.com/images/threephase/simcity.png)
-
-[Source](https://web.archive.org/web/20131227072619/http://www.gamegoldies.org/simcity-2000/)
 
 Electricity transmission surfaced as a game mechanic in recent computer games as
 well, such as [Darwinia](http://www.introversion.co.uk) and the new massively
