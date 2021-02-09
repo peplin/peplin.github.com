@@ -12,7 +12,7 @@ wrapped up, but now that I've posted an in-depth recap of the project I thought
 linking the location with the audio files would be an interesting experiment.
 
 A quick search led me to [Kaz Okuda's](http://notions.okuda.ca/) project on
-Google Code, [gpxviewer](http://code.google.com/p/gpxviewer/) - a perfect match.
+Google Code, [gpxviewer](https://code.google.com/p/gpxviewer/) - a perfect match.
 From the project's page:
 
 > The GPX viewer is a 100% client-side JavaScript GPX file viewer that uses

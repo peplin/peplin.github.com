@@ -719,7 +719,7 @@ and pleasure, and neither is good design.
 [nagios]: http://portal.acm.org/citation.cfm?id=1272685
 [civil-health]: http://shm.sagepub.com/content/2/3/257.short
 [structural-health]: http://books.google.com/books?hl=en&lr=&id=RPXU1vBhIFMC&oi=fnd&pg=PA123&dq=Health+Monitoring+Framework+for+Bridges+and+Civil+Infrastructure&ots=_LI3GPLQF0&sig=Slwwo9mnAB0rGg68Yh88RqLgoYc#v=onepage&q=Health%20Monitoring%20Framework%20for%20Bridges%20and%20Civil%20Infrastructure&f=false
-[smart-sensors]: http://onlinelibrary.wiley.com/doi/10.1002/stc.48/abstract
+[smart-sensors]: https://onlinelibrary.wiley.com/doi/abs/10.1002/stc.48
 [dist-automation]: http://ieeexplore.ieee.org/xpl/freeabs_all.jsp?arnumber=560831
 [wide-area-power]: http://ieeexplore.ieee.org/xpl/freeabs_all.jsp?arnumber=1259313
 [scada-vulnerabilities]: http://portal.acm.org/citation.cfm?id=1047846.1047872
