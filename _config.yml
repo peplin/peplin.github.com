@@ -1,8 +1,11 @@
 production: true
 permalink: pretty
+author: Christopher Peplin
+url: https://threephase.xyz
 plugins:
     - jekyll-sitemap
     - jekyll-redirect-from
+    - jekyll-seo-tag
 exclude:
   - vendor
   - README.md
