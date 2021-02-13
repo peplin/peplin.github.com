@@ -67,7 +67,7 @@ from the Java version of Processing made using the language somewhat unnatural
 
 Instead, Threephase uses two different Javascript graphics libraries:
 [Raphaël](http://raphaeljs.com) for basic charting and mapping and
-[Flot](http://code.google.com/p/flot/) for the piecewise graph
+[Flot](http://www.flotcharts.org/) for the piecewise graph
 necessary for the
 [average cost curve visualization](https://github.com/peplin/threephase/blob/master/public/javascripts/application.js#L157).
 Raphaël also has an existing charting extension,
