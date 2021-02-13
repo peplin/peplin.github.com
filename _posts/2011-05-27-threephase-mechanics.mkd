@@ -45,7 +45,7 @@ have a more intelligent, varying load profile function. The current function
 
     -.1 ∗ ((.42 ∗ Hour - 5)4 ) + 100) ∗ Customers/Constant)
 
-![Load Profile](http://things.rhubarbtech.com/images/threephase/profile.png)
+![Load Profile](/images/threephase/profile.png)
 
 ### Equipment Failure
 
@@ -79,7 +79,7 @@ customers is considered. The line constraint feature was removed from the list
 of initial features of Threephase, but it is the next big logical step for
 simulating reality.
 
-![Line Constraints](http://things.rhubarbtech.com/images/threephase/line-constraint.png)
+![Line Constraints](/images/threephase/line-constraint.png)
 
 The physical location of load on the grid can make the ideal, cost-minimizing
 generation scenario impossible. In this example, Titusville has 150MW of demand
@@ -156,7 +156,7 @@ In this example, Titusville has a marginal price of $80 because of
 its isolation from high capacity transmission lines, relatively high demand and
 (not pictured) an expensive local generator to make up the difference.
 
-![LMP](http://things.rhubarbtech.com/images/threephase/lmp.png)
+![LMP](/images/threephase/lmp.png)
 
 *Continue to the next section on
 [in-game time](/2011/05/threephase-time/).*

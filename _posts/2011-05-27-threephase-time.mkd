@@ -56,7 +56,7 @@ occur exactly once per day. That includes:
 * Clearing fuel market prices
 * Storing average marginal price and operating level statistics
 
-![Decreasing Updates](http://things.rhubarbtech.com/images/threephase/frequency2.png)
+![Decreasing Updates](/images/threephase/frequency2.png)
 
 The algorithms to calculate these values need to be able to step through the
 calculation for multiple days, and not condense the change into a single value.
@@ -65,7 +65,7 @@ calculate the marginal price of power on each of the three days, not on average.
 It is possible to use an integral in some situations where the calculations per
 day are unimportant, and this method is preferred if possible.
 
-![Marginal Price](http://things.rhubarbtech.com/images/threephase/mp.png)
+![Marginal Price](/images/threephase/mp.png)
 
 ## Update Scope
 
@@ -78,21 +78,21 @@ the next interval (e.g. 1 second), the updates will fall behind and never catch
 up. Another method is to maintain a list of only the objects that explicitly
 need to be updated. This avoids duplicated work, but is difficult to maintain.
 
-![Naive Updating](http://things.rhubarbtech.com/images/threephase/update1.png)
+![Naive Updating](/images/threephase/update1.png)
 
 A representation of naive, update-all approach to game updating. A naive
 approach to update scope chooses to update every game object starting and the
 top of the object hierarchy. This approach is not scalable to many simultaneous
 game instances, especially with short timesteps in between updates.
 
-![List Updating](http://things.rhubarbtech.com/images/threephase/update2.png)
+![List Updating](/images/threephase/update2.png)
 
 A representation of improved, list-based update approach game updating. An
 improved scope for updates maintains a list of specific objects that need to be
 updated. It saves time and work over the naive approach, but still has
 difficulty scaling in small timestep situations.
 
-![Lazy Updating](http://things.rhubarbtech.com/images/threephase/update3.png)
+![Lazy Updating](/images/threephase/update3.png)
 
 A representation of lazy approach to game updating. A lazy approach to update
 scope updates objects only on demand from player actions. A request for the
@@ -126,7 +126,7 @@ begins counting from the epoch of the game. This represents an accelerated view
 into the future, allowing players to see the near to medium-term implications of
 their choices.
 
-![Crossing Days](http://things.rhubarbtech.com/images/threephase/crossing-over2.png)
+![Crossing Days](/images/threephase/crossing-over2.png)
 
 At the high end of the time scale, update intervals can be especially
 problematic. At the maximum (200 times real-time), a day passes in game every 12

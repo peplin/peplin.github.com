@@ -3,7 +3,7 @@ layout: post
 title: Data Center Efficiency & Renewable Energy
 ---
 
-*A [PDF](http://things.rhubarbtech.com/data-center-efficiency/dc-efficiency-report.pdf)
+*A [PDF](/files/data-center-efficiency/dc-efficiency-report.pdf)
 of this article is available*
 
 ## Abstract
@@ -37,7 +37,7 @@ to take off in the first iteration, the latest push has spurred laptop and
 smartphone sales, and encouraged new devices like Apple's iPad. Their minimal
 energy demands are even more attractive in today's energy concious society.
 
-![Thin Power](http://things.rhubarbtech.com/data-center-efficiency/images/thin-power.png)
+![Thin Power](/files/data-center-efficiency/images/thin-power.png)
 
 *Thin clients use up to 24% less electricity than desktop computers, but some of
 that efficiency is lost in in the increased demand for servers. (source: "Green
@@ -74,7 +74,7 @@ separate from any application development, alone accounts for 2/3 of IT costs of
 a data center ([source][KOOM]). These costs as well as emissions are increasing
 on par with the total number of servers in operation.
 
-![Smart Datacenters](http://things.rhubarbtech.com/data-center-efficiency/images/smart-datacenters.png)
+![Smart Datacenters](/files/data-center-efficiency/images/smart-datacenters.png)
 
 *This diagram shows projected data center emissions. Volume servers represent
 the fastest growing segment ([source][SMART]).*
@@ -91,7 +91,7 @@ always run at optimal efficiency, as it represented a significant cost and
 investment. A single inefficient volume server is easy to write off because of
 the tiny impact, but the combined cost in a data center is high.
 
-![1u Cost](http://things.rhubarbtech.com/data-center-efficiency/images/1u-cost.png)
+![1u Cost](/files/data-center-efficiency/images/1u-cost.png)
 
 *The total cost of ownership of a 1U or volume server is almost four times that
 of the hardware itself and is still increasing, [according to the EPA][STAR].*
@@ -174,13 +174,13 @@ ideal as the number of servers grew according to the EPA:
 data centers — New York City and San Francisco — are geographically isolated
 areas with relatively limited electricity transmission resources."
 
-![Transmission Congestion](http://things.rhubarbtech.com/data-center-efficiency/images/congestion.png)
+![Transmission Congestion](/files/data-center-efficiency/images/congestion.png)
 
 *Some of the areas of high congestion concern noted by the U.S.
 Department of Energy are also popular locations for data centers which
 contribute additional strain to the grid.*
 
-![East Coast](http://things.rhubarbtech.com/data-center-efficiency/images/datacenter-eastcoast.png)
+![East Coast](/files/data-center-efficiency/images/datacenter-eastcoast.png)
 
 *A high density strip of data centers mirrors the strip of transmission
 congestion in the previous figure. ([source][DCMAP])*

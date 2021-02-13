@@ -58,7 +58,7 @@ tracking tool [Timetrap](https://github.com/samg/timetrap). Split into general
 categories, most of the time was spent on the backend code (which determines the
 data storage and object interaction). The second most time was spent in testing.
 
-![Time Distribution](http://things.rhubarbtech.com/images/threephase/time-tracking.png)
+![Time Distribution](/images/threephase/time-tracking.png)
 
 The initial concept of Threephase evolved over the summer months, culminating in
 software requirements and architecture documents (now in the project's wiki
