@@ -14,7 +14,7 @@ The Twoverse architecture can be split into three levels - server, client and
 input. This diagram [(full size)](https://github.com/peplin/august23/raw/master/doc/report/images/twoverse_arch.jpg)
 includes some unimplemented elements, such as input from a sound sensor.
 
-![Arch](http://things.rhubarbtech.com/images/august23/twoverse_arch.jpg)
+![Arch](/files/images/august23/twoverse_arch.jpg)
 
 ## System Design
 
@@ -65,7 +65,7 @@ its local cache of the universe via the server's XML feed.
 A screenshot of the star chart in a web browser during the time the gallery was
 open:
 
-![Star Chart](http://things.rhubarbtech.com/images/august23/starchart.png)
+![Star Chart](/files/images/august23/starchart.png)
 
 ## Library
 
@@ -94,17 +94,17 @@ Additional documentation is available as Javadoc comments with the
 
 ## Interface Screenshots
 
-![MT-screenshot](http://things.rhubarbtech.com/images/august23/Screenshot-MultitouchClient.png)
+![MT-screenshot](/files/images/august23/Screenshot-MultitouchClient.png)
 
 A screenshot of the multi-touch Client with a group of stars displayed at the
 default zoom level. The lines connecting the stars are constellations drawn by a
 user.
 
-![MT-screenshot](http://things.rhubarbtech.com/images/august23/Screenshot-MultitouchClient-1.png)
+![MT-screenshot](/files/images/august23/Screenshot-MultitouchClient-1.png)
 
 A screenshot of the multi-touch Client viewing the details of a single star.
 
-![MT-screenshot](http://things.rhubarbtech.com/images/august23/Screenshot-MultitouchClient-2.png)
+![MT-screenshot](/files/images/august23/Screenshot-MultitouchClient-2.png)
 
 A screenshot of the multi-touch Client zoomed in for a closer look at a cluster
 of stars.

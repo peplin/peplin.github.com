@@ -4,7 +4,7 @@ title: Threephase - A Browser-based Electric Power System Game
 permalink: /2011/05/threephase/
 ---
 
-![Logo](http://things.rhubarbtech.com/images/threephase/threephase-logo.jpg)
+![Logo](/files/images/threephase/threephase-logo.jpg)
 
 *This post is part of a series describing the [Threephase](/2011/05/threephase/)
 project.*
@@ -17,7 +17,7 @@ Master's in Information Networking (MSIN) candidates at the
 University (CMU).
 
 This article is an abriged version of the
-[final report](http://things.rhubarbtech.com/threephase/report.pdf),
+[final report](/files/threephase/report.pdf),
 reformatted for the web and with some (less formal) comments and reflections
 added. I've split it up into a few posts:
 
@@ -121,18 +121,18 @@ recently, the German board game [Power
 Grid](http://www.riograndegames.com/games.html?id=5) used the power system as
 its core game mechanic.
 
-![SimCity 2000](http://things.rhubarbtech.com/images/threephase/simcity.png)
+![SimCity 2000](/files/images/threephase/simcity.png)
 
 Electricity transmission surfaced as a game mechanic in recent computer games as
 well, such as [Darwinia](http://www.introversion.co.uk) and the new massively
 multiplayer game [Love](http://www.quelsolaar.com/love). In both games,
 protecting transmission lines from attack and malfunction is a key objective.
 
-![Darwinia](http://things.rhubarbtech.com/images/threephase/darwinia.jpg)
+![Darwinia](/files/images/threephase/darwinia.jpg)
 
 [Source](http://www.introversion.co.uk)
 
-![Love](http://things.rhubarbtech.com/images/threephase/love.png)
+![Love](/files/images/threephase/love.png)
 
 [Source](http://www.quelsolaar.com/love)
 
@@ -145,7 +145,7 @@ Since this project started, IBM released a web-based city planning serious game,
 efficiency in their virtual city. IBM's take on serious games is unfortunately
 less of a challenging, immersive virtual world and more of a marketing tool.
 
-![Gipsys](http://things.rhubarbtech.com/images/threephase/gipsys.png)
+![Gipsys](/files/images/threephase/gipsys.png)
 
 The frequent appearance of the electrical system in games is not a coincidence -
 the concepts of generation and transmission fit well with strategy gameplay. The

@@ -19,13 +19,13 @@ sounds of wind passing through narrow walkways, the hum of machinery, and other
 background sounds. Most of the recordings were slowed down quite dramatically.
 
 <ul class="audio-playlist" data-id="1">
-    <li><a href="http://things.rhubarbtech.com/august23/audio/ambient1.mp3">Furnace</a></li>
-    <li><a href="http://things.rhubarbtech.com/august23/audio/ambient2.mp3">Water Pump</a></li>
-    <li><a href="http://things.rhubarbtech.com/august23/audio/ambient3.mp3">Corridor</a></li>
-    <li><a href="http://things.rhubarbtech.com/august23/audio/ambient4.mp3">Furnace</a></li>
-    <li><a href="http://things.rhubarbtech.com/august23/audio/ambient5.mp3">Road</a></li>
-    <li><a href="http://things.rhubarbtech.com/august23/audio/ambient6.mp3">Engine</a></li>
-    <li><a href="http://things.rhubarbtech.com/august23/audio/ambient7.mp3">Field</a></li>
+    <li><a href="/files/august23/audio/ambient1.mp3">Furnace</a></li>
+    <li><a href="/files/august23/audio/ambient2.mp3">Water Pump</a></li>
+    <li><a href="/files/august23/audio/ambient3.mp3">Corridor</a></li>
+    <li><a href="/files/august23/audio/ambient4.mp3">Furnace</a></li>
+    <li><a href="/files/august23/audio/ambient5.mp3">Road</a></li>
+    <li><a href="/files/august23/audio/ambient6.mp3">Engine</a></li>
+    <li><a href="/files/august23/audio/ambient7.mp3">Field</a></li>
 </ul>
 
 {% assign jplayer-id = "1" %}
@@ -44,11 +44,11 @@ These were recorded in my Ann Arbor apartment with an M-Audio Nova microphone,
 and that's me speaking.
 
 <ul class="audio-playlist" data-id="2">
-    <li><a href="http://things.rhubarbtech.com/august23/audio/sequence1.mp3">Connect Lifeline</a></li>
-    <li><a href="http://things.rhubarbtech.com/august23/audio/sequence2.mp3">Lifeline Connected</a></li>
-    <li><a href="http://things.rhubarbtech.com/august23/audio/sequence3.mp3">Airlock Sequence Finished</a></li>
-    <li><a href="http://things.rhubarbtech.com/august23/audio/sequence4.mp3">Enter the Star Formation Chamber</a></li>
-    <li><a href="http://things.rhubarbtech.com/august23/audio/sequence5.mp3">Star Formation Beginning</a></li>
+    <li><a href="/files/august23/audio/sequence1.mp3">Connect Lifeline</a></li>
+    <li><a href="/files/august23/audio/sequence2.mp3">Lifeline Connected</a></li>
+    <li><a href="/files/august23/audio/sequence3.mp3">Airlock Sequence Finished</a></li>
+    <li><a href="/files/august23/audio/sequence4.mp3">Enter the Star Formation Chamber</a></li>
+    <li><a href="/files/august23/audio/sequence5.mp3">Star Formation Beginning</a></li>
 </ul>
 
 {% assign jplayer-id = "2" %}
@@ -63,15 +63,15 @@ These were recorded in the DL-1 lab at the University of Michigan with an
 M-Audio Nova microphone.
 
 <ul class="audio-playlist" data-id="3">
-    <li><a href="http://things.rhubarbtech.com/august23/audio/narration1.mp3">Star Graveyard</a></li>
-    <li><a href="http://things.rhubarbtech.com/august23/audio/narration2.mp3">Collapsing Molecular Cloud</a></li>
-    <li><a href="http://things.rhubarbtech.com/august23/audio/narration3.mp3">Atomic Fusion</a></li>
-    <li><a href="http://things.rhubarbtech.com/august23/audio/narration4.mp3">Fusion</a></li>
-    <li><a href="http://things.rhubarbtech.com/august23/audio/narration5.mp3">Pressure vs. Gravity</a></li>
-    <li><a href="http://things.rhubarbtech.com/august23/audio/narration6.mp3">Out of Fuel</a></li>
-    <li><a href="http://things.rhubarbtech.com/august23/audio/narration7.mp3">Black Hole</a></li>
-    <li><a href="http://things.rhubarbtech.com/august23/audio/narration8.mp3">Supernova</a></li>
-    <li><a href="http://things.rhubarbtech.com/august23/audio/narration9.mp3">Pulsar</a></li>
+    <li><a href="/files/august23/audio/narration1.mp3">Star Graveyard</a></li>
+    <li><a href="/files/august23/audio/narration2.mp3">Collapsing Molecular Cloud</a></li>
+    <li><a href="/files/august23/audio/narration3.mp3">Atomic Fusion</a></li>
+    <li><a href="/files/august23/audio/narration4.mp3">Fusion</a></li>
+    <li><a href="/files/august23/audio/narration5.mp3">Pressure vs. Gravity</a></li>
+    <li><a href="/files/august23/audio/narration6.mp3">Out of Fuel</a></li>
+    <li><a href="/files/august23/audio/narration7.mp3">Black Hole</a></li>
+    <li><a href="/files/august23/audio/narration8.mp3">Supernova</a></li>
+    <li><a href="/files/august23/audio/narration9.mp3">Pulsar</a></li>
 </ul>
 
 
@@ -85,12 +85,12 @@ Finally, we recorded a few other phrases to throw in to the exhition to give it
 some spice. Some are pretty silly.
 
 <ul class="audio-playlist" data-id="4">
-    <li><a href="http://things.rhubarbtech.com/august23/audio/grabbag1.mp3">Starstuff</a></li>
-    <li><a href="http://things.rhubarbtech.com/august23/audio/grabbag2.mp3">Saw Ourselves</a></li>
-    <li><a href="http://things.rhubarbtech.com/august23/audio/grabbag3.mp3">System Initialized</a></li>
-    <li><a href="http://things.rhubarbtech.com/august23/audio/grabbag4.mp3">Warning</a></li>
-    <li><a href="http://things.rhubarbtech.com/august23/audio/grabbag5.mp3">Full Power</a></li>
-    <li><a href="http://things.rhubarbtech.com/august23/audio/grabbag6.mp3">Malfunction</a></li>
+    <li><a href="/files/august23/audio/grabbag1.mp3">Starstuff</a></li>
+    <li><a href="/files/august23/audio/grabbag2.mp3">Saw Ourselves</a></li>
+    <li><a href="/files/august23/audio/grabbag3.mp3">System Initialized</a></li>
+    <li><a href="/files/august23/audio/grabbag4.mp3">Warning</a></li>
+    <li><a href="/files/august23/audio/grabbag5.mp3">Full Power</a></li>
+    <li><a href="/files/august23/audio/grabbag6.mp3">Malfunction</a></li>
 </ul>
 
 {% assign jplayer-id = "4" %}

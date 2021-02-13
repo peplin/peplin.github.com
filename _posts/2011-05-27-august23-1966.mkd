@@ -37,7 +37,7 @@ We named the project "August 23rd, 1966," after the date of the first photograph
 of the Earth from the far side of the moon by
 [Lunar Orbiter 1](http://en.wikipedia.org/wiki/Lunar_Orbiter_1).
 
-![Logo](http://things.rhubarbtech.com/images/august23/august_logo_transp.png)
+![Logo](/files/images/august23/august_logo_transp.png)
 
 Our proposal was accepted, and from January to May 2009, we focused our ideas
 into a three day interactive gallery installation. Visitors could configure and
@@ -54,7 +54,7 @@ This writeup is split into a few separate posts:
 
 ## Gallery Installation
 
-![Gallery](http://things.rhubarbtech.com/images/august23/gallery_installation.png)
+![Gallery](/files/images/august23/gallery_installation.png)
 
 The gallery experience went something like this:
 

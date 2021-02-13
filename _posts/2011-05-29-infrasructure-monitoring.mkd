@@ -4,7 +4,7 @@ title: Monitoring Civil Infrastructure
 permalink: /2011/05/civil-infrastructure-monitoring
 ---
 
-*A [PDF](http://things.rhubarbtech.com/infrastructure-monitoring/infra-monitoring-report.pdf)
+*A [PDF](/files/infrastructure-monitoring/infra-monitoring-report.pdf)
 of this post is available*
 
 ## Introduction
@@ -108,7 +108,7 @@ deploy, as they can self-organize into ad-hoc networks (see the figure below) as
 long as they are within range of another sensor node. Connectivity problems also
 tend to be isolated to individual units, and are easier to troubleshoot.
 
-![Ad-Hoc](http://things.rhubarbtech.com/images/infrastructure-monitoring/adhoc.png)
+![Ad-Hoc](/files/images/infrastructure-monitoring/adhoc.png)
 
 *Wireless sensors along a pipeline form an ad-hoc wireless network and
 communicate only with nearby neighbors ([source][pipeline])*
@@ -140,7 +140,7 @@ of guaranteeing a wide enough dispersal of communication relay and data
 discharge nodes to reach all of the levels of the hierarchy, compared to the
 somewhat arbitrary trees made in computer networks.
 
-![Hierarchy](http://things.rhubarbtech.com/images/infrastructure-monitoring/hierarchy.png)
+![Hierarchy](/files/images/infrastructure-monitoring/hierarchy.png)
 
 *An example hierarchy for a network of sensor nodes ([source][pipeline]).*
 
@@ -528,7 +528,7 @@ incorrectly, dismiss repeated warnings because of frequent false positives, and
 those who can't get a good sense of the true health of the system in the field
 based on tabular data.
 
-![SCADA](http://things.rhubarbtech.com/images/infrastructure-monitoring/scada.png)
+![SCADA](/files/images/infrastructure-monitoring/scada.png)
 
 *A screenshot from a SCADA system for monitoring a pipeline (from the NTSB
 study)*
@@ -638,7 +638,7 @@ entertainment and creative expression, game developers are creating increasingly
 detailed worlds. Some of the important features that could be applied to
 infrastructure management are highlighted by a few recent titles:
 
-![Mirror's Edge](http://things.rhubarbtech.com/images/infrastructure-monitoring/mirrorsedge.jpg)
+![Mirror's Edge](/files/images/infrastructure-monitoring/mirrorsedge.jpg)
 
 * Valve's [Half-Life 2](http://orange.half-life2.com/) (2004) - provides
     advanced real-time physics simulation that could be used for combining

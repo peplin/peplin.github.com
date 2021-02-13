@@ -4,7 +4,7 @@ title: Massively Distributed Monitoring
 redirect_from: /2011/05/distributed-monitoring/
 ---
 
-*A [PDF](http://things.rhubarbtech.com/distributed-monitoring/distributed-monitoring-report.pdf)
+*A [PDF](/files/distributed-monitoring/distributed-monitoring-report.pdf)
 of this article is available*
 
 ## Abstract
@@ -441,7 +441,7 @@ arbitrary trees made in computer networks.
 
 ## Astral, a Testbed
 
-![Node](http://things.rhubarbtech.com/distributed-monitoring/images/node.png)
+![Node](/files/distributed-monitoring/images/node.png)
 
 *The major components of the central web application sink and a node in the
 Astral network. Nodes communicate with one another via HTTP using an embedded
@@ -587,20 +587,20 @@ delay in seconds.*
 |Two Level (1000 supernodes)|0 + 2 hops|10s|20s|60s|
 |Three Level (10 + 1000 supernodes)|0 + 3 hops|15s|30s|90s|
 
-![Graph 1](http://things.rhubarbtech.com/distributed-monitoring/images/graph1.png)
+![Graph 1](/files/distributed-monitoring/images/graph1.png)
 
 *This graph relates the total number of nodes being monitored with the total
 number of requests per second that the sink cluster must be able to handle. The
 vertical axis is logarithmic to accommodate the large range of request rates.*
 
-![Graph 2](http://things.rhubarbtech.com/distributed-monitoring/images/graph2.png)
+![Graph 2](/files/distributed-monitoring/images/graph2.png)
 
 *This graph relates the total number of nodes being monitored with the total
 number of sink servers required to process them, assuming a maximum average of
 500 requests per second per sink. The vertical axis is logarithmic to
 accommodate the large range of request rates.*
 
-![Graph 3](http://things.rhubarbtech.com/distributed-monitoring/images/graph3.png)
+![Graph 3](/files/distributed-monitoring/images/graph3.png)
 
 *This graph relates the batch window size (in seconds) with the total number of
 requests per second, on average, that the sink cluster must be able to handle.
