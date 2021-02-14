@@ -14,16 +14,13 @@ A quick search led me to [Kaz Okuda's](http://notions.okuda.ca/) project on
 Google Code, gpxviewer - a perfect match. From the project's page:
 
 > The GPX viewer is a 100% client-side JavaScript GPX file viewer that uses
-Google Maps to map waypoints and tracklogs.
-
-> GPX files are a standard GPS data format that is supported by many software
-applications. It is an XML based data format which lends itself nicely to being
-parsed in JavaScript.
-
-> Since it is written entirely in JavaScript, this script can be added to any web
-page with minimal effort and little or no server code. Just copy a GPX file to
-your web site, make a web page with an embedded Google Map, include the script,
-and initialize it.
+Google Maps to map waypoints and tracklogs. GPX files are a standard GPS data
+format that is supported by many software applications. It is an XML based data
+format which lends itself nicely to being parsed in JavaScript. Since it is
+written entirely in JavaScript, this script can be added to any web page with
+minimal effort and little or no server code. Just copy a GPX file to your web
+site, make a web page with an embedded Google Map, include the script, and
+initialize it.
 
 The script works fine, but it hasn't been updated since 2007 and is only
 compatible with the now deprecated Google Maps API v2. I
