@@ -4,12 +4,10 @@ require 'open-uri'
 
 task :test do
   options = {
-      :href_ignore => ["#"],
-      :alt_ignore => [],
-      :disable_external => false,
-      :check_favicon => false,
-      :parallel => { :in_processes => 4},
+      :url_ignore => [/https:\/\/threephase.xyz\/.*/],
+      :disable_external => true,
       :assume_extension => true,
+      :parallel => { :in_processes => 4},
       :typhoeus =>
         {
           :followlocation => true,
