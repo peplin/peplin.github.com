@@ -1,6 +1,6 @@
 ---
-layout: post
 title: Data Center Efficiency & Renewable Energy
+permalink: /2011/05/29/data-center-electricity/
 ---
 
 *A [PDF](/files/data-center-efficiency/dc-efficiency-report.pdf)

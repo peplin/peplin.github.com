@@ -1,5 +1,4 @@
 ---
-layout: post
 title: The Wiremap of August 23, 1966
 permalink: /2011/05/august23-wiremap/
 ---

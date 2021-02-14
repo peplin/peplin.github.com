@@ -1,7 +1,8 @@
 ---
-layout: post
-title: Threephase - A Browser-based Electric Power System Game
+title: Threephase
+subtitle: A browser-based electric power system game
 permalink: /2011/05/threephase/
+featured_image: /images/threephase/threephase-logo.jpg
 ---
 
 ![Logo](/images/threephase/threephase-logo.jpg)

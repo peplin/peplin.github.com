@@ -1,7 +1,7 @@
 ---
-layout: post
 title: Massively Distributed Monitoring
 redirect_from: /2011/05/distributed-monitoring/
+permalink: /2011/05/29/distributed-monitoring/
 ---
 
 *A [PDF](/files/distributed-monitoring/distributed-monitoring-report.pdf)

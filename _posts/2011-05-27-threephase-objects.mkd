@@ -1,5 +1,4 @@
 ---
-layout: post
 title: The Game Objects of Threephase
 permalink: /2011/05/threephase-game-objects/
 ---

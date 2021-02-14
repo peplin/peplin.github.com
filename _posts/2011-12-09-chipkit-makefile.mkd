@@ -1,7 +1,7 @@
 ---
-layout: post
 title: chipKIT Compatible Arduino-based Makefile
 permalink: /2011/12/chipkit-arduino-makefile
+tags: hidden
 ---
 
 The [Arduino][] is a great platform for rapid prototyping hardware devices.

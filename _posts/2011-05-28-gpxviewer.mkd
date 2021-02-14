@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Viewing GPX files in Embedded Google Maps
 permalink: /2011/05/gpxviewer/
 ---

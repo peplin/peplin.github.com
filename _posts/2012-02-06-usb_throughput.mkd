@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Maximizing USB Bulk Transfer Throughput
 permalink: /2012/02/bulk-usb-throughput
 ---

@@ -1,6 +1,6 @@
 ---
-layout: post
 title: Safe Cracking at Home
+permalink: /2015/10/19/safe-cracking/
 ---
 
 One of the most interesting places I've lived with my family is a late 19th

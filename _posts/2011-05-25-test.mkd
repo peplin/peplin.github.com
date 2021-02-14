@@ -1,7 +1,7 @@
 ---
-layout: post
 title: Standardizing Python Web Application Deployment
 permalink: /2011/05/python-deployment/
+tags: hidden
 ---
 
 Deployment is one of the most talked about issues in the Python web application

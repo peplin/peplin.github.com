@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Monitoring Civil Infrastructure
 permalink: /2011/05/civil-infrastructure-monitoring
 ---

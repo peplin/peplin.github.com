@@ -2,3 +2,5 @@
 .git
 serve
 _site
+.sass-cache/
+.jekyll-cache/

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Parallelizing the FLAC Encoder
 permalink: /2011/05/pflac/
 ---

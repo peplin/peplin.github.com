@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Implementation of Threephase
 permalink: /2011/05/threephase-implementation/
 ---

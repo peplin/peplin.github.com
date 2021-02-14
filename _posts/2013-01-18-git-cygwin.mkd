@@ -1,7 +1,7 @@
 ---
-layout: post
 title: "Git with Smart HTTP in Cygwin"
 permalink: /2013/01/cygwin-git-https
+tags: hidden
 ---
 
 <div class="pullout">

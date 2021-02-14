@@ -1,8 +1,8 @@
 ---
-layout: post
 title: August 23, 1966
 permalink: /2011/05/august23/
 redirect_from: /2011/05/august23-1966
+featured_image: /images/august23/august_logo_transp.png
 ---
 
 How do you tell the universe's story as our story? Myth has been intertwining
