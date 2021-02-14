@@ -7,6 +7,7 @@ ul.posts {
   text-decoration: none;
   font-size: 14px;
   list-style: none;
+  padding-inline-start: 0px;
 }
 
 .posts a:hover {
