@@ -1,6 +1,7 @@
 ---
 title: The Multi-touch Table of August 23, 1966
 permalink: /2011/05/august23-multitouch/
+tags: hidden
 ---
 
 *This post is part of a series describing the
