@@ -1,6 +1,7 @@
 ---
 title: Implementation of Threephase
 permalink: /2011/05/threephase-implementation/
+tags: hidden
 ---
 
 *This post is part of a series describing the [Threephase](/2011/05/threephase/)
