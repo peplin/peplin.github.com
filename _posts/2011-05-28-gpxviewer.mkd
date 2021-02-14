@@ -39,7 +39,7 @@ development.)
 
 With jQuery, using the library is as simple as:
 
-{% highlight js %}
+```js
 function loadGPXFileIntoGoogleMap(map, filename) {
     $.ajax({url: filename,
         dataType: "xml",
@@ -64,7 +64,7 @@ $(document).ready(function() {
         mapOptions);
     loadGPXFileIntoGoogleMap(map, "myTracks.gpx");
 });
-{% endhighlight %}
+```
 
 ## Source Code
 

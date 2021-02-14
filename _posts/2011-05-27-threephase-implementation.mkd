@@ -32,7 +32,7 @@ patterns of the game's API, the project uses a
 [custom set of RSpec feature groups](https://github.com/peplin/threephase/blob/master/spec/support/crud_helper.rb).
 These can be called like methods in a test case to avoid duplication, e.g.:
 
-{% highlight ruby %}
+```ruby
 describe StatesController do
     before do
         @game = Factory :game
@@ -47,7 +47,7 @@ describe StatesController do
         it_should_behave_like "standard PUT update"
     end
 end
-{% endhighlight %}
+```
 
 This example makes use of the `it_should_behave_like` feature group ability in
 RSpec, allowing much of the test logic to be shared among controllers. Object

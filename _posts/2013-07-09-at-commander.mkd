@@ -59,7 +59,7 @@ but is designed with a flexible API so it can be used on any platform.
 Let's just right to the code. Here's an example of how to configure the baud
 rate of an attached AT-compatible device:
 
-{% highlight c %}
+```c
 
 AtCommanderConfig config;
 config.platform = AT_PLATFORM_RN42;
@@ -70,7 +70,7 @@ config.delay_function = delay;
 // Set the baud to 115200, if it's not already correct
 bool baud_set = at_commander_set_baud(&config, 115200);
 
-{% endhighlight %}
+```
 
 You must pass a few simple functions to the library that can read and write
 bytes to your UART interface, and everything else is handled by the library. All

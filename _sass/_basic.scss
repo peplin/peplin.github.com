@@ -153,7 +153,8 @@ p, ul, ol {
 }
 
 ul, ol {
-	list-style-position: inside;
+	list-style-position: outside;
+    padding-inline-start: 40px;
 }
 
 blockquote {
@@ -388,7 +389,7 @@ section {
 	}
 
 	@include mq(laptop) {
-		
+
 	}
 }
 

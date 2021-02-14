@@ -4,6 +4,8 @@ header_settings:
 
 menu_settings:
   menu_items:
+    - title: 'Christopher Peplin'
+      url: '/about'
     - title: 'Projects'
       url: '/'
     - title: 'Posts'
@@ -14,16 +16,16 @@ grid_settings:
   grid_spacing: 20
 
 social_settings:
+  linkedin_url: 'https://www.linkedin.com/in/peplin/'
   github_url: 'http://github.com/peplin'
   flickr_url: 'https://www.flickr.com/photos/christopherpeplin/'
   bandcamp_url: 'https://bandcamp.com/peplin'
-  linkedin_url: 'https://www.linkedin.com/in/peplin/'
 
 color_settings:
-  background_color: '#ffffff'
+  background_color: '#FFFFFF'
   background_alt_color: '#F5F7FA'
   text_dark_color: '#2A2F36'
-  text_medium_color: '#6C7A89'
+  text_medium_color: '#2A2F36'
   text_light_color: '#ABB7B7'
   accent_color: '#0C5DF2'
   border_color: '#dddddd'
@@ -40,13 +42,13 @@ font_settings:
   site_title:
     small_size: 25
     medium_size: 35
-    large_size: 45
+    large_size: 38
     weight: 500
     letter_spacing: -0.02
   site_tagline:
     small_size: 16
-    medium_size: 18
-    large_size: 20
+    medium_size: 14
+    large_size: 16
     weight: 300
     letter_spacing: 0
     line_height: 1.5
@@ -71,14 +73,14 @@ font_settings:
   h1:
     small_size: 25
     medium_size: 35
-    large_size: 45
+    large_size: 42
     weight: 500
     letter_spacing: -0.02
     line_height: 1.2
   h2:
     small_size: 22
     medium_size: 30
-    large_size: 35
+    large_size: 32
     weight: 500
     letter_spacing: -0.02
     line_height: 1.2
@@ -113,7 +115,7 @@ font_settings:
   p:
     small_size: 16
     medium_size: 18
-    large_size: 20
+    large_size: 18
     weight: 300
     letter_spacing: 0
     line_height: 1.6

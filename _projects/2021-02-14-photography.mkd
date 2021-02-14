@@ -1,0 +1,6 @@
+---
+title: Photography
+subtitle: mmmpictures
+permalink: /photography/
+featured_image: /images/threephase/threephase-logo.jpg
+---
