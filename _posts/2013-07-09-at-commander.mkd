@@ -5,12 +5,13 @@ permalink: 2013/07/09/at-commander/
 
 <div class="pullout">
 
-<strong>Summary</strong>: As a part of the <a
+<p>As a part of the <a
 href="http://openxcplatform.com">OpenXC platform</a>, I have released the <a
 href="https://github.com/openxc/AT-commander">AT-commander</a> C library to help
 programatically configure Bluetooth devices like the Roving Networks
 RN-42 (i.e. SparkFun's <a
 href="https://www.sparkfun.com/products/10269">BlueSMiRF</a>).
+</p>
 
 </div>
 
@@ -60,7 +61,6 @@ Let's just right to the code. Here's an example of how to configure the baud
 rate of an attached AT-compatible device:
 
 ```c
-
 AtCommanderConfig config;
 config.platform = AT_PLATFORM_RN42;
 config.write_function = write_byte
@@ -69,7 +69,6 @@ config.delay_function = delay;
 
 // Set the baud to 115200, if it's not already correct
 bool baud_set = at_commander_set_baud(&config, 115200);
-
 ```
 
 You must pass a few simple functions to the library that can read and write

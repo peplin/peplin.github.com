@@ -14,7 +14,7 @@ theme](https://jekyllthemes.io/theme/index-portfolio-jekyll-theme) from
 
 ## Local Development
 
-```
+```sh
 bundle exec jekyll serve
 ```
 

@@ -35,14 +35,12 @@ There a few Asterisk configuration files to change:
 Add this to the end of the file:
 
 ```sh
-
 [google]
 context=incoming-motif
 disallow=all
 allow=ulaw
 connection=google
 transport=google
-
 ```
 
 ### `/etc/asterisk/modules.conf`
@@ -50,10 +48,8 @@ transport=google
 Add this to the end of the file:
 
 ```sh
-
 load => chan_motif.so
 load => res_xmpp.so
-
 ```
 
 ### `/etc/asterisk/extensions.conf`
@@ -61,9 +57,7 @@ load => res_xmpp.so
 Find the `[local]` section of this file and add this to set up outgoing calls:
 
 ```sh
-
 exten => _1XXXXXXXXXX,1,Dial(Motif/google/${EXTEN}@voice.google.com,,r)
-
 ```
 
 At the end of the file, add this new `incoming-motif` section. Replace
@@ -71,14 +65,12 @@ At the end of the file, add this new `incoming-motif` section. Replace
 calls and corrects the Caller ID.
 
 ```sh
-
 [incoming-motif]
 exten => s,1,NoOp()
  same => n,Set(crazygooglecid=${CALLERID(name)})
  same => n,Set(stripcrazysuffix=${CUT(crazygooglecid,@,1)})
  same => n,Set(CALLERID(all)=${stripcrazysuffix})
  same => n,Dial(SIP/asterisk-username,20,D(:1))
-
 ```
 
 ### `/etc/asterisk/sip.conf`
@@ -88,13 +80,11 @@ Replace `asterisk-username` with your desired Asterisk username and
 information to log in to your Asterisk server from a SIP phone.
 
 ```sh
-
 [asterisk-username]
 type=peer
 secret=asterisk-password
 host=dynamic
 context=local
-
 ```
 
 ### `/etc/asterisk/xmpp.conf`

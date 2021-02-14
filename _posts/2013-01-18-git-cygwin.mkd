@@ -27,12 +27,10 @@ So for OpenXC, a new users installs Cygwin with the "git" package and
 attempts to clone the repository, and it explodes:
 
 ```sh
-
 $ git clone https://github.com/openxc/openxc-android
 Cloning into 'openxc-android'...
 /usr/lib/git-core/git-remote-https.exe: error while loading shared
     libraries: ?: cannot open shared object file: No such file or directory
-
 ```
 
 I was able to figure out which library was missing by using `cygcheck`:

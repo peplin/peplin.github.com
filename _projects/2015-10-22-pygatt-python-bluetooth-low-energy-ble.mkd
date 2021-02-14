@@ -11,10 +11,10 @@ of the protocol and how we could stretch it to support something more
 complicated than a simple sensor. We ended up (like many others using BLE) with
 an RPC service built on top of GATT services and characteristics.
 
-<div class="pullout"> This post is about the origins <a
+<div class="pullout"> <p>This post is about the origins <a
 href="https://github.com/stratosinc/pygatt">PyGATT</a>, a Python library we
 built to interact with BLE peripherals from a standard (non-mobile) desktop or
-laptop development environment. </div>
+laptop development environment.</p></div>
 
 ## Mobile First?
 
@@ -89,7 +89,7 @@ supports any BLE adapter compatible with BlueZ in Linux, and any
 BGAPI-compatible adapter on any platform. Here's an example using a
 BGAPI-compatible adapter to connect and read characteristic:
 
-```
+```python
 import pygatt.backends
 
 # The BGAPI backend will attemt to auto-discover the serial device name of the

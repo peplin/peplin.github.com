@@ -23,7 +23,7 @@ social_settings:
 
 color_settings:
   background_color: '#FFFFFF'
-  background_alt_color: '#F5F7FA'
+  background_alt_color: '#F9F9FB'
   text_dark_color: '#2A2F36'
   text_medium_color: '#2A2F36'
   text_light_color: '#ABB7B7'
@@ -120,9 +120,9 @@ font_settings:
     letter_spacing: 0
     line_height: 1.6
   blockquote:
-    small_size: 25
-    medium_size: 35
-    large_size: 45
+    small_size: 18
+    medium_size: 20
+    large_size: 24
     weight: 300
     letter_spacing: -0.02
     line_height: 1.6
