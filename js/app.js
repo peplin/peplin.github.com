@@ -1,6 +1,5 @@
 $(document).ready(function() {
     loadPhotoGrid();
-    loadGithubDetails();
     loadAudioPlayers();
 });
 
@@ -33,34 +32,6 @@ function loadPhotoGrid() {
             }
         });
     }
-}
-
-function loadGithubDetails() {
-    $(".github a").each(function(i, item) {
-        var listItem = $(item).parents("li");
-        var url = $(item).attr("href");
-        var segments = url.split("/");
-        var repo = segments.pop();
-        var username = segments.pop();
-
-        $.ajax({url: "https://api.github.com/repos/" + username + "/" + repo,
-            dataType: "jsonp",
-            success: function(data) {
-                var repoData = data.data;
-                if(repoData) {
-                    var meta = $("<div>").addClass("meta");
-                    var watchers_link = $("<a>").addClass("watchers").attr(
-                            "href", url + "/watchers").text(repoData.watchers);
-                    var forks_link = $("<a>").addClass("forks").attr(
-                            "href", url + "/network").text(repoData.forks);
-                    var header = listItem.find("h3");
-                    meta.append(watchers_link);
-                    meta.append(forks_link);
-                    header.after(meta);
-                }
-            }
-        });
-    });
 }
 
 function loadAudioPlayers() {
