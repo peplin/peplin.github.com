@@ -105,6 +105,7 @@ some spice. Some are pretty silly.
 * [Pulse Oximeter (Heartbeat Monitor)](/2011/05/august23-pulse-oximeter/)
 * [Audio Recordings](/2011/05/august23-audio/)
 
+<link type="text/css" href="/css/vendor/jplayer/jplayer.blue.monday.min.css" rel="stylesheet" />
 <script defer type="text/javascript" src="/js/vendor/jPlayer/jquery.jplayer.min.js"></script>
 <script defer type="text/javascript" src="/js/vendor/jPlayer/jplayer.playlist.min.js"></script>
 <script defer type="text/javascript" src="//maps.googleapis.com/maps/api/js?key=AIzaSyBubiWhOSfnpj5LqS2KNY9VtjqfSWVD5xU"></script>
