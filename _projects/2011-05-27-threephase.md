@@ -1,6 +1,6 @@
 ---
-title: Threephase
-subtitle: A browser-based electric power system game
+title: Threephase (The Game)
+subtitle: A browser-based electric power system game concept
 permalink: /2011/05/threephase/
 featured_image: /images/threephase/threephase-logo.jpg
 ---
@@ -10,14 +10,14 @@ featured_image: /images/threephase/threephase-logo.jpg
 *This post is part of a series describing the [Threephase](/2011/05/threephase/)
 project.*
 
-Threephase is a web browser-based game simulating the electric power generation
-and transmission system. The project was completed over a two month period
-beginning in September 2010, to satisfy the graduate project requirement for
-Master's in Information Networking (MSIN) candidates at the
-[Information Networking Institute](http://www.ini.cmu.edu) of Carnegie Mellon
-University (CMU).
+Threephase is a conceptual web browser-based game simulating the electric power
+generation and transmission system. The project was prototyped over a two month
+period beginning in September 2010, to satisfy the graduate project requirement
+for Master's in Information Networking (MSIN) candidates at the [Information
+Networking Institute](http://www.ini.cmu.edu) of Carnegie Mellon University
+(CMU).
 
-This article is an abriged version of the
+This article is an abridged version of the
 [final report](/files/threephase/report.pdf),
 reformatted for the web and with some (less formal) comments and reflections
 added. I've split it up into a few posts:
@@ -42,7 +42,7 @@ outside the industry. Threephase is an attempt to balance between the artistic,
 playful and technical elements to create an immersive virtual world for
 experimentation and learning.
 
-From conception to implementation, the design shifted in a few ways in respose
+From conception to implementation, the design shifted in a few ways in response
 to the demands of the web-based user interface. The nature of the web protocol
 HTTP also presented unique challenges to a real-time game, and Threephase
 applies some novel techniques to find scalable solutions.
