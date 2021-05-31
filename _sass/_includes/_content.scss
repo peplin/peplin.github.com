@@ -31,9 +31,9 @@
 			max-width: 65%;
 		}
 	}
-	
+
 	h1 {
-		
+
 		@include mq(tabletp) {
 			white-space: pre-line;
 		}
@@ -45,7 +45,7 @@
 }
 
 .content-wrap {
-	
+
 }
 
 .single {
@@ -55,15 +55,15 @@
 	min-height: 100vh;
 
 	@include mq(tabletp) {
-		padding: 40px 0;
+		padding: 10px 0;
 	}
 
 	@include mq(tabletl) {
-		padding: 40px $grid-spacing;
+		padding: 10px $grid-spacing;
 	}
 
 	@include mq(laptop) {
-		padding: 60px $grid-spacing;
+		padding: 20px $grid-spacing;
 	}
 
 	h1, h2, h3, h4, h5, h6, p, ul, ol {
@@ -216,7 +216,7 @@
 				padding: 20px;
 			}
 		}
-		
+
 		tbody tr {
 			background: $background-color;
 
@@ -281,7 +281,7 @@
 					text-align: center;
 					color: $text-light-color;
 				}
-				
+
 				p {
 					display: inline;
 					max-width: 100%;

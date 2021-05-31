@@ -50,3 +50,10 @@ ul.posts {
 .audioplayer {
   margin: 10px auto;
 }
+
+/* Photo grid */
+
+#photo-grid img {
+  display: inline;
+  margin: 5px 10px;
+}
