@@ -1,11 +1,11 @@
 ---
 title: Threephase (The Game)
-subtitle: A browser-based electric power system game concept
+subtitle: A browser-based electric power system game
 permalink: /2011/05/threephase/
-featured_image: /images/threephase/threephase-logo.jpg
+featured_image: /images/threephase/threephase-hero
 ---
 
-![Logo](/images/threephase/threephase-logo.jpg)
+{% include picture_tag.html path="/images/threephase/threephase-inner-leader" alt="Power lines in front of sky and cell phone tower" %}
 
 *This post is part of a series describing the [Threephase](/2011/05/threephase/)
 project.*
@@ -175,6 +175,8 @@ energy decisions in one state can be felt by many others.
 
 *Continue to the next section on
 [game objects](/2011/05/threephase-game-objects/).*
+
+![Transformer on Utility Pole](/images/threephase/threephase-logo.jpg)
 
 ## Other Threephase Articles
 
