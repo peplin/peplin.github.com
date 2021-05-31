@@ -2,7 +2,7 @@
 title: About
 subtitle: TODO portfolio of stuff
 description: Threephase is an outlet for my creative and professional works
-permalink: /about
+permalink: /about/
 ---
 
 <img src="/images/contour-sketch-headshot.webp" width="300px" alt="Contour sketch of Chris Peplin"/>

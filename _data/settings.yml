@@ -5,7 +5,7 @@ header_settings:
 menu_settings:
   menu_items:
     - title: 'About'
-      url: '/about'
+      url: '/about/'
     - title: 'Infrequent Writing'
       url: '/posts/'
 
