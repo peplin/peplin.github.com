@@ -58,6 +58,10 @@ ul.posts {
   margin: 5px 10px;
 }
 
+.license p {
+    font-size: 13px;
+}
+
 .license img {
     display: inline-block;
 }

@@ -179,7 +179,7 @@
 
         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Images
 
-        $('.single picture, .single p > img').each( function() {
+        $('.single picture, .single p > img ').each( function() {
             var thisP = $(this).parent('p');
             $(this).insertAfter(thisP);
             $(this).wrapAll('<div class="image-wrap"></div>');

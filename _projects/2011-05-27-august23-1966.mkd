@@ -1,5 +1,6 @@
 ---
 title: August 23, 1966
+subtitle: A 2009 gallery installation at the University of Michigan
 permalink: /2011/05/august23/
 redirect_from: /2011/05/august23-1966
 featured_image: /images/august23/august23-hero

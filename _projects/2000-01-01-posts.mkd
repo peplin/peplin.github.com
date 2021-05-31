@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Infrequent Writings
+subtitle: Not a blog.
 permalink: /posts/
 featured_image: images/writing-hero
 ---
