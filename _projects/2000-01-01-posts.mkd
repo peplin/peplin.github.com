@@ -2,11 +2,13 @@
 layout: default
 title: Infrequent Writings
 permalink: /posts/
+featured_image: images/writing-hero
 ---
 
 <section class="blog">
 	<div class="content-wrap">
-        <p>TODO Some text about when and why I write.</p>
+        <p>I generally write to document projects, publish research, or try and better
+            understand my own brain. Occasionally, it's worth sharing.</p>
 
         <ul class="posts">
             {% for post in site.posts %}

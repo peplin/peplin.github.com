@@ -1,6 +1,6 @@
 ---
 title: About
-subtitle: TODO portfolio of stuff
+subtitle: Chris Peplin
 description: Threephase is an outlet for my creative and professional works
 permalink: /about/
 ---
