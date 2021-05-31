@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'github-pages', '211'
-gem 'rake', '12.3.3'
-gem 'html-proofer', '3.18.5'
+gem 'github-pages', '215'
+gem 'rake', '13.0.3'
+gem 'html-proofer', '3.19.1'
