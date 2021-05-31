@@ -57,3 +57,8 @@ ul.posts {
   display: inline;
   margin: 5px 10px;
 }
+
+.license img {
+    display: inline-block;
+}
+
