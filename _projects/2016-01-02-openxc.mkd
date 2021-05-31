@@ -1,5 +1,0 @@
----
-title: OpenXC
-subtitle: mmmdata
-featured_image: /images/threephase/threephase-logo.jpg
----

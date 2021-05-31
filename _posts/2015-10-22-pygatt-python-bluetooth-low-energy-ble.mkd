@@ -1,7 +1,6 @@
 ---
 title: PyGATT - Bluetooth LE and Python
 permalink: /2015/10/22/pygatt-python-bluetooth-low-energy-ble/
-featured_image: /images/threephase/threephase-logo.jpg
 ---
 
 When I started working on the Stratos Card, the

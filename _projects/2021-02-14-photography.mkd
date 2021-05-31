@@ -1,5 +1,6 @@
 ---
 title: Photography
 subtitle: mmmpictures
-featured_image: /images/threephase/threephase-logo.jpg
+permalink: /project/photography
+featured_image: images/photography-hero-bschool-construction
 ---

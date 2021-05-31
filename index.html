@@ -9,7 +9,9 @@ layout: default
         <div class="portfolio-item">
             <a class="portfolio-item__link" href="{{ project.url | relative_url }}">
                 <div class="portfolio-item__image">
-                    {% include picture_tag.html path="{{ project.featured_image | relative_url }}" alt="{{ project.title }}" %}
+                    {% capture image_path %}{{ project.featured_image | relative_url }}{% endcapture %}
+                    {% capture image_alt %}{{ project.title }} {% endcapture %}
+                    {% include picture_tag.html path=image_path alt=image_alt %}
                 </div>
 
                 <div class="portfolio-item__content">
