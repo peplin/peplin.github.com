@@ -1,6 +1,6 @@
 ---
-layout: post
 title: Maximum BlueSMirF.
+permalink: /2013/07/26/uart-hardware-flow-control/
 ---
 
 <div class="pullout">

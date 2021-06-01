@@ -1,7 +1,7 @@
 ---
-layout: post
 title: A Google Voice Landline with Asterisk
 permalink: /2011/05/google-voice-asterisk/
+tags: hidden
 ---
 
 <div class="pullout">
@@ -34,52 +34,44 @@ There a few Asterisk configuration files to change:
 
 Add this to the end of the file:
 
-{% highlight sh %}
-
+```sh
 [google]
 context=incoming-motif
 disallow=all
 allow=ulaw
 connection=google
 transport=google
-
-{% endhighlight %}
+```
 
 ### `/etc/asterisk/modules.conf`
 
 Add this to the end of the file:
 
-{% highlight sh %}
-
+```sh
 load => chan_motif.so
 load => res_xmpp.so
-
-{% endhighlight %}
+```
 
 ### `/etc/asterisk/extensions.conf`
 
 Find the `[local]` section of this file and add this to set up outgoing calls:
 
-{% highlight sh %}
-
+```sh
 exten => _1XXXXXXXXXX,1,Dial(Motif/google/${EXTEN}@voice.google.com,,r)
-
-{% endhighlight %}
+```
 
 At the end of the file, add this new `incoming-motif` section. Replace
 `asterisk-username` with your user account in Asterisk. This enables incoming
 calls and corrects the Caller ID.
 
-{% highlight sh %}
-
+```sh
 [incoming-motif]
 exten => s,1,NoOp()
  same => n,Set(crazygooglecid=${CALLERID(name)})
  same => n,Set(stripcrazysuffix=${CUT(crazygooglecid,@,1)})
  same => n,Set(CALLERID(all)=${stripcrazysuffix})
  same => n,Dial(SIP/asterisk-username,20,D(:1))
-
-{% endhighlight %}
+```
 
 ### `/etc/asterisk/sip.conf`
 
@@ -87,15 +79,13 @@ Replace `asterisk-username` with your desired Asterisk username and
 `asterisk-password` with your desired password - you'll use this account
 information to log in to your Asterisk server from a SIP phone.
 
-{% highlight sh %}
-
+```sh
 [asterisk-username]
 type=peer
 secret=asterisk-password
 host=dynamic
 context=local
-
-{% endhighlight %}
+```
 
 ### `/etc/asterisk/xmpp.conf`
 
@@ -104,7 +94,7 @@ and `your-google-voice-password` with your Google account password. If you use
 Google's two-factor authentication, you will need to create an
 application-specific password.
 
-{% highlight sh %}
+```sh
 [google]
 type=client
 serverhost=talk.google.com
@@ -117,7 +107,7 @@ usesasl=yes
 status=available
 statusmessage="Asterisk Server - Not a Human"
 timeout=5
-{% endhighlight %}
+```
 
 ## Caveats
 

@@ -8,8 +8,13 @@ Served at:
 * christopherpeplin.com (legacy, redirects to threephase.xyz)
 * rhubarbtech.com (legacy, also redirects)
 
+This site uses a modified version of the [Index
+theme](https://jekyllthemes.io/theme/index-portfolio-jekyll-theme) from
+[jekyllthemes.io](https://jekyllthemes.io/) (see the [license](THEME_LICENSE.html).
+
 ## Local Development
 
-```
-bundle exec jekyll serve
+```sh
+bundle install
+bundle exec jekyll serve -wl
 ```

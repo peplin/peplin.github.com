@@ -1,11 +1,13 @@
 ---
-layout: post
 title: The Multi-touch Table of August 23, 1966
 permalink: /2011/05/august23-multitouch/
+tags: hidden
 ---
 
 *This post is part of a series describing the
 [August 23, 1966](/2011/05/august23/) project.*
+
+{% include picture_tag.html path="/images/august23/multitouch-in-gallery" alt="Multitouch display deployed in gallery running Twoverse software" %}
 
 The multi-touch table created for the project is a rear diffused illumination
 design, and is housed in a core‐ten steel cabinet with recessed cooling fans and

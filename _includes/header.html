@@ -1,0 +1,41 @@
+<header class="header">
+
+	<div class="header__content">
+
+		<a href="{{ site.baseurl }}/" class="header__title">
+			{{ site.title }}
+		</a>
+
+		<h1 class="header__tagline">{{ site.tagline }}</h1>
+
+		<div class="menu">
+			<div class="menu__toggle js-menu-toggle">
+				<div class="menu__toggle__icon"><span></span></div>
+			</div>
+			<div class="menu__wrap">
+				<ul class="menu__list">
+
+					{% for item in site.data.settings.menu_settings.menu_items %}
+					<li class="menu__list__item">
+						<a href="{{ item.url | relative_url }}" class="menu__list__item__link">{{ item.title }}</a>
+					</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+
+		<div class="projects-menu">
+			<ul class="menu__list">
+				{% for project in site.projects reversed %}
+				<li class="menu__list__item">
+					<a href="{{ project.url | relative_url }}" class="menu__list__item__link">{{ project.title }}</a>
+				</li>
+				{% endfor %}
+			</ul>
+		</div>
+
+		<div class="header__lower">
+            {% include footer.html %}
+		</div>
+	</div>
+</header>

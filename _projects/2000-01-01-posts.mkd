@@ -1,0 +1,25 @@
+---
+layout: default
+title: Infrequent Writings
+subtitle: Not a blog.
+permalink: /posts/
+featured_image: images/writing-hero
+---
+
+<section class="blog">
+	<div class="content-wrap">
+        <p>I generally write to document projects, publish research, or try and better
+            understand my own brain. Occasionally, it's worth sharing.</p>
+
+        <ul class="posts">
+            {% for post in site.posts %}
+            {% unless post.tags and post.tags contains "hidden" %}
+                <li>
+                    <span class="date">{{ post.date | date: "%B %e, %Y" }}</span>
+                    <a href="{{ post.url }}">{{ post.title }}</a>
+                </li>
+            {% endunless %}
+            {% endfor %}
+        </ul>
+	</div>
+</section>

@@ -1,84 +1,28 @@
 ---
 layout: default
-title: Christopher Peplin
 ---
 
-<div class="row">
-    <div class="col-md-4">
-        <header class="block">
-            <h1><a href="/">Christopher Peplin</a></h1>
-        </header>
-    </div>
-</div>
+<section class="portfolio">
+    <div class="content-wrap portfolio-wrap">
 
-<div class="row">
-    <div class="col-md-4">
-        <div class="block">
-            <h2>Identity</h2>
-            <ul>
-                <li><img src="https://secure.gravatar.com/avatar/86c4047481dee2e494439bb221a641c0/" alt="Chris' Headshot" /></li>
-                <li><a href="http://github.com/peplin" target="_blank"><i class="fa fa-github"></i>@peplin</a></li>
-                <li><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#99;&#111;&#110;&#116;&#97;&#99;&#116;&#64;&#114;&#104;&#117;&#98;&#97;&#114;&#98;&#116;&#101;&#99;&#104;&#46;&#99;&#111;&#109;">
-                        <i class="email-icon fa fa-envelope-o"></i>&#99;&#111;&#110;&#116;&#97;&#99;&#116;&#64;&#114;&#104;&#117;&#98;&#97;&#114;&#98;&#116;&#101;&#99;&#104;&#46;&#99;&#111;&#109;</a></li>
-                <li>OpenPGP Key: <a href="http://keyserver.ubuntu.com:11371/pks/lookup?op=get&amp;search=0x0E4DC980D963BFAF">D963BFAF</a></li>
-                <li>FCC Call Sign: KB3TLD</li>
-            </ul>
+        {% for project in site.projects reversed %}
+        <div class="portfolio-item">
+            <a class="portfolio-item__link" href="{{ project.url | relative_url }}">
+                <div class="portfolio-item__image">
+                    {% capture image_path %}{{ project.featured_image | relative_url }}{% endcapture %}
+                    {% capture image_alt %}{{ project.title }} {% endcapture %}
+                    {% include picture_tag.html path=image_path alt=image_alt %}
+                </div>
 
-            <h2>R&eacute;sum&eacute; <a href="/files/peplin-resume.pdf"><i class="fa fa-file-pdf-o"></i></a></h2>
-            <ul class="resume work">
-                <li>Software Engineer at <a href="https://aurora.tech/">Aurora Innovation</a>.</li>
-            </ul>
-            <ul class="resume education">
-                <li>Studied at <a href="http://www.ini.cmu.edu/">Carnegie Mellon University</a>
-                and the <a href="http://www.eecs.umich.edu/">University of Michigan</a>.</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="col-md-4">
-        <div class="block">
-            <h2><a href="https://github.com/peplin" target="_blank">
-                    Code <span class="subheader">more</span></a></h2>
-            <ul class="code">
-                <li>
-                    <section class="description">
-                        <h3><a href="http://openxcplatform.com">
-                                The OpenXC Platform</a></h3>
-                    </section>
-                </li>
-                <li class="github">
-                    <section class="description">
-                        <h3><a href="https://github.com/stratosinc/pygatt">
-                                PyGATT</a></h3>
-                        <p>Python API for Bluetooth Low Energy</p>
-                    </section>
-                </li>
-                <li class="github">
-                    <section class="description">
-                        <h3>More recent work</h3>
-                        <p>Working in the competitive self-driving vehicle
-                            industry since 2016, my more recent
-                            software engineering work is unfortunately proprietary, not open source.</P.
-                    </section>
-            </ul>
-        </div>
-    </div>
-
-    <div class="col-md-4">
-        <div class="block">
-        <h2><a href="http://flickr.com/photos/christopherpeplin"
-                    target="_blank">
-                Photography <span class="subheader">more</span>
+                <div class="portfolio-item__content">
+                    <div class="portfolio-item__info">
+                        <h2 class="portfolio-item__title">{{ project.title }}</h2>
+                        <p class="portfolio-item__subtitle">{{ project.subtitle }}</p>
+                    </div>
+                </div>
             </a>
-        </h2>
-        <noscript>
-            <p>This photo grid requires JavaScript, and your browser doesn't
-            seem to support it. Click the link above to see some pretty
-            pictures.</p>
-        </noscript>
-        <div id="photo-grid">
         </div>
-        </div>
-    </div>
+        {% endfor %}
 
-</div>
+    </div>
+</section>

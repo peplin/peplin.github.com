@@ -1,17 +1,62 @@
-title: Christopher Peplin
-production: true
+title: Threephase
+tagline: Creative and professional things by Chris Peplin
+description: Christopher Peplin's personal and professional site.
+url: https://threephase.xyz
 permalink: pretty
 author: Christopher Peplin
-url: https://threephase.xyz
 plugins:
     - jekyll-sitemap
     - jekyll-redirect-from
     - jekyll-seo-tag
 exclude:
   - vendor
+  - LICENSE.md
+  - THEME_LICENSE.md
   - README.md
-  - Makefile
+  - Rakefile
   - Gemfile
   - Gemfile.lock
-  - CHANGELOG.md
-  - .travis.yml
+
+collections:
+  pages:
+    output: true
+    permalink: /:name
+  posts:
+    output: true
+    permalink: /:slug
+  projects:
+    output: true
+    permalink: /project/:slug
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "default"
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  -
+    scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+sass:
+  style: compressed

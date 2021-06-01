@@ -19,9 +19,9 @@ function loadPhotoGrid() {
                 var grid = $("#photo-grid");
                 $(data.photos.photo).each(function(i, photo) {
                     var element = "";
-                    photo.thumbnail = "https://farm" + photo.farm +
-                        ".static.flickr.com/" + photo.server + "/" +
-                        photo.id + "_" + photo.secret + "_" + "s.jpg";
+                    photo.thumbnail = "https://live.staticflickr.com/" +
+                        photo.server + "/" +
+                        photo.id + "_" + photo.secret + "_" + "z.jpg";
                     photo.url = "https://www.flickr.com/photos/" +
                         photo.owner + "/" + photo.id;
 

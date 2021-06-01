@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Parallelizing the FLAC Encoder
 permalink: /2011/05/pflac/
 ---
@@ -49,13 +48,14 @@ described at a high level in this way:
     an MD5 checksum
 
 Finally, do the encoding:
-{% highlight cpp %}
+
+```cpp
 while(blocksLeft) {
     readBlock();
     encodeBlockToFlac();
     writeFrameToOutputStream();
 }
-{% endhighlight %}
+```
 
 Each block of audio is processed in 3 stages.
 
@@ -63,14 +63,12 @@ Each block of audio is processed in 3 stages.
     the audio into channels (left & right), and if so, which method. One option is a
     simple left/right split, and another (which often garners significant extra
     compression) is mid and side channels.
-
 1. **Modeling** The audio signal is approximately modeled by a function in one
     of three ways. The function should ideally represent the original audio with
     fewer bits.
     1. Constant signal frames fit to a simple, constant function with only one argument
     1. Extremely busy or random frames are modeled verbatim, as themselves
     1. All other frames are modeled using general linear predictive coding (LPC)
-
 1. **Residual Coding** Once modeled, the model is subtracted from the original
     audio to produce the residual, or error. This stream is then encoded using Rice
     codes (a special set of Huffman codes) and run length encoding.
@@ -110,7 +108,7 @@ middle step of the while loop from above).
 
 Truncated profiling results showing the prime candidates for parallel speedup:
 
-{% highlight bash %}
+```sh
 index  \% time  self   children    called     name
                 0.00    0.00       1/3080     FLAC__stream_encoder_finish [37]
                 0.00   12.99    3079/3080     FLAC__stream_encoder_process [6]
@@ -118,7 +116,7 @@ index  \% time  self   children    called     name
                 0.00   12.34    3080/3080     process_subframes_ [8]
                 0.00    0.47    3080/3080     FLAC__MD5Accumulate [22]
 ...
-{% endhighlight %}
+```
 
 ## Concurrent Architecture
 

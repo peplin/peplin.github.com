@@ -1,0 +1,16 @@
+---
+title: Photography
+permalink: /project/photography
+featured_image: images/photography-hero-bschool-construction
+---
+
+
+
+[Flickr](https://www.flickr.com/photos/christopherpeplin/) remains my preferred
+place to share photos. My photostream is moderately curated, but still more of a
+stream of visual conciousness than a portfolio.
+
+This grid dynamically fetches the most recent photos. Click any image to open
+the full size.
+
+<div id="photo-grid" class="image-wrap"></div>

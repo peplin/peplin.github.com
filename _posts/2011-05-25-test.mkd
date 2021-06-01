@@ -1,7 +1,7 @@
 ---
-layout: post
 title: Standardizing Python Web Application Deployment
 permalink: /2011/05/python-deployment/
+tags: hidden
 ---
 
 Deployment is one of the most talked about issues in the Python web application
@@ -11,7 +11,7 @@ together with experience and blog posts.
 Fabric is often mentioned as the Python alternative to the code deploy tool
 Capistrano, but there are many more Capistrano plugins and extensions than
 Fabfiles. One reason for this is a lack of standard application layouts (i.e.
-where is the WSGI application, the javascript files, list of dependencies,
+where is the WSGI application, the Javascript files, list of dependencies,
 etc.). What if there were a standard convention for organizing and deploying
 small- to medium-sized applications? We are open-sourcing the configuration we
 use at Bueda for building and deploying Django and Tornado web applications.
