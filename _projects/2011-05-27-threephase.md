@@ -122,7 +122,7 @@ recently, the German board game [Power
 Grid](http://www.riograndegames.com/games.html?id=5) used the power system as
 its core game mechanic.
 
-![SimCity 2000](/images/threephase/simcity.png)
+{% include picture_tag.html path="/images/threephase/simcity" alt="SimCity 2000 game screenshot" %}
 
 Electricity transmission surfaced as a game mechanic in recent computer games as
 well, such as [Darwinia](http://www.introversion.co.uk) and the new massively
@@ -133,7 +133,7 @@ protecting transmission lines from attack and malfunction is a key objective.
 
 [Source](http://www.introversion.co.uk)
 
-![Love](/images/threephase/love.png)
+{% include picture_tag.html path="/images/threephase/love" alt="Love game screenshot" %}
 
 [Source](http://www.quelsolaar.com/love)
 
