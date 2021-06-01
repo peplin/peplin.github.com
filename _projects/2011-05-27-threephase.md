@@ -47,12 +47,12 @@ to the demands of the web-based user interface. The nature of the web protocol
 HTTP also presented unique challenges to a real-time game, and Threephase
 applies some novel techniques to find scalable solutions.
 
-### Source Code
+## Source Code
 
 The game's source code is provided under an MIT open source license at
 [GitHub](https://github.com/peplin/threephase).
 
-### Acknowldgements
+## Acknowldgements
 
 This project would not have been possible without the assitance of my advisors
 and professors at CMU. The course I mentioned was taught by:
@@ -64,7 +64,7 @@ The advisors for this project in particular were
 [Dr. Jay Apt](https://www.cmu.edu/tepper/faculty-and-research/faculty-by-area/profiles/apt-jay.html)
 and [Dr. Gabriela Hug](http://www.ece.cmu.edu/directory/details/4617).
 
-### Current Player Actions & Abilities
+## Current Player Actions & Abilities
 
 In the current version of Threephase, players can:
 
