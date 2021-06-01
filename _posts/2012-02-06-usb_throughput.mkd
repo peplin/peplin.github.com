@@ -14,7 +14,7 @@ some people.
 > I'm just getting started with USB programming using the recently released
 > Microchip library on the chipKIT with the network shield. I've tried to learn as
 > much as I can about proper USB programming and it's been good for the most part
-> - however, I'm stuck at a ~75KB/s bulk transfer speed.
+> however, I'm stuck at a ~75KB/s bulk transfer speed.
 
 At Ford, we created a device for the [OpenXC][] project that spits out discrete
 messages to a host PC over USB as fast as possible. The current strategy is to
@@ -72,7 +72,7 @@ No matter how many bytes were requested on the host, from 64 to 4096, the read
 operation only every returned 45 bytes - one message. USB uses 64 byte packets,
 and it uses a less than 64 byte packet (traditionally but not limited to a zero
 length packet) to indicate the end of a transfer. Were we causing a lot of extra
-overhead by ending every transfer after 45 byets?
+overhead by ending every transfer after 45 bytes?
 
 I padded out the 45 byte test message I was using to 64 bytes, and now it is
 **much** faster (70KB/s from Python to 650+ KB/s). Previously, we requested 1024

@@ -1,6 +1,8 @@
 ---
-title: PyGATT - Bluetooth LE and Python
+title: PyGATT
+subtitle: A Python library for Bluetooth LE
 permalink: /2015/10/22/pygatt-python-bluetooth-low-energy-ble/
+featured_image: /images/pygatt/stratos-atlas-card-hero
 ---
 
 When I started working on the Stratos Card, the
@@ -10,10 +12,17 @@ of the protocol and how we could stretch it to support something more
 complicated than a simple sensor. We ended up (like many others using BLE) with
 an RPC service built on top of GATT services and characteristics.
 
-<div class="pullout"> <p>This post is about the origins <a
+<div class="pullout">
+<p>This post is about the origins <a
 href="https://github.com/stratosinc/pygatt">PyGATT</a>, a Python library we
 built to interact with BLE peripherals from a standard (non-mobile) desktop or
-laptop development environment.</p></div>
+laptop development environment.</p>
+
+<p>As of 2019, I am no longer actively using this project with personal projects
+or at work, but do my best to keep it functional. If you are interested in
+becoming a maintainer, please comment on <a
+href="https://github.com/peplin/pygatt/issues/229">this GitHub issue</a></p>
+</div>
 
 ## Mobile First?
 
@@ -38,6 +47,8 @@ the desktop is the simple fact that it just isn't the target platform for the
 majority of Bluetooth devices. I don't write code on my phone though, and the
 potential for automated testing and CI was a big incentive for me to have a
 desktop interface.
+
+{% include picture_tag.html path="/images/pygatt/hardware-desk" alt="Person at desk with laptop and electronics test equipment" %}
 
 ## BlueZ's gatttool
 
