@@ -10,6 +10,29 @@
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Page load
 
     function pageFunctions() {
+
+
+        // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Show content
+
+        // Wait until first image has loaded
+        $('.page__content').find('img:first').imagesLoaded( function() {
+
+            // Portfolio grid layout
+            $('.portfolio-wrap').imagesLoaded( function() {
+                $('.portfolio-wrap').masonry({
+                    itemSelector: '.portfolio-item',
+                    transitionDuration: 0
+                });
+            });
+
+            // Show the content
+            $('body').removeClass('loading');
+
+            // Hide the menu - mobile only
+            $('body').removeClass('menu--open');
+        });
+
+
         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Active links
 
         // Switch active link states
