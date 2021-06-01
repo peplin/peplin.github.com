@@ -15,10 +15,6 @@ theme](https://jekyllthemes.io/theme/index-portfolio-jekyll-theme) from
 ## Local Development
 
 ```sh
-bundle exec jekyll serve
+bundle install
+bundle exec jekyll serve -wl
 ```
-
-projects to list:
-
-OpenXC
-pygatt?

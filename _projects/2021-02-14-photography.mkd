@@ -10,7 +10,7 @@ featured_image: images/photography-hero-bschool-construction
 place to share photos. My photostream is moderately curated, but still more of a
 stream of visual conciousness than a portfolio.
 
-This grid dynamically fetches the most recent photos. Click any to see
-uncropped, full size images.
+This grid dynamically fetches the most recent photos. Click any image to open
+the full size.
 
 <div id="photo-grid" class="image-wrap"></div>
