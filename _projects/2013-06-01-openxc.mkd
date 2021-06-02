@@ -1,0 +1,369 @@
+---
+title: The OpenXC Platform
+permalink: /project/openxc
+featured_image: /images/openxc/final-vi-box-6
+---
+
+<p class="pullout">
+    After graduate school, I worked at Ford's Research & Innovation center.
+    One of my major projects was the development and launch of the OpenXC
+    Platform. I stepped away from the project after leaving Ford in 2014,
+    but the open source project continues today. Looking back, my experience
+    at Ford was enriching and formative, but unsurprisingly I didn't realize
+    it until years later. This is an attempt to document some of the history
+    of OpenXC, and to serve as a personal coda.
+</p>
+
+{% include picture_tag.html path="/images/openxc/ford-engineering-notepaper" alt="Scan of Ford engineering graph paper" %}
+
+In 2011, I graduated from Carnegie Mellon and moved back to Michigan to join
+Katy, who was starting a PhD program at the University of Michigan. Although I
+had no burning desire to work in the auto industry, I found a role as a Research
+Scientist at Ford's Research & Innovation Center. The hiring manager at the time
+told me it was a fluke my application landed where it did, since recruiting was
+otherwise very opaque at such a large company.
+
+In what I found to be a comical snub, I was not permitted the title of Research
+Engineer because my undergraduate Computer Science degree was offered through
+the college of Literature, Science and the Arts, not the College of Engineering.
+No matter! I embraced the title and coveted the 1970s era white research lab
+coats a few of the more senior engineers wore around the building.
+
+In 2021, I have enough emotional distance from my first full-time professional
+gig to put it into perspective. I'm proud of the impact I had at Ford, and can
+see now how those years offered more than a few formative professional
+experiences. I'm hoping by writing this, I can understand those lessons even
+better, and close out this part of my life.
+
+## Infotronics
+
+At Ford, I joined the [Infotronics
+team](https://www.zdnet.com/article/ford-solving-the-internets-last-inch-problem-at-70-mph/);
+a small group of supportive engineering colleagues with an optimistic, visionary
+leader. The primary focus during my tenure was the development of an open
+platform to accelerate experimentation and development of new automotive and
+mobility applications: [the OpenXC platform](https://openxcplatform.com/).
+
+<picture>
+    <source type="image/webp" srcset="/images/openxc/openxc-logo.webp">
+    <source type="image/jpeg" srcset="/images/openxc/openxc-logo.png">
+    <img src="/images/openxc/openxc-logo.png" alt="OpenXC Logo">
+</picture>
+
+The vision was quite broad, and served as a useful avenue to test a variety of
+open source development, collaboration and publishing models from within a large
+non-tech company. We aimed to provide consumer-grade access to real-time data
+from vehicles, using open source software, and with open source hardware
+reference implementations for any connections to the car. This was meant to go
+far beyond the existing open standard for vehicle data (On-board Diagnostics)
+and expose the more interesting, and as-of-then proprietary information from
+systems like the doors and windows, HVAC, and EV battery management.
+
+One product angle, and the one I could most easily identify with, was to
+re-engage The Tinkerer; people who enjoy understanding, tweaking and fixing
+their cars. These folks haven't disappeared completely, but as engines and other
+automotive systems became increasingly computerized, experimentation became less
+accessible for anyone except the dealership or a licensed repair shop. The
+die-hards kept at it and eventually reverse engineered many early ECUs for
+performance tweaking, but the majority of the tinkerers moved on. I think some
+were rebranded as "makers", which had the side benefit of bringing in a more
+diverse group of people, technologies and mediums; not just cars, but code, art,
+biology and crafts.
+
+## The Tech
+
+OpenXC is built around a [specification](https://github.com/openxc/openxc-message-format) for encoding vehicle data and commands in
+JSON. JSON made the most sense at the project's onset as an approachable,
+human-readable format. The spec defined [common names for vehicle
+data](https://openxcplatform.com/about/data-set.html), meant to
+be more approachable than OBD-II diagnostic IDs.
+
+We paired the spec with a reference implementation of a low cost vehicle
+interface, using off-the-shelf components, that connected to the standard OBD-II
+port. Other cheap OBD "dongles" existed, but were primarily meant to provide
+phone interfaces to the standard OBD-II commands. For example, a vehicle owner
+could clear a diagnostic trouble code without having to visit the dealer. OpenXC
+was more focused on providing an accessible software development environment to
+be more creative with the data.
+
+<div class="gallery" data-columns="3">
+    {% include picture_tag.html path="/images/openxc/chipkit-can-translator" alt="Microcontroller PCB with cables" %}
+    {% include picture_tag.html path="/images/openxc/chipkit-can-translator-2" alt="Gray electronics project box with OpenXC sticker and cable" %}
+    {% include picture_tag.html path="/images/openxc/original-can-translator-mustang-backseat" alt="Gray electronics box labeled OpenXC on back seat of a Ford Mustang" %}
+</div>
+
+Android was our [application development
+environment](https://openxcplatform.com/host-devices/hardware.html) of choice,
+because of the wide support for external devices. The [first version of the vehicle
+interface](https://openxcplatform.com/vehicle-interface/hardware.html#diy-chipkit)
+used a wired USB On-the-Go wired, and we eventually went wireless with a
+Bluetooth 2.0 serial adapter (the classic RN-42).
+
+## The Pitch
+
+A part of the pitch for this project inside Ford was to provide a potential
+infotainment platform for developing markets. The Ford Figo was popular in
+India, but had only a turn-of-the-century dashboard display. Smartphones,
+however, were becoming as popular as in the rest of the world. Why not leverage
+the mobile computer you already have with you for your car?
+
+We also explored this angle for developed markets. The average age of personal
+cars on the road had just passed 11 years. Compared with the dramatic pace of
+smartphone replacement, there is no way for a personal car's tech to stay
+current. Just like with a low cost vehicle with no built-in displays at all,
+what if you could leverage your phone to make whatever was in your 10 year old
+car irrelevant?
+
+Neither initiative became material, but the idea lodged in a few leaders' minds.
+In a slightly modified form, this concept did end up coming to fruition - see
+Ford's [AppLink](https://owner.ford.com/support/how-tos/sync/sync/applink/sync-applink-overview.html),
+and especially Apple CarPlay and Android Auto. Tesla aside, many automakers are
+giving up on trying to make their own infotainment and are providing interfaces
+for a more easily updated phone to take over.
+
+I think what's still missing is any meaningful interaction with the car itself.
+Infotainment is stuck in its lane, providing navigation, music, and call/SMS
+support.
+
+## Launch & Outreach
+
+OpenXC was the first significant open source project published by Ford, and
+possibly the first ever. We had Ford's intellectual property arm (Ford Global
+Technologies LLC, or FGTL) and marketing department aligned, and it took
+surprisingly little wrangling to get final approval.
+
+The public project
+[officially](https://makezine.com/2013/01/11/make-at-ces-2013-ford-opens-up-to-developers-and-hackers/)
+[launched](https://www.prnewswire.com/news-releases/ford-openxc-platform-is-now-open-for-vehicle-data-customizable-hardware-and-open-source-research-186340382.html)
+at CES 2013. I wasn't able to attend, but Katy and I celebrated at home with
+champagne.
+
+After the launch, we spent a significant amount of energy on outreach, community
+building and education. If all else failed, our leadership at Ford was happy to
+have us engage a crowd of folks that otherwise wouldn't have thought to learn
+about automotive engineering, or seen any advantage to buying a Ford car.
+
+We hosted booths at a few Maker Faires in Michigan and California, complete with
+a kitted out Ford Focus showing some of the available data.
+
+Ford partnered with the now defunct TechShop, to jointly run a TechShop location
+in Dearborn. We ran OpenXC workshops out of this location, and eventually went
+on a tour of a half dozen shops around the country. I hosted workshops in Round
+Rock, TX and Pittsburgh, PA (where I now reside!). The open hardware angle was
+especially interesting for this crowd; we based the event around actually
+soldering together a physical, customizable dashboard gauge (the [retro
+gauge](http://openxcplatform.com/projects/retro-gauge.html))
+that could be fed with any data from an OpenXC interface.
+
+<div class="gallery" data-columns="3">
+    {% include picture_tag.html path="/images/openxc/detroit-maker-faire-openxc-table" alt="Chris and Prasad at the Dearbor Maker Faire table" %}
+    {% include picture_tag.html path="/images/openxc/ann-arbor-maker-faire-openxc-table" alt="People at an outdoor table demonstrating OpenXC hardware" %}
+    {% include picture_tag.html path="/images/openxc/openxc-techshop-texas" alt="Exterior of TechShop in Round Rock with OpenXC banner and Ford C-Max car" %}
+    {% include picture_tag.html path="/images/openxc/openxc-techshop-texas-inside" alt="People on laptops at work tables inside TechShop" %}
+    {% include picture_tag.html path="/images/openxc/openxc-techshop-texas-bbq" alt="Black's Barbecue road sign in Round Rock" %}
+    {% include picture_tag.html path="/images/openxc/openxc-techshop-austin" alt="Paddle boaters on river in Austin" %}
+</div>
+
+The next year, we sponsored a challenge to developers to use OpenXC data to
+build an app or service that helps individuals understand and improve their
+personal fuel economy. Jim Farley, (now the Ford CEO but at the time the
+executive VP of Global Marketing, Sales and Service and Lincoln) announced the
+Personalized Fuel Efficiency App Challenge on stage at the [2013 New York
+International Auto
+Show](https://www.extremetech.com/extreme/152101-new-york-auto-show-automakers-cede-ground-give-users-more-control-of-dashboard-entertainment-apps).
+I spent the press day on the show floor with a demo unit, ready for questions,
+but I mostly chatted with the other presenters.
+
+The trip to New York was memorable for being my first time driving in the city.
+I'd visited a few times prior, but as any reasonable person would, I got around
+in cabs and the subway. Driving was exhilarating and surprisingly easy,
+especially after escaping from Midtown. The goal of this joyride, in a Fusion
+borrowed from Manhattan Ford, was to record data with OpenXC with a local flair
+for the auto show. I used a few of my drives as samples in one of the log
+analysis tools we released (the [trace
+analyzer](http://trace-analyzer.openxcplatform.com/)).
+
+<div class="gallery" data-columns="2">
+    {% include picture_tag.html path="/images/openxc/nyias-fuel-economy-challenge-launch" alt="Blurry picture of an auto show presentation from a distance"  %}
+    {% include picture_tag.html path="/images/openxc/nyias-openxc-hacky-display" alt="OpenXC equipment haphazardly placed on a car hood on the auto showfloor" %}
+    {% include picture_tag.html path="/images/openxc/ford-manhattan-self" alt="Chris standing outside the Ford of Manhattan dealership" %}
+    {% include picture_tag.html path="/images/openxc/nyc-driving-vehicle-interface" alt="OpenXC vehicle interface plugged into the OBD-II port, with Chris' shoe visible" %}
+    {% include picture_tag.html path="/images/openxc/nyc-driving-hud" alt="View over the dashboard of a Ford Fusion in Manhattan" %}
+    {% include picture_tag.html path="/images/openxc/trace-analyzer-map" alt="Graphical overlay of a driving route on a map of Manhattan, a screenshot from the Trace Analyzer application" %}
+</div>
+
+These weren't the only events, and the Ford team appears to have kept up with
+outreach and engagement. You can find a more up to date list at [the OpenXC site](http://openxcplatform.com/community/events.html).
+
+## Internal Applications
+
+OpenXC turned out to be a useful prototyping platform for a variety of
+departments within Ford, and not just "infotainment". It was a quick way to
+interact with a device on a CAN bus without lugging around a Vector
+interface and Windows laptop, and was much easier to link with other research
+software. We even used it for one of Ford's first forays into autonomous
+driving, as an early prototype for controlling the PRNDL state. The magic
+happened from this cubicle, on the days I wasn't working remotely from Ann
+Arbor:
+
+{% include picture_tag.html path="/images/openxc/ford-cube" alt="Office cubicle with computer monitor and laptop" %}
+
+
+One of the most memorable events was a series of workshops I hosted at Ford of
+Australia for around 100 engineers over 4 days. This was our first attempt at
+pollinating the founding ideas of OpenXC around our global offices.
+
+The teams in Broadmeadows, Lara and Geelong (a short drive from where I stayed
+in Melbourne) were most welcoming, and tipped me off to an excellent
+over-the-mountains drive. Unbelievably, this rental car returned dirty but
+otherwise undamaged.
+
+<div class="gallery" data-columns="3">
+    {% include picture_tag.html path="/images/openxc/australia-1" alt="Buildings in downtown Melbourne, Australia" %}
+    {% include picture_tag.html path="/images/openxc/australia-2" alt="Buildings in downtown Melbourne Australia" %}
+    {% include picture_tag.html path="/images/openxc/ford-australia-workshop-1" alt="People in a conference room, working on laptops around tables" %}
+    {% include picture_tag.html path="/images/openxc/ford-australia-workshop-2" alt="People in a conference room, working on laptops and with electronics hardware" %}
+    {% include picture_tag.html path="/images/openxc/australia-dirt-road-car" alt="A white rental car with mud streaks" %}
+    {% include picture_tag.html path="/images/openxc/australia-self-windy-tower" alt="Chris with windblown hair and a pathetic beard standing on a tall tower" %}
+</div>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/dLa6BterhEI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Product Evolution
+
+Back in Dearborn, the Infotronics team also worked on evolving the hardware
+design, and exploring ways that Ford could leverage nimbler mechanical and
+electrical prototyping. This effort was a collaboration with [Bug
+Labs](http://buglabs.net/), but I
+must give most of the credit to a colleague (now founder and CEO of
+[Fictiv](https://www.fictiv.com/)). He
+had a passion for rapid prototyping and additive manufacturing at Ford, and even
+helped design a retail box for our custom hardware kit. He also tested the idea
+of using 3D printing and quicker turn PCB fabrication shops to build prototypes.
+You can hear him [talk about it much more eloquently at SXSW
+2019](https://youtu.be/pPkUXeLjTYA?t=270).
+
+For the vehicle interface hardware, we strived to continue supporting the
+original DIY-style kit based on off-the-shelf components. This remained the
+preferred prototyping platform for many people, since being built on an
+Arduino-compatible embedded device (the [Digilent chipKIT
+Max32](https://reference.digilentinc.com/chipkit_max32/refmanual)) meant you could
+easily add additional sensors or physical controls.
+
+The next generation vehicle interface was Ford's first published open source
+hardware. The mechanical and PCB schematics were designed with Bug Labs and
+[released on GitHub](https://github.com/openxc/reference-vi). Our goal was on a
+slimmer package, with more intentional physical integration with the car. We
+went through 3 design iterations.
+
+<div class="gallery" data-columns="3">
+    {% include picture_tag.html path="/images/openxc/hardware-prototype-1" alt="OpenXC vehicle interface prototype" %}
+    {% include picture_tag.html path="/images/openxc/hardware-prototype-2" alt="OpenXC Bluetooth audio adapter prototype" %}
+    {% include picture_tag.html path="/images/openxc/hardware-prototype-3" alt="OpenXC cupholder USB hub prototype" %}
+    {% include picture_tag.html path="/images/openxc/hardware-prototype-4" alt="OpenXC vehicle interface prototype, cover off" %}
+    {% include picture_tag.html path="/images/openxc/hardware-prototype-5" alt="OpenXC Bluetooth audio adapter prototype, cover off" %}
+    {% include picture_tag.html path="/images/openxc/hardware-prototype-6" alt="OpenXC cupholder USB hub prototype, cover off" %}
+</div>
+
+The final version came in a fancy box, with a few custom-built accessories: a
+[USB dock](https://github.com/openxc/reference-dock) designed to fit in a cup
+holder, and a [Bluetooth audio
+interface](https://github.com/openxc/bluetooth-audio-passthrough) for streaming
+music to your car stereo. Remember, this was when people were driving 2000-era
+cars, but carrying much more capable smartphones.
+
+<div class="gallery" data-columns="4">
+    {% include picture_tag.html path="/images/openxc/hardware-full-kit-1" alt="OpenXC full size retail box" %}
+    {% include picture_tag.html path="/images/openxc/hardware-full-kit-3" alt="OpenXC retail vehicle interface, 1st gen" %}
+    {% include picture_tag.html path="/images/openxc/hardware-full-kit-5" alt="OpenXC retail Bluetooth audio adapter" %}
+    {% include picture_tag.html path="/images/openxc/hardware-full-kit-7" alt="OpenXC retail cupholder USB hub" %}
+    {% include picture_tag.html path="/images/openxc/hardware-full-kit-2" alt="OpenXC full size retail box, opened" %}
+    {% include picture_tag.html path="/images/openxc/hardware-full-kit-4" alt="OpenXC retail vehicle interface, cover off" %}
+    {% include picture_tag.html path="/images/openxc/hardware-full-kit-6" alt="OpenXC retail Bluetooth audio adapter, cover off" %}
+    {% include picture_tag.html path="/images/openxc/hardware-full-kit-8" alt="OpenXC retail cupholder USB hub, cover off" %}
+</div>
+
+We also had a slimmer retail box that fit only the vehicle interface:
+
+<div class="gallery" data-columns="3">
+    {% include picture_tag.html path="/images/openxc/final-vi-box-1" alt="Slim retail box for vehicle interface" %}
+    {% include picture_tag.html path="/images/openxc/final-vi-box-2" alt="Slim retail box for vehicle interface, slipcover removed" %}
+    {% include picture_tag.html path="/images/openxc/final-vi-box-3" alt="Slim retail box for vehicle interface, opened" %}
+    {% include picture_tag.html path="/images/openxc/final-vi-box-4" alt="Second gen retail vehicle interface with glossy plastic" %}
+    {% include picture_tag.html path="/images/openxc/final-vi-box-5" alt="Second gen retail vehicle interface, opened" %}
+    {% include picture_tag.html path="/images/openxc/final-vi-box-7" alt="Second gen vehicle interface installed in a Ford Mustang OBD-II port, light pipe glowing blue" %}
+</div>
+
+We found a good partner in Fleetcarma (nee CrossChasm), a Canadian company with
+a similar mission to unlock vehicle data, particularly to optimize the growing
+EV fleet. They had their own design for an OBD-II interface (the C5), with
+extras like a microSD card slot, cellular modem support and an even slimmer form
+factor. We eventually [added the C5 as a supported
+platform](https://openxcplatform.com/vehicle-interface/hardware.html#crosschasm)
+for OpenXC (using the same open source firmware!) and offered a kit for sale
+through the official store.
+
+As our [list of supported hardware
+grew](https://openxcplatform.com/vehicle-interface/hardware.html), I spent a good amount of time building
+an [automatic hardware-in-the-loop
+test](http://vi-firmware.openxcplatform.com/en/master/testing.html), to make sure new releases were
+universally compatible with all variants.
+
+## Legacy
+
+After the launch and road show, I hoped to incrementally expand the set of
+supported vehicle "signals", especially data relating to the battery tech in our
+fledgling electric vehicles; the C-Max and Ford Focus Electric. I ran up against
+the limits of my political and interpersonal expertise at the time, and never
+made much progress. We struggled to form meaningful partnerships with the
+production engineering side of Ford to learn how to interpret the raw data, or
+win approval for a public release. Battery management technology was (and still
+is) a hotly protected trade secret, but I think Tesla's success with a
+data-forward approach is proof of the value of our initiative.
+
+I stopped actively contributing to OpenXC after leaving Ford, but new faces in
+the group continue to use it today. I think we failed at our goal of broadly
+opening up access to vehicle data, but possibly seeded the idea in a few places
+where it is now successful. Companies like [Volvo are offering
+APIs](https://developer.volvocars.com/volvo-api/extended-vehicle/), albeit the
+data goes through a proprietary cloud-hosted service and is not directly from
+your car.
+
+OpenXC did succeed at becoming a flexible prototyping platform for Ford R&D,
+universities, intern projects, and projects by tinkerers (evidence of which I
+periodically find on GitHub or YouTube).
+
+OpenXC and my time at Ford educated me on the workings of large organizations:
+the good and the not so good. I didn't expect it, but I had great opportunities
+for travel and to meet engineers from a wide variety of backgrounds, from local
+mechanical engineers to software engineers in India (on the other side of a
+contract with HCL). I never did get a trip to Ford of India out of it, though!
+
+I experienced firsthand the disadvantages of sequestering software development
+in the IT department. It left the Research & Innovation Center teams without
+clear organizing principles and hurt our ability to create a consolidated open
+source policy for the company. I learned how to develop a project in the open,
+and how to foster a community of users (albeit a small one). I definitely never
+experienced the volume of flak I see hitting some popular project maintainers
+today. Working on the project generally left me with positive feelings; I must
+keep in mind, unlike the majority of open source development, my contributions
+were funded.
+
+Ultimately, I left Ford disillusioned with infotainment. It was hard to continue
+to imagine approachable use cases for OpenXC when the perils of distracted
+driving were a frequent issue in the news. To me, the most interesting
+applications were fleet-wide and on the backend, but those didn't offer as much
+flash or marketing opportunities.
+
+What ended up being most influential and valuable in the next decade of my
+career was the broad knowledge of vehicle electrical systems, and the automotive
+industry's general workings. My embedded experience started at home, on side
+projects with Arduinos, grew into OpenXC, and proved useful at Stratos, Uber and
+Aurora. Even this basic, early-career experience gave me the language I needed
+to be able to talk to professional embedded engineers down the line.
+
+I worked with a few great people, and we launched a high altitude balloon (and
+caught it, after it almost immediately floated off into the distance but never
+to the stratosphere).
+
+{% include picture_tag.html path="/images/openxc/high-altitude-balloon-recovery" alt="Chris in the distance, in scrubland holding a partially inflated weather balloon attached to a small foam payload" %}
