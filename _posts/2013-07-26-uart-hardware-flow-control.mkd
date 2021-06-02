@@ -3,16 +3,13 @@ title: Maximum BlueSMirF.
 permalink: /2013/07/26/uart-hardware-flow-control/
 ---
 
-<div class="pullout">
-<p>If you are using a Roving Networks
+<p class="pullout">
+If you are using a Roving Networks
 RN-42 (e.g. SparkFun's <a
 href="https://www.sparkfun.com/products/10269">BlueSMiRF</a>) and need to
 get anywhere the maximum throughput (~23KB/s), you must use hardware flow
-control on the UART interface.</p>
-
-<p>Roving Networks, the manufacturer of the RN-42, was acquired by Microchip
+control on the UART interface. Roving Networks, the manufacturer of the RN-42, was acquired by Microchip
 Technology in 2012.</p>
-</div>
 
 Until I started working at Ford on the [OpenXC Platform][openxc], most embedded
 concepts were new to me. I had used the [Arduino](http://arduino.cc) quite bit,

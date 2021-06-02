@@ -4,10 +4,10 @@ permalink: /2011/05/google-voice-asterisk/
 tags: hidden
 ---
 
-<div class="pullout">
+<p class="pullout">
 This article was <strong>updated May 2013</strong> with new instructions for
 Asterisk 11.
-</div>
+</p>
 
 Inspired by a recent [Maximum PC
 article](http://www.maximumpc.com/article/how-tos/how_build_your_own_home_phone_server),

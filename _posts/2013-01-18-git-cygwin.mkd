@@ -4,12 +4,12 @@ permalink: /2013/01/cygwin-git-https
 tags: hidden
 ---
 
-<div class="pullout">
+<p class="pullout">
 <strong>Executive summary</strong>: In order to use git in <a
 href="http://www.cygwin.com/">Cygwin</a> with Smart HTTP style URLs, you need
 to also install the <code>libsasl2</code> and <code>ca-certificates</code>
 packages.
-</div>
+</p>
 
 I recently set up a new Cygwin environment to test and document the process
 of cloning and using one of the [OpenXC][] repositories from GitHub in

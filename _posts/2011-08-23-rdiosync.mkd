@@ -4,11 +4,9 @@ permalink: /2011/08/rdio-filesystem-collection-sync
 tags: hidden
 ---
 
-<div class="pullout">
+<p class="pullout">
 Sadly, the music streaming service Rdio shut down in December 2015. This post
-is preserved in its honor.</div>
-
-***
+is preserved in its honor.</p>
 
 Rdio is pretty neat, but I've been missing out on some of the fun because I
 can't sync my music collection to my Rdio account. I don't use iTunes or Windows
