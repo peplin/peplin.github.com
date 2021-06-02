@@ -66,12 +66,12 @@
             $this.append('<div class="gallery__wrap"></div>');
 
             // Add images to container
-            $this.children('img').each( function() {
+            $this.children('picture').each( function() {
                 $(this).appendTo('#' + thisId + ' .gallery__wrap');
             });
 
             // Wrap images
-            $this.find('.gallery__wrap img').each( function() {
+            $this.find('.gallery__wrap picture img').each( function() {
                 var imageSrc = $(this).attr('src');
                 $(this).wrapAll('<div class="gallery__item"><a href="' + imageSrc + '" class="gallery__item__link"></div></div>').appendTo();
             });
