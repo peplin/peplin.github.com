@@ -1,19 +1,15 @@
 ---
-title: "Configuring Bluetooth modules with AT-commander"
-permalink: 2013/07/09/at-commander/
+title: Configuring Bluetooth modules with AT-commander
+permalink: /2013/07/09/at-commander/
 ---
 
-<div class="pullout">
-
-<p>As a part of the <a
+<p class="pullout">As a part of the <a
 href="http://openxcplatform.com">OpenXC platform</a>, I have released the <a
 href="https://github.com/openxc/AT-commander">AT-commander</a> C library to help
 programatically configure Bluetooth devices like the Roving Networks
 RN-42 (i.e. SparkFun's <a
 href="https://www.sparkfun.com/products/10269">BlueSMiRF</a>).
 </p>
-
-</div>
 
 The RN-42 based BlueSmirf from SparkFun is a great development board for
 prototyping Bluetooth applications, and it's fairly easy to configure. It uses
