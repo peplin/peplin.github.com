@@ -6,7 +6,7 @@ permalink: /posts/
 featured_image: images/writing-hero
 ---
 
-<section class="blog">
+<section class="posts_wrapper">
 	<div class="content-wrap">
         <p>I generally write to document projects, publish research, or try and better
             understand my own brain. Occasionally, it's worth sharing.</p>

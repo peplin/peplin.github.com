@@ -1,3 +1,7 @@
+.posts_wrapper {
+    padding-left: 20px;
+}
+
 .page ul.posts li {
   margin-bottom: 8px;
   font-size: 18px;
