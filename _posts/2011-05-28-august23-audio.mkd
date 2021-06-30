@@ -32,7 +32,7 @@ background sounds. Most of the recordings were slowed down quite dramatically.
 {% include jplayer.html %}
 
 <div id="map"></div>
-<a href="/files/august/audio.gpx" class="gpx"></a>
+<a href="/files/august23/audio.gpx" class="gpx"></a>
 
 ## Mission Control Instructions
 
