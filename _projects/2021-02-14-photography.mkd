@@ -14,3 +14,5 @@ This grid dynamically fetches the most recent photos. Click any image to open
 the full size.
 
 <div id="photo-grid" class="image-wrap"></div>
+
+See the rest [on Flickr](https://www.flickr.com/photos/christopherpeplin/).
