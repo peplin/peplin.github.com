@@ -21,6 +21,6 @@ area of interest, particularly because it's so broadly accessible.
 
 ## <a href="/files/peplin-resume.pdf">R&eacute;sum&eacute; <i class="fas fa-file-pdf"></i></a>
 
-* Software Engineer at <a href="https://aurora.tech/">Aurora Innovation</a>.
+* Software Engineer at <a href="https://careers.atob.com/">AtoB</a>.
 * Studied at <a href="http://www.ini.cmu.edu/">Carnegie Mellon University</a>
     and the <a href="http://www.eecs.umich.edu/">University of Michigan</a>.
