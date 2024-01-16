@@ -21,7 +21,7 @@ function loadPhotoGrid() {
                     var element = "";
                     photo.thumbnail = "https://live.staticflickr.com/" +
                         photo.server + "/" +
-                        photo.id + "_" + photo.secret + "_" + "w.jpg";
+                        photo.id + "_" + photo.secret + "_" + "c.jpg";
                     photo.url = "https://www.flickr.com/photos/" +
                         photo.owner + "/" + photo.id;
 
