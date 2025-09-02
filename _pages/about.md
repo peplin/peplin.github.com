@@ -19,7 +19,7 @@ area of interest, particularly because it's so broadly accessible.
 
 <i>Blind contour drawing of me, circa 2020, by Katy Peplin.</i>
 
-## <a href="/files/2023-08 - Chris Peplin Resume.pdf">R&eacute;sum&eacute; <i class="fas fa-file-pdf"></i></a>
+## <a href="/files/2025-09 - Peplin Resume.pdf">R&eacute;sum&eacute; <i class="fas fa-file-pdf"></i></a>
 
 * Software Engineer at <a href="https://www.vanta.com/">Vanta</a>.
 * Studied at <a href="http://www.ini.cmu.edu/">Carnegie Mellon University</a>
